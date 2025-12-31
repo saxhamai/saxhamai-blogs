@@ -69,6 +69,14 @@ a {
   border-bottom: 1px solid #e2e8f0;
 }
 
+/* ✅ NEW: 2-Column Grid Utility (For Resources & Contact Pages) */
+.cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
 /* Typography */
 h1, h2, h3, h4 {
   color: var(--primary);
@@ -352,5 +360,11 @@ article li {
 
   .hero p {
     font-size: 1.05rem;
+  }
+
+  /* ✅ Stack 2-column layouts on mobile */
+  .cols-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
