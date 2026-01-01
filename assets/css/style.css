@@ -69,7 +69,7 @@ a {
   border-bottom: 1px solid #e2e8f0;
 }
 
-/* ✅ NEW: 2-Column Grid Utility (For Resources & Contact Pages) */
+/* 2-Column Grid Utility */
 .cols-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -137,11 +137,18 @@ p {
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--text-main);
+  border-bottom: 2px solid transparent; /* Prepare for hover/active */
+  padding-bottom: 4px;
 }
 
-.site-header nav a:hover,
+.site-header nav a:hover {
+  color: var(--accent);
+}
+
+/* ✅ IMPROVEMENT: Active State Visibility */
 .site-header nav a.active {
   color: var(--accent);
+  border-bottom: 2px solid var(--accent);
 }
 
 /* -----------------------------------------------------------
@@ -252,13 +259,30 @@ article h3 {
   margin-top: 2.2rem;
 }
 
-article ul {
+/* ✅ IMPROVEMENT: Better Readability for Long Form */
+article p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+article ul, article ol {
   padding-left: 1.4rem;
   margin-bottom: 2rem;
 }
 
 article li {
   margin-bottom: 0.6rem;
+  font-size: 1.05rem; /* Matching paragraph size */
+}
+
+/* ✅ IMPROVEMENT: Better Link Visibility in Articles */
+article a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+article a:hover {
+  text-decoration: underline;
 }
 
 /* -----------------------------------------------------------
@@ -362,7 +386,7 @@ article li {
     font-size: 1.05rem;
   }
 
-  /* ✅ Stack 2-column layouts on mobile */
+  /* Stack 2-column layouts */
   .cols-2 {
     grid-template-columns: 1fr;
     gap: 1.5rem;
