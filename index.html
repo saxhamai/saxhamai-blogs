@@ -21,28 +21,40 @@
   </script>
   
   <meta name="google-adsense-account" content="ca-pub-9771104122165922">
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      
       // Track WhatsApp Clicks
       document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(el){
         el.addEventListener("click", function(){
-          gtag('event', 'whatsapp_click', { 'event_category': 'Contact', 'event_label': 'WhatsApp' });
+          gtag('event', 'whatsapp_click', {
+            'page_path': window.location.pathname,
+            'link_type': 'social'
+          });
         });
       });
 
       // Track Email Clicks
       document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
         el.addEventListener("click", function(){
-          gtag('event', 'email_click', { 'event_category': 'Contact', 'event_label': 'Email' });
+          gtag('event', 'email_click', {
+            'page_path': window.location.pathname,
+            'link_type': 'contact'
+          });
         });
       });
 
-      // Track Audit/Contact Page Clicks
-      document.querySelectorAll('.ecosystem-btn, a[href*="contact.html"]').forEach(function(el){
+      // Track Audit/Nav Clicks
+      document.querySelectorAll('a[href*="audit.html"]').forEach(function(el){
         el.addEventListener("click", function(){
-          gtag('event', 'audit_cta_click', { 'event_category': 'Conversion', 'event_label': 'Audit Interest' });
+          gtag('event', 'audit_cta_click', {
+            'page_path': window.location.pathname,
+            'intent': 'navigation'
+          });
         });
       });
+
     });
   </script>
 </head>
@@ -59,6 +71,7 @@
     <nav>
       <a href="/" class="active">Home</a>
       <a href="/blog/">Blog</a>
+      <a href="/audit.html" style="color:var(--accent); font-weight:700;">Audit</a>
       <a href="/resources.html">Resources</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
