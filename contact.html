@@ -5,52 +5,51 @@
   <title>Digital Trust Audit for Indian Businesses | SaXhamAI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Get a Digital Trust Audit by SaXhamAI. We help Indian businesses fix Google Maps, WhatsApp, website trust, and response gaps.">
+  <meta name="description" content="Contact SaXhamAI for a digital trust audit. We help Indian businesses fix Google Maps, WhatsApp, and operational trust gaps.">
   <meta name="author" content="Nitin Pawar">
 
   <link rel="canonical" href="https://blog.saxhamai.com/contact.html">
+
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-B22TGFQD60');
   </script>
 
-  <!-- Conversion Tracking -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-
-      // WhatsApp clicks
-      document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+      
+      // Track WhatsApp Clicks
+      document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(el){
         el.addEventListener("click", function(){
           gtag('event', 'whatsapp_click', {
-            event_category: 'conversion',
-            page_path: window.location.pathname,
-            brand: 'SaXhamOps'
+            'page_path': window.location.pathname,
+            'link_type': 'contact_social'
           });
         });
       });
 
-      // Email clicks
+      // Track Email Clicks
       document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
         el.addEventListener("click", function(){
           gtag('event', 'email_click', {
-            event_category: 'conversion',
-            page_path: window.location.pathname
+            'page_path': window.location.pathname,
+            'link_type': 'contact_email'
           });
         });
       });
 
-      // Audit CTA
+      // Track Audit/Conversion Clicks
       document.querySelectorAll('.audit-cta').forEach(function(el){
         el.addEventListener("click", function(){
           gtag('event', 'audit_cta_click', {
-            event_category: 'conversion',
-            intent: 'high'
+            'page_path': window.location.pathname,
+            'intent': 'high_value'
           });
         });
       });
@@ -67,6 +66,7 @@
       <a href="/">SaXhamAI</a>
       <span class="tagline">Blog</span>
     </div>
+
     <nav>
       <a href="/">Home</a>
       <a href="/blog/">Blog</a>
@@ -80,11 +80,10 @@
 <section class="section soft-bg">
   <div class="container narrow">
     <h1>Digital Trust Audit</h1>
-    <p style="font-size:1.1rem;">
-      Calls dropping? WhatsApp silent?  
-      Customers visiting but not converting?
-      <br><br>
-      We identify <strong>hidden trust gaps</strong> in your digital presence and fix them.
+    <p style="font-size: 1.1rem; color: var(--text-main);">
+      Calls dropping? WhatsApp silent? Customers not converting?
+      <br>
+      We find the hidden trust gaps in your business and fix them.
     </p>
   </div>
 </section>
@@ -92,68 +91,103 @@
 <section class="section">
   <div class="container narrow">
 
-    <div class="blog-card" style="border-top:4px solid var(--accent);padding:2.5rem;">
-      <h2 style="text-align:center;">🔍 Get a Digital Trust Audit</h2>
-
-      <p class="muted" style="text-align:center;margin-bottom:2rem;">
-        For Indian local businesses, service providers & founders.
+    <div class="blog-card" style="margin-bottom: 3rem; background: #ffffff; border-top: 4px solid var(--accent); padding: 2.5rem;">
+      <h2 style="margin-bottom: 0.5rem; text-align:center;">🔍 Get a Digital Trust Audit</h2>
+      
+      <p style="text-align: center; margin-bottom: 2rem; color: var(--text-light);">
+        For local businesses, service providers, and founders in India.
       </p>
 
-      <div class="cols-2">
+      <div class="cols-2" style="margin-bottom: 2rem;">
         <div>
-          <h4>What We Check</h4>
-          <ul>
-            <li>✅ Google Maps & GBP trust signals</li>
-            <li>✅ WhatsApp Business setup & tone</li>
-            <li>✅ Website trust & clarity</li>
-            <li>✅ First response speed</li>
+          <h4 style="color: var(--primary);">What We Check:</h4>
+          <ul style="font-size: 0.95rem;">
+            <li>✅ Google Maps Visibility & Errors</li>
+            <li>✅ WhatsApp Business Setup & Tone</li>
+            <li>✅ Website Trust Signals</li>
+            <li>✅ First Response Speed</li>
           </ul>
         </div>
         <div>
-          <h4>What You Get</h4>
-          <ul>
-            <li>📄 Clear audit PDF</li>
-            <li>🧠 No jargon, only fixes</li>
-            <li>🚀 Trust-first improvement plan</li>
+          <h4 style="color: var(--primary);">What You Get:</h4>
+          <ul style="font-size: 0.95rem;">
+            <li>📄 A Clear PDF Report</li>
+            <li>🔧 Actionable Fixes (No Jargon)</li>
+            <li>🚀 Immediate Trust Boost</li>
           </ul>
         </div>
       </div>
 
-      <p class="muted" style="margin-top:1.5rem;border-top:1px dashed #e2e8f0;padding-top:1rem;text-align:center;">
-        ❌ Not for agencies or free-advice seekers
+      <p class="muted" style="text-align:center; font-size:0.9rem; margin-bottom: 2rem; border-top: 1px dashed #e2e8f0; padding-top: 1rem;">
+        ❌ Not for agencies, resellers, or people looking for free advice.
       </p>
 
-      <!-- CTA -->
-      <div style="text-align:center;margin-top:2rem;">
-
-        <!-- Email -->
-        <a href="mailto:founder@saxhamai.com?subject=Digital%20Trust%20Audit%20Request"
-           class="ecosystem-btn audit-cta"
-           style="background:var(--accent);color:#fff;padding:12px 24px;">
+      <div style="text-align: center;">
+        
+        <a href="mailto:founder@saxhamai.com?subject=Digital%20Trust%20Audit%20Request" 
+           class="ecosystem-btn audit-cta" 
+           style="background-color: var(--accent); color: white; padding: 12px 25px; font-size: 1.1rem;">
           📧 Request Audit via Email
         </a>
 
         <br><br>
 
-        <!-- WhatsApp -->
-        <a href="https://wa.me/919325750093?text=Hi%20SaXhamOps,%20I%20want%20a%20Digital%20Trust%20Audit."
-           class="ecosystem-btn audit-cta"
-           style="background:#25D366;color:#fff;padding:12px 24px;"
+        <a href="https://wa.me/919325750093?text=Hi%20SaXhamOps,%20I%20want%20to%20book%20a%20Digital%20Trust%20Audit." 
+           class="ecosystem-btn audit-cta" 
+           style="background-color: #25D366; color: white; padding: 12px 25px; font-size: 1.1rem;"
            target="_blank">
           💬 Chat on WhatsApp (SaXhamOps)
         </a>
-
-        <p class="muted" style="margin-top:10px;font-size:0.85rem;">
-          WhatsApp handled by <strong>SaXhamOps</strong> • Response within 24 working hours
+        
+        <p style="margin-top: 15px; font-size: 0.85rem; color: var(--text-light);">
+          ⏱️ WhatsApp handled by SaXhamOps • Response within 24 working hours.
         </p>
       </div>
-
     </div>
 
-    <p class="muted" style="text-align:center;margin-top:2rem;">
-      New here?  
-      <a href="/blog/why-trust-matters.html">Read why digital trust matters →</a>
+    <p class="muted" style="text-align:center; margin-bottom: 3rem;">
+      Not sure why trust matters?  
+      <a href="/blog/why-trust-matters.html" style="color: var(--accent); text-decoration: underline;">Read this first →</a>
     </p>
+
+    <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 3rem 0;">
+
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h3 style="margin-bottom: 1rem;">Other Ways to Connect</h3>
+      <p class="muted" style="margin-bottom: 1.5rem;">Follow our updates, code, and insights.</p>
+      
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://www.linkedin.com/company/saxhamai/" target="_blank" class="ecosystem-btn">
+          👔 LinkedIn
+        </a>
+        <a href="https://instagram.com/saxhamai" target="_blank" class="ecosystem-btn">
+          📸 Instagram
+        </a>
+        <a href="https://github.com/saxhamai" target="_blank" class="ecosystem-btn">
+          💻 GitHub
+        </a>
+        <a href="https://youtube.com/@saxhamai?si=sRTQQYQ5psY_CGSf" target="_blank" class="ecosystem-btn">
+          ▶️ YouTube
+        </a>
+        <a href="https://x.com/SaxhamA34969" target="_blank" class="ecosystem-btn">
+          🐦 X (Twitter)
+        </a>
+      </div>
+    </div>
+
+    <div class="ecosystem-container" style="text-align: left; padding: 2rem; margin-top: 2rem;">
+      <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Explore Our Ecosystem</h3>
+
+      <a href="https://saxhamai.com" class="ecosystem-btn">
+        🌐 Visit Main Site
+      </a>
+      <a href="https://ops.saxhamai.com" class="ecosystem-btn">
+        ⚙️ SaXhamOps
+      </a>
+      <a href="https://technostar.saxhamai.com" class="ecosystem-btn">
+        💻 TechnoStar Infotech
+      </a>
+    </div>
 
   </div>
 </section>
@@ -165,18 +199,23 @@
       <p class="muted">Founder-led technology consulting.</p>
       <a href="https://saxhamai.com">Visit main site →</a>
     </div>
+
     <div>
       <h4>Ecosystem</h4>
       <a href="https://ops.saxhamai.com">SaXhamOps</a>
       <a href="https://technostar.saxhamai.com">TechnoStar Infotech</a>
     </div>
+
     <div>
       <h4>Contact</h4>
       <p class="muted">founder@saxhamai.com</p>
       <p class="muted">Navi Mumbai, India</p>
     </div>
   </div>
-  <p class="copyright">© 2026 SaXhamAI. Built for clarity.</p>
+
+  <p class="copyright">
+    © 2026 SaXhamAI. Built for clarity.
+  </p>
 </footer>
 
 </body>
