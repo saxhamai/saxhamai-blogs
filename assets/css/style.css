@@ -10,6 +10,10 @@
   --text-light: #64748b;    /* Light Grey - Meta/Secondary */
   --bg-light: #f8fafc;      /* Very Light Grey - Backgrounds */
   --bg-white: #ffffff;      /* Pure White */
+  
+  /* Brand Colors (New for Audit) */
+  --whatsapp-green: #25D366;
+  --alert-red: #ef4444;
 
   /* Spacing & Layout */
   --border-radius: 8px;
@@ -145,7 +149,7 @@ p {
   color: var(--accent);
 }
 
-/* ✅ IMPROVEMENT: Active State Visibility */
+/* Active State */
 .site-header nav a.active {
   color: var(--accent);
   border-bottom: 2px solid var(--accent);
@@ -259,7 +263,6 @@ article h3 {
   margin-top: 2.2rem;
 }
 
-/* ✅ IMPROVEMENT: Better Readability for Long Form */
 article p {
   font-size: 1.05rem;
   line-height: 1.75;
@@ -272,10 +275,9 @@ article ul, article ol {
 
 article li {
   margin-bottom: 0.6rem;
-  font-size: 1.05rem; /* Matching paragraph size */
+  font-size: 1.05rem;
 }
 
-/* ✅ IMPROVEMENT: Better Link Visibility in Articles */
 article a {
   color: var(--accent);
   font-weight: 600;
@@ -308,6 +310,7 @@ article a:hover {
   font-weight: 600;
   font-size: 0.95rem;
   transition: var(--transition);
+  text-decoration: none !important; /* Ensure no underline on buttons */
 }
 
 .ecosystem-btn:hover {
@@ -391,4 +394,43 @@ article a:hover {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+}
+
+/* -----------------------------------------------------------
+   10. SPECIAL UTILITIES (AUDIT & CTA) - NEW
+----------------------------------------------------------- */
+
+/* WhatsApp Button Theme */
+.btn-whatsapp {
+  background-color: var(--whatsapp-green) !important;
+  color: #fff !important;
+  border-color: var(--whatsapp-green) !important;
+}
+.btn-whatsapp:hover {
+  background-color: #1ebc57 !important;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+/* Red Alert Box (Trust Gaps) */
+.alert-box {
+  background: #fff;
+  padding: 1.5rem;
+  border-left: 4px solid var(--alert-red);
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Success Box (Offers) */
+.success-box {
+  background: #f0fdf4;
+  padding: 2rem;
+  border: 2px solid var(--whatsapp-green);
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+/* Highlight Nav Link */
+.nav-highlight {
+  color: var(--accent) !important;
+  font-weight: 700;
 }
