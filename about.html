@@ -12,36 +12,48 @@
 
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-B22TGFQD60');
   </script>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      
       // Track WhatsApp Clicks
       document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(el){
         el.addEventListener("click", function(){
-          gtag('event', 'whatsapp_click', { 'event_category': 'Contact', 'event_label': 'WhatsApp' });
+          gtag('event', 'whatsapp_click', {
+            'page_path': window.location.pathname,
+            'link_type': 'social'
+          });
         });
       });
 
       // Track Email Clicks
       document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
         el.addEventListener("click", function(){
-          gtag('event', 'email_click', { 'event_category': 'Contact', 'event_label': 'Email' });
+          gtag('event', 'email_click', {
+            'page_path': window.location.pathname,
+            'link_type': 'contact'
+          });
         });
       });
 
-      // Track Audit/Contact Page Clicks
-      document.querySelectorAll('.ecosystem-btn, a[href*="contact.html"]').forEach(function(el){
+      // Track Audit/Nav Clicks
+      document.querySelectorAll('a[href*="audit.html"]').forEach(function(el){
         el.addEventListener("click", function(){
-          gtag('event', 'audit_cta_click', { 'event_category': 'Conversion', 'event_label': 'Audit Interest' });
+          gtag('event', 'audit_cta_click', {
+            'page_path': window.location.pathname,
+            'intent': 'navigation'
+          });
         });
       });
+
     });
   </script>
 </head>
@@ -58,6 +70,7 @@
     <nav>
       <a href="/">Home</a>
       <a href="/blog/">Blog</a>
+      <a href="/audit.html" style="color:var(--accent); font-weight:700;">Audit</a>
       <a href="/resources.html">Resources</a>
       <a href="/about.html" class="active">About</a>
       <a href="/contact.html">Contact</a>
@@ -93,7 +106,7 @@
 
     <p>Everything written here comes from:</p>
 
-    <ul style="margin-bottom: 2.5rem;">
+    <ul style="margin-bottom: 2.5rem; color: var(--text-main);">
       <li><strong>Real IT operations experience</strong> (8+ Years)</li>
       <li>Working with local businesses & ops teams</li>
       <li>Fixing broken systems — not selling trends</li>
@@ -118,9 +131,15 @@
     <div class="ecosystem-container" style="text-align: left; padding: 2rem; margin-top: 1.5rem;">
       <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Explore Our Ecosystem</h3>
 
-      <a href="https://saxhamai.com" class="ecosystem-btn">🌐 Visit Main Site</a>
-      <a href="https://ops.saxhamai.com" class="ecosystem-btn">⚙️ Visit SaXhamOps</a>
-      <a href="https://technostar.saxhamai.com" class="ecosystem-btn">💻 Visit TechnoStar Infotech</a>
+      <a href="https://saxhamai.com" class="ecosystem-btn">
+        🌐 Visit Main Site
+      </a>
+      <a href="https://ops.saxhamai.com" class="ecosystem-btn">
+        ⚙️ Visit SaXhamOps
+      </a>
+      <a href="https://technostar.saxhamai.com" class="ecosystem-btn">
+        💻 Visit TechnoStar Infotech
+      </a>
     </div>
 
     <p style="margin-top:2rem; font-weight:600; color: var(--text-light);">
