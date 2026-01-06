@@ -2,23 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact | SaXhamAI Blog</title>
+  <title>Digital Trust Audit for Indian Businesses | SaXhamAI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Contact SaXhamAI — reach out for consulting, operations guidance, or collaboration. Connect on LinkedIn, YouTube, Instagram, GitHub, and X.">
+  <meta name="description" content="Contact SaXhamAI for a digital trust audit. We help Indian businesses fix Google Maps, WhatsApp, and operational trust gaps.">
   <meta name="author" content="Nitin Pawar">
 
   <link rel="canonical" href="https://blog.saxhamai.com/contact.html">
 
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-B22TGFQD60');
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      // 1. Track WhatsApp Clicks (Captures Page Path automatically)
+      document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(el){
+        el.addEventListener("click", function(){
+          gtag('event', 'whatsapp_click', {
+            'page_path': window.location.pathname,
+            'link_type': 'social'
+          });
+        });
+      });
+
+      // 2. Track Email Clicks
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
+        el.addEventListener("click", function(){
+          gtag('event', 'email_click', {
+            'page_path': window.location.pathname,
+            'link_type': 'contact'
+          });
+        });
+      });
+
+      // 3. Track Audit CTA / Conversion Clicks
+      document.querySelectorAll('.ecosystem-btn, a[href*="contact.html"]').forEach(function(el){
+        el.addEventListener("click", function(){
+          gtag('event', 'audit_cta_click', {
+            'page_path': window.location.pathname,
+            'intent': 'high_value'
+          });
+        });
+      });
+
+    });
   </script>
 </head>
 
@@ -43,11 +79,11 @@
 
 <section class="section soft-bg">
   <div class="container narrow">
-    <h1>Get in Touch</h1>
-    <p style="font-size: 1.15rem;">
-      If something on this blog resonates with you,
-      or you’re facing clarity issues in digital systems,
-      you can reach out.
+    <h1>Digital Trust Audit</h1>
+    <p style="font-size: 1.15rem; color: var(--text-main);">
+      Calls dropping? WhatsApp silent? Customers not converting?
+      <br>
+      We find the hidden trust gaps in your business and fix them.
     </p>
   </div>
 </section>
@@ -55,60 +91,81 @@
 <section class="section">
   <div class="container narrow">
 
-    <div class="blog-card" style="text-align:center; margin-bottom:2rem; border-top:4px solid var(--accent);">
-      <h3 style="font-size:1.4rem;">📧 Email</h3>
-      <p class="muted">Direct line to the founder</p>
+    <div class="blog-card" style="margin-bottom: 3rem; background: #ffffff; border-top: 4px solid var(--accent); padding: 2.5rem;">
+      <h2 style="margin-bottom: 1rem; text-align:center;">🔍 Get a Digital Trust Audit</h2>
+      
+      <p style="text-align: center; margin-bottom: 2rem; color: var(--text-light);">
+        For local businesses, service providers, and founders in India.
+      </p>
 
-      <a href="mailto:founder@saxhamai.com" style="font-size:1.3rem; font-weight:700; color:var(--accent);">
-        founder@saxhamai.com
+      <div class="cols-2" style="margin-bottom: 2rem;">
+        <div>
+          <h4 style="color: var(--primary);">What We Check:</h4>
+          <ul style="font-size: 0.95rem;">
+            <li>✅ Google Maps Visibility & Errors</li>
+            <li>✅ WhatsApp Business Setup & Tone</li>
+            <li>✅ Website Trust Signals</li>
+            <li>✅ First Response Speed</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--primary);">What You Get:</h4>
+          <ul style="font-size: 0.95rem;">
+            <li>📄 A Clear PDF Report</li>
+            <li>🔧 Actionable Fixes (No Jargon)</li>
+            <li>🚀 Immediate Trust Boost</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <a href="mailto:founder@saxhamai.com?subject=Request%20for%20Digital%20Trust%20Audit" class="ecosystem-btn" style="background-color: var(--accent); color: white; padding: 12px 25px; font-size: 1.1rem;">
+          Book an Audit Request →
+        </a>
+        <p style="margin-top: 10px; font-size: 0.85rem; color: var(--text-light);">
+          Direct email to Nitin Pawar. Founder-led review.
+        </p>
+      </div>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 3rem 0;">
+
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <h3 style="margin-bottom: 1rem;">Other Ways to Connect</h3>
+      <p class="muted" style="margin-bottom: 1.5rem;">Follow our updates, code, and insights.</p>
+      
+      <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://www.linkedin.com/company/saxhamai/" target="_blank" class="ecosystem-btn">
+          👔 LinkedIn
+        </a>
+        <a href="https://instagram.com/saxhamai" target="_blank" class="ecosystem-btn">
+          📸 Instagram
+        </a>
+        <a href="https://github.com/saxhamai" target="_blank" class="ecosystem-btn">
+          💻 GitHub
+        </a>
+        <a href="https://youtube.com/@saxhamai?si=sRTQQYQ5psY_CGSf" target="_blank" class="ecosystem-btn">
+          ▶️ YouTube
+        </a>
+        <a href="https://x.com/SaxhamA34969" target="_blank" class="ecosystem-btn">
+          🐦 X (Twitter)
+        </a>
+      </div>
+    </div>
+
+    <div class="ecosystem-container" style="text-align: left; padding: 2rem; margin-top: 2rem;">
+      <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Explore Our Ecosystem</h3>
+
+      <a href="https://saxhamai.com" class="ecosystem-btn">
+        🌐 Visit Main Site
+      </a>
+      <a href="https://ops.saxhamai.com" class="ecosystem-btn">
+        ⚙️ SaXhamOps
+      </a>
+      <a href="https://technostar.saxhamai.com" class="ecosystem-btn">
+        💻 TechnoStar Infotech
       </a>
     </div>
-
-    <div style="background:#f8fafc; padding:2rem; border-radius:8px; border:1px solid #e2e8f0; text-align:center; margin-bottom:3rem;">
-      <h3 style="margin-bottom:1rem;">Connect Online</h3>
-      <p class="muted" style="margin-bottom:1.5rem;">Follow our updates, code, and insights.</p>
-
-      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-        <a href="https://www.linkedin.com/company/saxhamai/" target="_blank" class="ecosystem-btn">👔 LinkedIn</a>
-        <a href="https://instagram.com/saxhamai" target="_blank" class="ecosystem-btn">📸 Instagram</a>
-        <a href="https://github.com/saxhamai" target="_blank" class="ecosystem-btn">💻 GitHub</a>
-        <a href="https://youtube.com/@saxhamai" target="_blank" class="ecosystem-btn">▶️ YouTube</a>
-        <a href="https://x.com/SaxhamA34969" target="_blank" class="ecosystem-btn">🐦 X</a>
-      </div>
-    </div>
-
-    <div class="cols-2">
-      <div>
-        <h2>What to Contact For</h2>
-        <ul>
-          <li>Digital trust & online presence</li>
-          <li>IT operations & Linux guidance</li>
-          <li>Consulting via SaXhamAI</li>
-          <li>Collaborations</li>
-        </ul>
-      </div>
-
-      <div>
-        <h2>What This Is Not</h2>
-        <ul class="muted">
-          <li>Free troubleshooting</li>
-          <li>One-day branding requests</li>
-          <li>Spam / sales pitches</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="ecosystem-container" style="margin-top:2.5rem;">
-      <h3>Explore Our Ecosystem</h3>
-      <a href="https://saxhamai.com" class="ecosystem-btn">🌐 SaXhamAI</a>
-      <a href="https://ops.saxhamai.com" class="ecosystem-btn">⚙️ SaXhamOps</a>
-      <a href="https://technostar.saxhamai.com" class="ecosystem-btn">💻 TechnoStar</a>
-    </div>
-
-    <p style="margin-top:3rem; font-weight:600; text-align:center; color:var(--text-light); font-size:0.9rem;">
-      Founder-led. Limited bandwidth.<br>
-      Conversations focused on long-term clarity.
-    </p>
 
   </div>
 </section>
@@ -124,7 +181,7 @@
     <div>
       <h4>Ecosystem</h4>
       <a href="https://ops.saxhamai.com">SaXhamOps</a>
-      <a href="https://technostar.saxhamai.com">TechnoStar</a>
+      <a href="https://technostar.saxhamai.com">TechnoStar Infotech</a>
     </div>
 
     <div>
