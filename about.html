@@ -5,166 +5,198 @@
   <title>About | SaXhamAI Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="About the SaXhamAI Blog — real-world insights on IT operations, digital trust, and business systems by Nitin Pawar.">
-  <meta name="author" content="Nitin Pawar">
+  <meta name="description" content="Learn how SaXham Technologies helps businesses fix digital trust, Google visibility and WhatsApp conversions. Insights by Swapnil Kinjalkar.">
+  <meta name="author" content="Swapnil Kinjalkar">
 
   <link rel="canonical" href="https://blog.saxhamai.com/about.html">
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- SEO Open Graph -->
-  <meta property="og:title" content="About SaXhamAI Blog">
-  <meta property="og:description" content="Clear thinking for digital businesses in India">
+  <meta property="og:title" content="About SaXhamAI Blog - Fix Your Business Trust">
+  <meta property="og:description" content="Real-world insights on IT systems, WhatsApp conversions, and digital trust by Swapnil Kinjalkar.">
+  <meta property="og:image" content="https://blog.saxhamai.com/assets/images/trust.png">
   <meta property="og:type" content="website">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B22TGFQD60');
+  </script>
+
+  <style>
+    .muted { color: var(--text-light); font-size: 0.9rem; }
+    .nav-menu { display: flex; align-items: center; }
+    .nav-cta { padding: 6px 14px; font-size: 0.9rem; border-radius: 6px; }
+    
+    /* Premium List Styling */
+    .feature-list { list-style: none; padding: 0; margin-top: 15px; }
+    .feature-list li { margin-bottom: 12px; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+    
+    .promo-box { text-align: center; padding: 40px 30px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-white); transition: var(--transition); }
+    .promo-box:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    
+    /* Dark Mode Fixes */
+    .dark-mode .promo-box { background: #0f172a; border-color: #334155; }
+    .dark-mode .muted { color: #94a3b8; }
+
+    @media (max-width: 768px) {
+      .nav-menu { flex-direction: column; gap: 10px; }
+    }
+  </style>
 
 </head>
 
 <body>
 
-<!-- HEADER -->
+<div id="progress-bar"></div>
+
 <header class="site-header">
   <div class="container nav">
+
     <div class="logo">
       <a href="/">SaXhamAI</a>
       <span class="tagline">Blog</span>
     </div>
 
-    <nav>
+    <nav class="nav-menu">
       <a href="/">Home</a>
       <a href="/blog/">Blog</a>
-      <a href="/audit.html" style="color:var(--accent); font-weight:700;">Audit</a>
       <a href="/resources.html">Resources</a>
       <a href="/about.html" class="active">About</a>
       <a href="/contact.html">Contact</a>
+      <a href="/audit.html" class="btn btn-primary nav-cta" style="margin-left:20px; color: white;">🔍 Audit</a>
     </nav>
+
+    <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.3rem; cursor:pointer; margin-left:15px; transition: transform 0.3s ease;">
+      🌙
+    </button>
+
   </div>
 </header>
 
-<!-- HERO -->
 <section class="section soft-bg">
-  <div class="container narrow">
-    <h1>About the SaXhamAI Blog</h1>
+  <div class="container narrow" style="text-align: center;">
 
-    <p style="font-size: 1.15rem; color: var(--primary);">
-      This blog exists for one simple reason:
-      <strong>to bring clarity to digital decisions for Indian businesses.</strong>
+    <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Why This Blog Exists</h1>
+
+    <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto;">
+      Most businesses don’t fail because of lack of effort.  <br>
+      They fail because of <strong style="color: var(--accent);">confusion, weak digital presence, and broken trust.</strong>
     </p>
 
-    <p>
-      Most businesses don’t fail because of lack of effort.  
-      They fail because of <em>confusion, bad digital signals, and fragile systems</em>.
+    <p style="font-size: 1.1rem; margin-top: 15px;">
+      This blog exists to solve that — with real-world insights, not theory.
     </p>
 
-    <!-- 🔥 BRAND CONNECTION -->
-    <p style="margin-top:20px;">
-      These insights come from real work done at 
-      <strong>SaXham Technologies</strong> — where we help businesses build and manage real systems.
+    <p class="muted" style="margin-top:25px;">
+      Everything here comes from real work done at 
+      <strong>SaXham Technologies</strong>.
     </p>
+
   </div>
 </section>
 
-<!-- CONTENT -->
 <section class="section">
   <div class="container narrow">
 
-    <h2>Who Writes This Blog?</h2>
-    <p>
-      My name is <strong>Nitin Pawar</strong>.  
-      I work closely with businesses on IT operations, Linux systems,
-      digital presence, and on-ground technical support.
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Who Am I?</h2>
+
+    <p style="font-size: 1.1rem;">
+      I’m <strong>Swapnil Kinjalkar</strong> — working in IT operations, Linux systems,
+      and business support for the last 7+ years.
     </p>
 
-    <p>Everything written here comes from:</p>
-
-    <ul style="margin-bottom: 2.5rem;">
-      <li><strong>Real IT operations experience (8+ Years)</strong></li>
-      <li>Working with local businesses & ops teams</li>
-      <li>Fixing broken systems — not selling trends</li>
-    </ul>
-
-    <h2>What You’ll Learn Here</h2>
-    <ul style="margin-bottom: 2.5rem;">
-      <li>Digital trust & online credibility</li>
-      <li>Google visibility & common mistakes</li>
-      <li>IT operations & Linux fundamentals</li>
-      <li>Systems that reduce chaos and dependency</li>
-    </ul>
-
-    <hr style="margin: 3rem 0;">
-
-    <!-- 🔥 SAXHAM TECHNOLOGIES SECTION -->
-    <h2>About SaXham Technologies</h2>
-
-    <p>
-      SaXham Technologies is where we implement everything discussed in this blog.
+    <p style="font-size: 1.1rem; margin-bottom: 20px;">
+      I don’t just write about systems.  
+      <strong>I build and fix them daily.</strong>
     </p>
 
-    <p>
-      We help businesses with:
-    </p>
+    <div style="background: var(--bg-light); padding: 25px; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 3rem;">
+      <ul class="feature-list" style="margin-top: 0;">
+        <li>✔️ <span>Real IT operations & Linux Server experience</span></li>
+        <li>✔️ <span>Business system & branding implementation</span></li>
+        <li>✔️ <span>Fixing broken setups (not selling hype)</span></li>
+      </ul>
+    </div>
 
-    <ul style="margin-bottom: 2rem;">
-      <li>Business setup (Logo, Website, Google, WhatsApp)</li>
-      <li>IT support & system management</li>
-      <li>Digital presence & automation</li>
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">What You’ll Learn Here</h2>
+
+    <ul class="feature-list" style="margin-bottom: 3rem;">
+      <li>🎯 <span>How to get more calls from Google</span></li>
+      <li>📈 <span>How to improve WhatsApp conversion</span></li>
+      <li>🛠️ <span>Why websites fail (and how to fix them)</span></li>
+      <li>⚙️ <span>Practical IT systems for business growth</span></li>
     </ul>
 
-    <!-- 🔥 MAIN CTA -->
-    <div class="cta-box">
-      <h2>Need Help for Your Business?</h2>
-      <p>Talk directly with SaXham Technologies</p>
+    <hr style="border: 0; height: 1px; background: var(--border); margin: 4rem 0;">
 
-      <a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20blog" class="btn btn-whatsapp">
-        💬 Chat on WhatsApp
+    <h2 style="font-size: 2rem; margin-bottom: 15px;">What We Do at SaXham Technologies</h2>
+
+    <p style="font-size: 1.1rem; margin-bottom: 20px;">
+      This blog is just the knowledge layer.  
+      Execution happens at <strong>SaXham Technologies</strong>.
+    </p>
+
+    <ul class="feature-list" style="margin-bottom: 3rem;">
+      <li>🚀 <span><strong>Business setup</strong> (Logo, Website, Google, WhatsApp)</span></li>
+      <li>💻 <span><strong>IT Support</strong> & System management</span></li>
+      <li>📈 <span><strong>Lead generation</strong> & Digital trust optimization</span></li>
+    </ul>
+
+    <div class="promo-box">
+      <h2 style="margin-bottom: 15px; font-size: 1.8rem;">Need Help Growing Your Business?</h2>
+
+      <p style="font-size: 1.1rem; margin-bottom: 25px;">
+        Stop guessing. Fix your system and start getting real leads.
+      </p>
+
+      <a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20about%20page%20and%20need%20help"
+         class="btn btn-whatsapp">
+         💬 Talk to an Expert
       </a>
     </div>
 
-    <!-- ECOSYSTEM -->
-    <div class="ecosystem-container" style="margin-top: 40px;">
-      <h3>Explore Our Ecosystem</h3>
+    <div style="margin-top: 50px;">
+      <h3 style="text-align:center; font-size: 1.5rem; margin-bottom: 25px;">Explore Our Ecosystem</h3>
 
-      <a href="https://saxhamai.com" class="ecosystem-btn">
-        🌐 Main Website
-      </a>
-
-      <a href="https://ops.saxhamai.com" class="ecosystem-btn">
-        ⚙️ SaXhamOps
-      </a>
-
-      <a href="https://saxhamai.com" class="ecosystem-btn">
-        💻 SaXham Technologies
-      </a>
+      <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://saxhamai.com" class="btn btn-outline" target="_blank">🌐 Main Website</a>
+        <a href="https://ops.saxhamai.com" class="btn btn-outline" target="_blank">⚙️ SaXhamOps</a>
+        <a href="https://saxhamai.com" class="btn btn-outline" target="_blank">💻 SaXham Tech</a>
+      </div>
     </div>
 
-    <p style="margin-top:2rem; font-weight:600;">
+    <p style="margin-top: 3rem; font-weight: 600; text-align: center; font-size: 1.2rem; color: var(--accent);">
       No noise. No hype. Just systems that work.
     </p>
 
   </div>
 </section>
 
-<!-- STICKY CTA -->
-<a href="https://wa.me/919702855005" class="sticky-cta">
-  💬 Chat with Expert
+<a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20about%20page%20and%20need%20help" class="sticky-cta">
+  💬 Get Leads Now
 </a>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-grid">
 
     <div>
-      <h4>SaXhamAI</h4>
+      <h4 style="color: #fff; margin-bottom: 15px;">SaXhamAI</h4>
       <p>Clarity-driven insights for Indian businesses.</p>
     </div>
 
     <div>
-      <h4>Business Services</h4>
-      <a href="https://saxhamai.com">SaXham Technologies</a>
-      <a href="/contact.html">Contact</a>
+      <h4 style="color: #fff; margin-bottom: 15px;">Services</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 8px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
+        <li><a href="/audit.html">Digital Audit</a></li>
+      </ul>
     </div>
 
     <div>
-      <h4>Contact</h4>
-      <p>📧 founder@saxhamai.com</p>
+      <h4 style="color: #fff; margin-bottom: 15px;">Contact</h4>
+      <p style="margin-bottom: 8px;">📧 founder@saxhamai.com</p>
       <p>📍 Navi Mumbai</p>
     </div>
 
@@ -174,6 +206,31 @@
     © 2026 SaXhamAI | Powered by SaXham Technologies
   </p>
 </footer>
+
+<script>
+  // Dark Mode Logic with Memory & Icon Update
+  function toggleDark(){
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
+    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
+  }
+
+  // Check theme on page load & set correct icon
+  window.onload = function() {
+    if(localStorage.getItem("saxham_theme") === "dark"){
+      document.body.classList.add("dark-mode");
+      document.getElementById("theme-btn").innerText = "☀️";
+    }
+  };
+
+  // Progress Bar Logic
+  window.onscroll = function(){
+    let winScroll = document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%";
+  };
+</script>
 
 </body>
 </html>
