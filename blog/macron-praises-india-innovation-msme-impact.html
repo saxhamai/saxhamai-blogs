@@ -20,32 +20,6 @@
 
   <link rel="stylesheet" href="../assets/css/style.css">
 
-  <style>
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 2rem 0;
-      font-size: 0.95rem;
-    }
-    .data-table th, .data-table td {
-      border: 1px solid #e2e8f0;
-      padding: 12px 15px;
-      text-align: left;
-    }
-    .data-table th {
-      background-color: #f8fafc;
-      color: var(--primary);
-      font-weight: 600;
-    }
-    .case-study-block {
-      background: #f0fdf4; /* Light green tint */
-      border-left: 4px solid #22c55e;
-      padding: 2rem;
-      margin: 2.5rem 0;
-      border-radius: 8px;
-    }
-  </style>
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -97,93 +71,129 @@
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-   "@context": "https://schema.org",
-   "@type": "BreadcrumbList",
-   "itemListElement": [
-     {
-       "@type": "ListItem",
-       "position": 1,
-       "name": "Blog",
-       "item": "https://blog.saxhamai.com/blog/"
-     },
-     {
-       "@type": "ListItem",
-       "position": 2,
-       "name": "Macron Praises India’s Innovation",
-       "item": "https://blog.saxhamai.com/blog/macron-praises-india-innovation-msme-impact.html"
-     }
-   ]
-  }
-  </script>
+  <style>
+    /* Unbreakable Grid List for Perfect Alignment */
+    .feature-list { list-style: none; padding: 0; margin-top: 15px; margin-bottom: 25px; }
+    .feature-list li { 
+      margin-bottom: 12px; 
+      font-size: 1.05rem; 
+      display: grid; 
+      grid-template-columns: 24px 1fr; 
+      gap: 12px; 
+      align-items: start; 
+      text-align: left;
+    }
+    .feature-list li span.text-content { color: var(--text-main); display: block; line-height: 1.6; }
+    
+    /* Article Specific Styling for Readability */
+    .article-content h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--primary-navy); }
+    .article-content h3 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.8rem; color: var(--primary-navy); }
+    .article-content p { font-size: 1.1rem; margin-bottom: 1.25rem; color: var(--text-main); line-height: 1.8; }
+    
+    /* Data Table Styling (Dark Mode Compatible) */
+    .data-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1.05rem; }
+    .data-table th, .data-table td { border: 1px solid var(--border); padding: 14px 16px; text-align: left; color: var(--text-main); }
+    .data-table th { background-color: var(--bg-light); color: var(--primary-navy); font-weight: 600; }
+    .table-container { overflow-x: auto; width: 100%; }
+    
+    /* Dark Mode Text Fixes */
+    body.dark-mode .feature-list li span.text-content { color: var(--text-main); }
+    body.dark-mode .article-content h2, body.dark-mode .article-content h3 { color: #ffffff; }
+    body.dark-mode .data-table th { background-color: #1e293b; color: #ffffff; }
+
+    /* Mobile Hamburger Menu Logic */
+    @media (max-width: 768px) {
+      nav {
+        display: none !important; 
+        flex-direction: column;
+        width: 100%;
+        background: var(--bg-white);
+        padding: 15px 0;
+      }
+      nav.nav-active {
+        display: flex !important; 
+      }
+    }
+  </style>
+
 </head>
 
 <body>
 
+<div id="progress-bar"></div>
+
 <header class="site-header">
-  <div class="container nav">
+  <div class="nav">
+    
     <div class="logo">
-      <a href="/">SaXhamAI</a>
-      <span class="tagline">Blog</span>
+      <a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Blog</span></a>
     </div>
-    <nav aria-label="Primary Navigation">
+
+    <div class="mobile-toggle" onclick="toggleMobileMenu()">
+      ☰
+    </div>
+
+    <nav id="mainNav">
       <a href="/">Home</a>
-      <a href="/blog/">All Articles</a>
-      <a href="/audit.html" style="color:var(--accent); font-weight:700;">Audit</a>
+      <a href="/blog/" class="active">Blog</a>
       <a href="/resources.html">Resources</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
+      <a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
+      
+      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer; margin-top: 2px;">
+        🌙
+      </button>
     </nav>
+
   </div>
 </header>
 
 <main>
   <article class="section" itemscope itemtype="https://schema.org/BlogPosting">
-    <div class="container narrow">
+    <div class="container narrow" style="max-width: 800px; margin: 0 auto;">
 
-      <p style="margin-bottom:2rem;">
-        <a href="/blog/" style="color:var(--text-light);font-size:0.9rem;">← Back to All Articles</a>
+      <p style="margin-bottom: 2rem;">
+        <a href="/blog/" style="color: var(--text-gray); font-size: 0.95rem; font-weight: 500;">← Back to All Articles</a>
       </p>
 
-      <header style="margin-bottom:2rem;">
-        <span class="tagline" style="margin-left:0; background:#e2e8f0;color:#475569;">
+      <header style="margin-bottom: 2.5rem;">
+        <span style="background: var(--border); color: var(--text-main); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">
           Innovation • Global Strategy • MSME
         </span>
-
-        <h1 style="font-size:2.3rem;margin-top:1rem;color:var(--primary);" itemprop="headline">
+        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-top: 1rem; color: var(--primary-navy); line-height: 1.3;" itemprop="headline">
           Macron Praises India’s Innovation Leadership: What It Means for MSMEs — And Why Stories Like Lina from Kolhapur Matter
         </h1>
-
-        <p class="muted" style="font-size:0.9rem;">
-          Published on <time datetime="2026-02-20" itemprop="datePublished">Feb 20, 2026</time> • By <span itemprop="author">Nitin Pawar</span> • 10 min read
+        <p style="color: var(--text-gray); font-size: 0.95rem; margin-top: 15px;">
+          Published on <time datetime="2026-02-20" itemprop="datePublished">Feb 20, 2026</time> • By <span itemprop="author" style="font-weight: 600;">Nitin Pawar</span>
+          <span style="margin-left: 8px;">• 10 min read</span>
         </p>
       </header>
 
-      <div class="content" itemprop="articleBody">
+      <div class="article-content" itemprop="articleBody">
 
-        <p style="font-size:1.15rem; color:var(--text-main);">
+        <p style="font-size: 1.25rem; font-weight: 600; color: var(--primary-navy);">
           At the India AI Impact Summit 2026 in New Delhi, French President Emmanuel Macron made a powerful statement that resonated across the global tech ecosystem.
         </p>
 
         <p>
-          He praised India for leading the world in digital public infrastructure, AI deployment at scale, fintech adoption, and inclusive innovation. He described India Stack not just as a tech framework — but as a <strong>“civilization-level digital transformation.”</strong>
+          He praised India for leading the world in digital public infrastructure, AI deployment at scale, fintech adoption, and inclusive innovation. He described India Stack not just as a tech framework — but as a <strong style="color: var(--accent-blue);">“civilization-level digital transformation.”</strong>
         </p>
 
         <p>
           That statement matters. When a global power like France publicly recognizes India’s innovation ecosystem, it signals something deeper: India is no longer catching up. India is setting the benchmark.
         </p>
 
-        <hr style="margin:3rem 0; border-top:1px solid #e2e8f0;">
+        <hr style="border:0; border-top:1px solid var(--border); margin:3rem 0;">
 
         <h2>What Exactly Did Macron Highlight?</h2>
         <p>Macron emphasized several areas where India has taken global leadership:</p>
 
         <h3>1. Digital Public Infrastructure (India Stack)</h3>
-        <ul>
-          <li>Aadhaar digital ID for 1.4 billion people</li>
-          <li>UPI processing over 20+ billion transactions per month</li>
-          <li>Paperless, presence-less, cashless governance</li>
+        <ul class="feature-list">
+          <li><span>✅</span><span class="text-content">Aadhaar digital ID for 1.4 billion people</span></li>
+          <li><span>✅</span><span class="text-content">UPI processing over 20+ billion transactions per month</span></li>
+          <li><span>✅</span><span class="text-content">Paperless, presence-less, cashless governance</span></li>
         </ul>
         <p>India built population-scale digital systems and made them accessible even to street vendors. This is not startup innovation; this is <strong>systemic innovation</strong>.</p>
 
@@ -200,59 +210,61 @@
           India didn’t just build technology. It built infrastructure that lowers entry barriers for everyone.
         </p>
 
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Innovation Layer</th>
-              <th>What India Built</th>
-              <th>MSME Impact</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>UPI</strong></td>
-              <td>20B+ monthly transactions</td>
-              <td>Instant payments, no POS cost</td>
-            </tr>
-            <tr>
-              <td><strong>Aadhaar</strong></td>
-              <td>Universal digital ID</td>
-              <td>Easy onboarding & compliance</td>
-            </tr>
-            <tr>
-              <td><strong>ONDC</strong></td>
-              <td>Open e-commerce network</td>
-              <td>Compete without giant dependency</td>
-            </tr>
-            <tr>
-              <td><strong>AI Platforms</strong></td>
-              <td>Scalable LLM access</td>
-              <td>Automation at startup cost</td>
-            </tr>
-            <tr>
-              <td><strong>Digital Lending</strong></td>
-              <td>Fintech-based credit</td>
-              <td>Faster, data-backed MSME loans</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Innovation Layer</th>
+                <th>What India Built</th>
+                <th>MSME Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>UPI</strong></td>
+                <td>20B+ monthly transactions</td>
+                <td>Instant payments, no POS cost</td>
+              </tr>
+              <tr>
+                <td><strong>Aadhaar</strong></td>
+                <td>Universal digital ID</td>
+                <td>Easy onboarding & compliance</td>
+              </tr>
+              <tr>
+                <td><strong>ONDC</strong></td>
+                <td>Open e-commerce network</td>
+                <td>Compete without giant dependency</td>
+              </tr>
+              <tr>
+                <td><strong>AI Platforms</strong></td>
+                <td>Scalable LLM access</td>
+                <td>Automation at startup cost</td>
+              </tr>
+              <tr>
+                <td><strong>Digital Lending</strong></td>
+                <td>Fintech-based credit</td>
+                <td>Faster, data-backed MSME loans</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <h2>Lina from Kolhapur: A Real Example of Inclusive Innovation</h2>
         <p> Let’s bring this down to ground level. This is exactly what Macron praised — technology deployed at scale for inclusion.</p>
 
-        <div class="case-study-block">
-          <h3 style="color:#15803d; margin-top:0;">The Story of Lina Kishor</h3>
-          <p>
+        <div class="cta-box" style="text-align: left; padding: 30px; border-left: 4px solid #16a34a; margin: 2.5rem 0;">
+          <h3 style="color: #16a34a; margin-top: 0; margin-bottom: 15px; font-size: 1.4rem;">The Story of Lina Kishor</h3>
+          <p style="margin-bottom: 15px;">
             Lina Kishor from Kolhapur started as an ASHA worker. She later began a small papad business from home. Through digital finance platforms like Mahila Money, she accessed small loans for packaging equipment.
           </p>
-          <p>With digital payments (UPI) and access to formal credit, she:</p>
-          <ul style="margin-bottom:0;">
-            <li>Scaled production</li>
-            <li>Employed local women</li>
-            <li>Formalized her business</li>
-            <li>Expanded distribution</li>
+          <p style="margin-bottom: 10px;">With digital payments (UPI) and access to formal credit, she:</p>
+          <ul class="feature-list" style="margin-bottom: 0;">
+            <li><span>✔️</span><span class="text-content">Scaled production</span></li>
+            <li><span>✔️</span><span class="text-content">Employed local women</span></li>
+            <li><span>✔️</span><span class="text-content">Formalized her business</span></li>
+            <li><span>✔️</span><span class="text-content">Expanded distribution</span></li>
           </ul>
-          <p style="margin-top:1.5rem; font-weight:600;">
+          <p style="margin-top: 1.5rem; margin-bottom: 0; font-weight: 600; font-size: 1.15rem; color: var(--primary-navy);">
             She didn’t build an AI company. But she benefited from India’s digital rails.
           </p>
         </div>
@@ -273,7 +285,7 @@
 
         <h3>2. AI Adoption Becomes Mandatory</h3>
         <p>
-          If India is positioning itself as a global AI leader, MSMEs must adopt automation early. As discussed in our analysis of the <a href="the-patil-effect-ai-infrastructure-msme-india.html" style="text-decoration:underline;">Patil Effect and AI infrastructure</a>, the cost barriers have collapsed. AI multiplies productivity; paired with digital infrastructure, it creates massive leverage.
+          If India is positioning itself as a global AI leader, MSMEs must adopt automation early. As discussed in our analysis of the <a href="the-patil-effect-ai-infrastructure-msme-india.html" style="color: var(--accent-blue); font-weight: 500;">Patil Effect and AI infrastructure</a>, the cost barriers have collapsed. AI multiplies productivity; paired with digital infrastructure, it creates massive leverage.
         </p>
 
         <h3>3. Women and Tier-2 Entrepreneurship Will Rise</h3>
@@ -283,25 +295,27 @@
 
         <h2>Budget 2026 + Macron Recognition = Strategic Moment</h2>
         <p>
-          In our earlier <a href="budget-2026-india-business-growth.html" style="text-decoration:underline;">analysis of Budget 2026</a>, we discussed the government's infrastructure push and MSME support. Now combine that with international recognition. This creates a trifecta of policy support, global credibility, and technology leverage. MSMEs are sitting at the center of this shift.
+          In our earlier <a href="budget-2026-india-business-growth.html" style="color: var(--accent-blue); font-weight: 500;">analysis of Budget 2026</a>, we discussed the government's infrastructure push and MSME support. Now combine that with international recognition. This creates a trifecta of policy support, global credibility, and technology leverage. MSMEs are sitting at the center of this shift.
         </p>
 
         <h2>The Real Question for MSMEs</h2>
         <p>
           Macron praising India is symbolic, but symbolic moments create momentum. Are MSMEs upgrading fast enough to match India’s global positioning? 
-          As we discussed in our <a href="website-trust-gaps.html" style="text-decoration:underline;">digital trust gap analysis</a>, infrastructure alone is not enough — businesses must align their internal systems too. Small businesses must operate like innovation adopters.
+          As we discussed in our <a href="website-trust-gaps.html" style="color: var(--accent-blue); font-weight: 500;">digital trust gap analysis</a>, infrastructure alone is not enough — businesses must align their internal systems too. Small businesses must operate like innovation adopters.
         </p>
 
-        <h3>Practical Steps for MSMEs Today:</h3>
-        <ol>
-          <li>Complete Udyam registration for formalization.</li>
-          <li>Move fully to UPI and digital accounting.</li>
-          <li>Adopt at least one AI automation workflow for efficiency.</li>
-          <li>Explore ONDC participation for wider market access.</li>
-          <li>Invest in skill development and AI literacy.</li>
-        </ol>
+        <div class="cta-box" style="text-align: left; padding: 30px; border-top: 4px solid var(--accent-blue); margin: 2.5rem 0;">
+          <h3 style="margin-top: 0; font-size: 1.4rem;">Practical Steps for MSMEs Today:</h3>
+          <ol style="margin-top: 15px; margin-bottom: 0; padding-left: 1.5rem; color: var(--text-main); font-size: 1.1rem; line-height: 1.8;">
+            <li style="margin-bottom: 8px;">Complete Udyam registration for formalization.</li>
+            <li style="margin-bottom: 8px;">Move fully to UPI and digital accounting.</li>
+            <li style="margin-bottom: 8px;">Adopt at least one AI automation workflow for efficiency.</li>
+            <li style="margin-bottom: 8px;">Explore ONDC participation for wider market access.</li>
+            <li style="margin-bottom: 0;">Invest in skill development and AI literacy.</li>
+          </ol>
+        </div>
 
-        <hr style="margin:3rem 0; border-top:1px solid #e2e8f0;">
+        <hr style="border:0; border-top:1px solid var(--border); margin:3.5rem 0;">
 
         <h2>Final Thought</h2>
         <p>
@@ -311,25 +325,27 @@
           From AI summits in Delhi to papad entrepreneurs in Kolhapur, the innovation story is interconnected. It is infrastructure-backed, policy-supported, and globally validated. And MSMEs are at the center of it.
         </p>
 
-        <p class="muted" style="margin-top:2rem;"><strong>✍ Written by: Nitin Pawar</strong><br>Founder, SaXhamAI</p>
+        <p style="margin-top: 2rem; font-weight: 600; color: var(--text-gray);">✍ Written by: Nitin Pawar</p>
 
-        <div style="background:#0f172a;color:#fff;padding:2rem;border-radius:8px;margin-top:2rem;text-align:center;">
-          <h3 style="color:#fff; margin-bottom:1rem;">Is Your MSME Ready for the Global Stage?</h3>
-          <p style="color:#cbd5e1; margin-bottom:1.5rem;">
+        <div class="cta-box" style="margin-top:3.5rem; text-align: center; border-color: var(--accent-blue); padding: 40px 30px;">
+          <h3 style="margin-bottom:15px; font-size: 1.8rem;">Is Your MSME Ready for the Global Stage?</h3>
+          <p style="margin-bottom:25px; font-size: 1.1rem;">
             India’s digital infrastructure is world-class. Are your business systems keeping up? 
             Ensure your digital foundation is ready for scale.
           </p>
-          <a href="../audit.html" style="background:#fff;color:#0f172a;padding:10px 20px;border-radius:6px;font-weight:700;text-decoration:none;display:inline-block;">
-            Get a Digital Readiness Audit
-          </a>
+          <div class="cta-buttons">
+            <a href="../audit.html" class="btn btn-primary" style="padding:14px 28px; font-size: 1.05rem;">
+               🔍 Get a Digital Readiness Audit
+            </a>
+          </div>
         </div>
 
       </div>
 
-      <div style="margin-top:4rem;text-align:center;">
-        <p class="muted">Read Previous Article</p>
-        <h4>
-          <a href="the-patil-effect-ai-infrastructure-msme-india.html" style="color:var(--primary);">
+      <div style="margin-top: 4rem; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border);">
+        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 10px;">Read Previous Article</p>
+        <h4 style="font-size: 1.3rem;">
+          <a href="the-patil-effect-ai-infrastructure-msme-india.html" style="color: var(--accent-blue);">
             The “Patil Effect”: How AI Infrastructure Shift Is Reshaping IT →
           </a>
         </h4>
@@ -339,31 +355,69 @@
   </article>
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <h4>SaXhamAI</h4>
-      <p class="muted">Founder-led technology consulting.</p>
-      <a href="https://saxhamai.com" rel="noopener">Visit main site →</a>
+<a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20the%20Macron%20Blog%20and%20need%20help" class="sticky-cta">
+  💬 Chat Now
+</a>
+
+<footer>
+  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+    
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-bottom: 15px;">SaXhamAI</h3>
+      <p>Clarity-driven insights for Indian businesses.</p>
     </div>
 
-    <div>
-      <h4>Ecosystem</h4>
-      <a href="https://ops.saxhamai.com" rel="noopener">SaXhamOps</a>
-      <a href="https://saxhamai.com" rel="noopener">SaXham Technologies</a>
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-bottom: 15px;">Services</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
+        <li><a href="/audit.html">Digital Audit</a></li>
+      </ul>
     </div>
 
-    <div>
-      <h4>Contact</h4>
-      <p class="muted">founder@saxhamai.com</p>
-      <p class="muted">Navi Mumbai, India</p>
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-bottom: 15px;">Contact</h3>
+      <p style="margin-bottom: 8px;">📧 founder@saxhamai.com</p>
+      <p>📍 Navi Mumbai, Maharashtra</p>
     </div>
+
   </div>
 
-  <p class="copyright">
-    © 2026 SaXhamAI. Built for clarity.
-  </p>
+  <div class="container" style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <p style="margin: 0;">© 2026 SaXhamAI | Powered by SaXham Technologies</p>
+  </div>
 </footer>
+
+<script>
+  // Hamburger Menu Logic
+  function toggleMobileMenu() {
+    const nav = document.getElementById("mainNav");
+    nav.classList.toggle("nav-active");
+  }
+
+  // Dark Mode Logic
+  function toggleDark(){
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
+    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
+  }
+
+  // Check theme on page load
+  window.onload = function() {
+    if(localStorage.getItem("saxham_theme") === "dark"){
+      document.body.classList.add("dark-mode");
+      document.getElementById("theme-btn").innerText = "☀️";
+    }
+  };
+
+  // Progress Bar Logic
+  window.onscroll = function(){
+    let winScroll = document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%";
+  };
+</script>
 
 </body>
 </html>
