@@ -1,541 +1,337 @@
 /* =========================================================
-   SaXham PRO UI – High Conversion + Premium UX System
-   Mobile-First | Psychology-Driven | Dark Mode Optimized
+   SaXham PRO UI – Pixel-Perfect Alignment & Spacing
+   Desktop & Mobile Optimized | Dual-Theme Glassmorphism
 ========================================================= */
 
 :root {
-  /* Brand Colors */
-  --primary: #0f172a;       /* Slate 900 - Premium Dark */
-  --primary-hover: #1e293b; 
-  --accent: #2563eb;        /* High-Trust Blue */
-  --accent-hover: #1d4ed8;
-  --whatsapp: #25D366;
-  --whatsapp-hover: #1ebd5a;
-
-  /* Typography Colors */
-  --text-main: #334155;     /* Slate 700 - High Readability */
-  --text-light: #64748b;    /* Slate 500 - Secondary text */
-  --text-heading: #0f172a;  /* Deep contrast for headings */
-
-  /* Backgrounds & Surfaces */
-  --bg-body: #ffffff;
-  --bg-surface: #ffffff;    /* Cards, Header */
-  --bg-alt: #f8fafc;        /* Alternate section background */
+  /* --- SPACING & LAYOUT SYSTEM --- */
+  --container-max: 1200px;   /* Prevents desktop from stretching too wide */
+  --pad-section-y: clamp(60px, 8vw, 100px); /* Dynamic vertical spacing */
+  --pad-section-x: clamp(20px, 5vw, 40px);  /* Dynamic horizontal padding */
   
-  /* UI Elements */
-  --border: #e2e8f0;
-  --radius-sm: 8px;
-  --radius-md: 12px;
+  /* --- LIGHT MODE --- */
+  --bg-body: #F8FAFC;        
+  --bg-surface: #FFFFFF;     
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --text-heading: #0F172A;   
+  --text-main: #334155;      
+  --text-light: #64748B;
+  --accent: #0284C7;         
+  --accent-hover: #0369A1;
+  --whatsapp: #10B981;       
+  --whatsapp-hover: #059669;
+  --border: #E2E8F0;         
+  
+  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  --shadow-hover: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 0 15px rgba(2, 132, 199, 0.15);
+  
+  --radius-md: 10px;
   --radius-lg: 16px;
   --radius-pill: 50px;
-  
-  /* Shadows - Depth & Hierarchy */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.15);
-  
-  /* Animations */
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fluid: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* ================= DARK MODE VARIABLES ================= */
+/* --- DARK MODE (Deep Charcoal & Navy) --- */
 body.dark-mode {
-  --primary: #ffffff;
-  --primary-hover: #e2e8f0;
-  --accent: #3b82f6;
-  --accent-hover: #60a5fa;
-  
-  --text-main: #cbd5e1;     /* Slate 300 */
-  --text-light: #94a3b8;    /* Slate 400 */
-  --text-heading: #f8fafc;  /* Slate 50 */
-  
-  --bg-body: #020617;       /* Slate 950 - Deepest Dark */
-  --bg-surface: #0f172a;    /* Slate 900 - Cards/Floating */
-  --bg-alt: #0b1120;        /* Subtle contrast background */
-  
-  --border: #1e293b;        /* Slate 800 */
-  
-  /* Adjusted shadows for dark mode (opacity changes to pure black) */
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.8);
+  --bg-body: #0B1121;        
+  --bg-surface: #151E32;     
+  --bg-glass: rgba(11, 17, 33, 0.85);
+  --text-heading: #F8FAFC;   
+  --text-main: #CBD5E1;      
+  --text-light: #94A3B8;
+  --accent: #38BDF8;         
+  --accent-hover: #7DD3FC;
+  --border: #1E293B;         
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 10px 30px -5px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 20px rgba(56, 189, 248, 0.15);
 }
 
-/* ================= RESET & BASE ================= */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html { 
-  scroll-behavior: smooth; 
-  -webkit-text-size-adjust: 100%;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--bg-body);
   color: var(--text-main);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  padding-bottom: 80px; /* Safe area for sticky CTA */
-  transition: background-color var(--transition-smooth), color var(--transition-smooth);
+  line-height: 1.7; 
+  padding-bottom: var(--pad-section-y); /* Safe space for sticky CTA */
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Base Typography Alignment */
+h1, h2, h3, h4 {
   color: var(--text-heading);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-}
-
-p {
+  line-height: 1.25;
   margin-bottom: 1rem;
 }
 
-a {
-  text-decoration: none;
-  color: var(--accent);
-  transition: color var(--transition-fast);
-}
+p { margin-bottom: 1.2rem; }
+a { text-decoration: none; color: var(--accent); transition: color var(--transition-fluid); }
+img { max-width: 100%; display: block; }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ================= LAYOUT & SCROLL RHYTHM ================= */
+/* ================= GLOBAL LAYOUT CONTAINERS ================= */
 .section {
-  padding: 100px 5%; /* % padding acts as dynamic container margins on mobile */
-  background-color: var(--bg-body);
-  opacity: 0; /* Handled by fadeUp */
-  transform: translateY(20px); /* Less aggressive starting point */
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  will-change: opacity, transform;
+  padding: var(--pad-section-y) var(--pad-section-x); 
+  width: 100%;
 }
 
-.section-alt {
-  background-color: var(--bg-alt);
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================= HEADER & NAVIGATION ================= */
+/* ================= HEADER (PERFECT DESKTOP ALIGNMENT) ================= */
 .site-header {
-  background-color: rgba(var(--bg-surface), 0.85); /* Requires separate RGB var if using exact transp, fallback below */
-  background: var(--bg-surface); /* Fallback */
-  background: color-mix(in srgb, var(--bg-surface) 85%, transparent); /* Modern approach */
+  background: var(--bg-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  z-index: 1000; /* High index to prevent overlap */
-  transition: all var(--transition-smooth);
+  z-index: 1000; 
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  max-width: 1400px;
+  max-width: var(--container-max);
   margin: 0 auto;
+  padding: 16px var(--pad-section-x);
 }
 
 .logo a {
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--text-heading);
-  letter-spacing: -0.5px;
 }
 
 nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem; /* Clean spacing between links on desktop */
 }
 
 nav a {
   font-weight: 500;
+  font-size: 0.95rem;
   color: var(--text-main);
   position: relative;
-  padding: 0.5rem 0;
+  padding: 5px 0;
 }
 
-/* Modern clean active/hover state */
-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0%;
-  height: 2px;
-  background: var(--accent);
-  transition: width var(--transition-smooth);
-  border-radius: 2px;
-}
+nav a:hover { color: var(--text-heading); }
 
-nav a:hover {
-  color: var(--text-heading);
-}
-
-nav a:hover::after,
-nav a.active::after {
-  width: 100%;
-}
-
-/* ================= HERO SECTION ================= */
+/* ================= HERO (CENTERED & FOCUSED) ================= */
 .hero {
-  background: linear-gradient(135deg, var(--bg-body), var(--bg-alt));
-  color: var(--text-main);
   text-align: center;
-  padding: 140px 5% 120px;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Add depth to hero background */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -10%;
-  width: 60%;
-  height: 150%;
-  background: radial-gradient(circle, var(--accent) 0%, transparent 60%);
-  opacity: 0.05;
-  z-index: 0;
-}
-
-.hero > * {
-  position: relative;
-  z-index: 1;
+  padding: clamp(80px, 12vw, 140px) var(--pad-section-x) clamp(60px, 8vw, 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem); /* Fluid typography */
-  margin-bottom: 1.5rem;
+  font-size: clamp(2.2rem, 5vw, 4rem); 
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 1.5rem auto;
 }
 
 .hero p {
   color: var(--text-light);
-  font-size: clamp(1.1rem, 2vw, 1.25rem);
-  max-width: 600px;
-  margin: 0 auto 2.5rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  max-width: 650px;
+  margin: 0 auto 2.5rem auto;
 }
 
-/* ================= BUTTON SYSTEM ================= */
+/* Button Container Alignment */
+.hero-buttons, .cta-buttons, div[style*="display: flex"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Keeps buttons safe on smaller desktop windows */
+}
+
+/* ================= BUTTONS ================= */
+button, .btn, a.btn { outline: none; border: none; }
+div[style*="border"], a[style*="border"] { border-color: var(--border) !important; }
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
-  border-radius: var(--radius-md);
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
   font-weight: 600;
   font-size: 1rem;
-  text-decoration: none;
-  border: 1px solid transparent;
   cursor: pointer;
-  transition: all var(--transition-bounce);
-  white-space: nowrap;
+  transition: all var(--transition-fluid);
+  text-align: center;
 }
 
-.btn:active {
-  transform: scale(0.97); /* Psychology: satisfying click feedback */
-}
+.btn-primary { background: var(--text-heading); color: var(--bg-body); }
+.btn-primary:hover { background: var(--accent); color: #ffffff; transform: translateY(-2px); box-shadow: var(--shadow-glow); }
+.btn-whatsapp { background: var(--whatsapp); color: #ffffff; }
+.btn-whatsapp:hover { background: var(--whatsapp-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3); }
 
-/* Primary Conversion Button */
-.btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-  box-shadow: var(--shadow-md);
-}
-
-.btn-primary:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
-  color: #ffffff;
-}
-
-/* Secondary Button / Outline */
-.btn-secondary {
-  background: transparent;
-  color: var(--text-heading);
-  border-color: var(--border);
-}
-
-.btn-secondary:hover {
-  background: var(--bg-alt);
-  border-color: var(--text-light);
-  transform: translateY(-2px);
-}
-
-/* Trust / WhatsApp Button */
-.btn-whatsapp {
-  background: var(--whatsapp);
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
-}
-
-.btn-whatsapp:hover {
-  background: var(--whatsapp-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-  color: #ffffff;
-}
-
-/* ================= BLOG / SERVICE CARDS ================= */
+/* ================= GRID ALIGNMENT (CARDS) ================= */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Fluid grid fills empty space perfectly */
   gap: 30px;
-  max-width: 1400px;
+  max-width: var(--container-max);
   margin: 0 auto;
 }
 
-.blog-card {
+.blog-card, .cta-box {
   background: var(--bg-surface);
   border-radius: var(--radius-lg);
-  overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-bounce);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-fluid);
   display: flex;
   flex-direction: column;
-  position: relative;
-  z-index: 1;
 }
 
-.blog-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--text-light); /* Highlights the card subtly */
-  z-index: 2;
+.blog-card:hover, .cta-box:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
 }
 
-/* Proper image container for aspect ratio and zoom */
 .blog-card img {
   width: 100%;
-  height: 220px; /* Fixed height for uniformity */
+  height: 220px;
   object-fit: cover;
-  transition: transform var(--transition-bounce);
-  will-change: transform;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
-.blog-card:hover img {
-  transform: scale(1.05); /* Smooth, premium zoom */
+.blog-card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes footer/buttons to bottom uniformly */
 }
 
-/* Assuming text content is wrapped in a container, provide generic padding */
-.blog-card > *:not(img) {
-  padding: 0 24px;
-}
-
-.blog-card > :nth-child(2) {
-  padding-top: 24px; /* Space above first text block */
-}
-
-.blog-card > :last-child {
-  padding-bottom: 24px;
-  margin-top: auto; /* Pushes footer/button to bottom */
-}
-
-.blog-card h3 {
-  margin-bottom: 12px;
-  font-size: 1.25rem;
-}
-
-.blog-card p {
-  color: var(--text-light);
-  font-size: 0.95rem;
-}
-
-/* ================= CTA BOX ================= */
 .cta-box {
   text-align: center;
   padding: 60px 40px;
-  border-radius: var(--radius-lg);
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-smooth);
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  position: relative;
-  overflow: hidden;
 }
 
-.cta-box::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: var(--accent); /* Premium top-line highlight */
+/* ================= DARK MODE OVERRIDES (FIXING HARDCODED INLINE STYLES) ================= */
+body.dark-mode [style*="background: white"],
+body.dark-mode [style*="background:#fff"],
+body.dark-mode [class*="bg-white"] {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border) !important;
+  box-shadow: none !important; 
+}
+body.dark-mode [style*="background: white"] *,
+body.dark-mode [style*="color: black"] {
+  color: var(--text-heading) !important;
 }
 
-.cta-box:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.cta-box h2 {
-  margin-bottom: 1rem;
-}
-
-.cta-box p {
-  color: var(--text-light);
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-}
-
-/* ================= STICKY CTA (FIXED & PREMIUM) ================= */
+/* ================= FLOATING STICKY CTA ================= */
 .sticky-cta {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: var(--primary); /* Deep dark background */
-  color: var(--bg-body); /* Inverse text */
+  background: var(--text-heading);
+  color: var(--bg-body); 
   padding: 14px 28px;
   border-radius: var(--radius-pill);
   font-weight: 600;
-  z-index: 1000; /* Stays above content */
-  box-shadow: var(--shadow-lg);
-  transition: all var(--transition-bounce);
+  z-index: 9999; 
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-fluid);
   display: flex;
   align-items: center;
-  gap: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 10px;
+  border: 1px solid var(--border);
 }
 
 .sticky-cta:hover {
   background: var(--accent);
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: var(--shadow-xl), var(--shadow-glow);
-  color: #ffffff;
-}
-
-/* Dark mode specific override for Sticky CTA to remain visible */
-body.dark-mode .sticky-cta {
-  background: var(--accent);
   color: #fff;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+  border-color: transparent;
 }
 
-/* ================= PROGRESS BAR ================= */
-#progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px; /* Slightly thinner, more elegant */
-  background: var(--accent);
-  width: 0%;
-  z-index: 1001; /* Above header */
-  transition: width 0.1s ease-out; /* Smooth reading progress */
-  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
-}
-
-/* ================= MOBILE-FIRST RESPONSIVE FIXES ================= */
+/* ================= 📱 MOBILE-SPECIFIC ALIGNMENT & SPACING ================= */
 @media (max-width: 768px) {
   
-  /* Container adjustments */
-  .section {
-    padding: 70px 5%;
-  }
-
-  /* Header Fixes - Horizontal Scroll for links instead of ugly stacking */
+  /* Reset container rules for mobile edge-to-edge flow */
   .nav {
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px 5%;
-  }
-  
-  .logo a {
-    font-size: 1.25rem;
-  }
-
-  nav {
-    width: 100%;
-    justify-content: flex-start;
-    overflow-x: auto; /* Thumb-friendly swipe */
-    padding-bottom: 5px;
-    gap: 1.5rem;
-    -ms-overflow-style: none; /* Hide scrollbar IE */
-    scrollbar-width: none; /* Hide scrollbar Firefox */
-  }
-
-  nav::-webkit-scrollbar {
-    display: none; /* Hide scrollbar Chrome/Safari */
-  }
-  
-  nav a {
-    white-space: nowrap; /* Prevent wrapping */
-    font-size: 0.95rem;
-  }
-
-  /* Hero adjustments */
-  .hero {
-    padding: 100px 5% 80px;
-  }
-
-  /* Button stacking for mobile */
-  .btn {
-    width: 100%; /* Full width thumb targets */
-    padding: 16px 24px; /* Taller touch targets */
-  }
-  
-  /* Avoid buttons side-by-side causing horizontal scroll */
-  .hero-buttons, .cta-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-  }
-
-  /* Blog Grid */
-  .blog-grid {
-    grid-template-columns: 1fr; /* Single column */
-    gap: 20px;
-  }
-
-  .blog-card:hover {
-    transform: none; /* Disable heavy hover transforms on mobile */
+    flex-direction: row !important; /* Force horizontal */
+    flex-wrap: wrap !important;
+    padding: 15px var(--pad-section-x);
   }
   
-  /* Sticky CTA positioning */
+  /* Structure Header Logo & Right side icons */
+  .logo { flex: 1 1 auto; }
+
+  /* Smooth scrollable navigation row */
+  .nav nav, nav {
+    order: 3; 
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: flex-start;
+    overflow-x: auto; 
+    gap: 20px;
+    padding: 15px 0 5px 0;
+    margin-top: 10px;
+    border-top: 1px solid var(--border);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .nav nav::-webkit-scrollbar, nav::-webkit-scrollbar { display: none; }
+  nav a { white-space: nowrap; font-size: 0.95rem; }
+
+  /* Stack Buttons Vertically with Full Width for Thumbs */
+  .hero-buttons, .cta-buttons, div[style*="display: flex"] {
+    flex-direction: column !important;
+    width: 100%;
+    gap: 15px;
+  }
+  
+  .btn { width: 100%; padding: 16px 20px; } 
+
+  /* CTA Boxes need less internal padding on mobile */
+  .cta-box {
+    padding: 40px 20px;
+  }
+
+  /* Center the Sticky CTA on Mobile so it doesn't clip off the right edge */
   .sticky-cta {
     bottom: 20px;
     right: 50%;
-    transform: translateX(50%); /* Center it on mobile */
-    width: calc(100% - 40px); /* Almost full width */
-    justify-content: center; /* Center text */
-    padding: 16px;
-    font-size: 1rem;
+    transform: translateX(50%);
+    width: max-content;
+    padding: 12px 24px;
+    font-size: 0.95rem;
   }
   
   .sticky-cta:hover {
-    transform: translateX(50%) translateY(0) scale(1); /* Reset hover on mobile */
-  }
-  
-  /* Increase padding bottom to accommodate wide sticky CTA */
-  body {
-    padding-bottom: 100px;
+    transform: translateX(50%) translateY(-2px); 
   }
 }
