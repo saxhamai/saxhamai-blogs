@@ -1,184 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>All Articles | SaXhamAI Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>SaXhamAI Blog | IT, Digital Trust & Business Growth Guides</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Learn digital trust, Google visibility & business systems. Practical guides for Indian businesses by SaXham Technologies.">
-<meta name="author" content="Nitin Pawar">
+  <meta name="description" content="Actionable guides on IT operations, digital trust, Google visibility & WhatsApp conversion. Built for Indian businesses by SaXhamAI.">
+  <meta name="keywords" content="IT blog India, digital trust, DevOps guides, business automation, Google visibility, WhatsApp business tips">
+  <meta name="author" content="Swapnil Kinjalkar">
 
-<link rel="canonical" href="https://blog.saxhamai.com/blog/">
-<link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="canonical" href="https://blog.saxhamai.com/blog/">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
-<meta name="google-adsense-account" content="ca-pub-9771104122165922">
+  <meta name="google-adsense-account" content="ca-pub-9771104122165922">
+
+  <meta property="og:title" content="SaXhamAI Blog | Practical IT & Business Guides">
+  <meta property="og:description" content="Real-world insights from IT operations, DevOps & business systems.">
+  <meta property="og:image" content="https://blog.saxhamai.com/assets/images/trust.png">
+  <meta property="og:type" content="website">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B22TGFQD60');
+  </script>
+
+  <style>
+    .muted { color: var(--text-light); font-size: 0.9rem; }
+    
+    /* Clean Nav Menu Fixes */
+    .nav-menu { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; }
+    
+    /* Audit Button Forced Visibility */
+    .nav-cta { 
+      padding: 8px 18px !important; 
+      font-size: 0.95rem !important; 
+      border-radius: 6px !important; 
+      background-color: var(--primary) !important; 
+      color: #ffffff !important; 
+      font-weight: 600 !important; 
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center;
+    }
+    .nav-cta:hover { background-color: var(--accent) !important; transform: translateY(-2px); }
+    
+    .promo-box { text-align: center; padding: 40px 30px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-white); transition: var(--transition); }
+    .promo-box:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    
+    /* Dark Mode Fixes */
+    .dark-mode .promo-box { background: #0f172a; border-color: #334155; }
+    .dark-mode .muted { color: #94a3b8; }
+
+    /* Mobile Visibility Fix */
+    @media (max-width: 768px) {
+      .nav-menu { flex-direction: column; gap: 12px; width: 100%; padding-top: 15px; }
+      .nav-cta { margin-left: 0 !important; width: auto; justify-content: center; }
+      .site-header .nav { flex-wrap: wrap; }
+    }
+  </style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
-<div class="container nav">
-<div class="logo">
-<a href="/">SaXhamAI</a>
-<span class="tagline">Blog</span>
-</div>
+<div id="progress-bar"></div>
 
-<nav>
-<a href="/">Home</a>
-<a href="/blog/" class="active">Blog</a>
-<a href="/audit.html" class="nav-highlight">Audit</a>
-<a href="/resources.html">Resources</a>
-<a href="/about.html">About</a>
-<a href="/contact.html">Contact</a>
-</nav>
-</div>
+<header class="site-header">
+  <div class="container nav" style="flex-wrap: wrap;">
+    <div class="logo">
+      <a href="/">SaXhamAI</a>
+      <span class="tagline">Blog</span>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="/">Home</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/audit.html" class="nav-cta" style="margin-left: 20px;">🔍 Audit</a>
+    </nav>
+
+    <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.3rem; cursor:pointer; margin-left:15px; transition: transform 0.3s ease;">
+      🌙
+    </button>
+  </div>
 </header>
 
-<!-- HERO -->
 <section class="section soft-bg">
-<div class="container narrow">
+  <div class="container narrow" style="text-align: center;">
 
-<h1>All Articles</h1>
+    <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Practical IT & Business Guides</h1>
 
-<p style="font-size:1.1rem;">
-Learn how to fix Google visibility, improve WhatsApp response,
-and build real trust in your business.
-</p>
+    <p style="font-size:1.2rem; max-width: 700px; margin: 0 auto;">
+      Real-world insights from IT operations, DevOps & business systems —
+      helping you fix visibility, <strong style="color: var(--accent);">improve conversions & build trust.</strong>
+    </p>
 
-<!-- CTA -->
-<div style="margin-top:20px;">
-<a href="https://wa.me/919702855005?text=Hi%20I%20need%20help%20with%20my%20business"
-   class="btn btn-whatsapp">
-   💬 Get Help on WhatsApp
-</a>
-</div>
+    <div style="margin-top:35px;">
+      <a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20Blog%20Index%20and%20need%20help%20with%20my%20business"
+         class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 12px 25px;">
+         💬 Get Free Help on WhatsApp
+      </a>
+    </div>
 
-</div>
+  </div>
 </section>
 
-<!-- ARTICLES -->
 <section class="section">
-<div class="container">
+  <div class="container">
 
-<div class="blog-grid">
+    <h2 style="margin-bottom:30px; text-align: center; font-size: 2rem;">🔥 Featured Insight</h2>
 
-<!-- FEATURED -->
-<article class="blog-card" style="border:2px solid var(--accent);">
+    <article class="blog-card" style="border: 2px solid var(--accent); box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);">
+      <img src="../assets/images/it-policy-reform.png" onerror="this.src='../assets/images/default.png'" alt="IT Employees India" loading="lazy">
+      
+      <div style="margin-top: 15px;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">India’s IT Employees: Protection or Exploitation?</h3>
+        <p class="muted" style="margin-bottom: 15px;">Policy • IT Industry | <time datetime="2026-04-23">Apr 23, 2026</time></p>
 
-<div>
-<h3>🔥 India’s IT Employees: Protection or Exploitation?</h3>
-<p class="muted">Policy • IT Industry</p>
-<time datetime="2026-04-23">Apr 23, 2026</time>
-<p>
-Deep analysis of layoffs, overtime culture & reforms.
-</p>
-</div>
+        <p style="font-size: 1.1rem; margin-bottom: 20px;">
+          A deep breakdown of layoffs, overtime pressure, poor management practices,
+          and what policy reforms India actually needs.
+        </p>
+      </div>
 
-<a href="it-employees-protection-exploitation-india.html">
-Read article →
-</a>
+      <a href="it-employees-protection-exploitation-india.html" class="btn btn-outline" style="width: 100%; text-align: center;">
+        Read Full Analysis →
+      </a>
 
-</article>
+    </article>
 
-<!-- OTHER ARTICLES -->
-
-<article class="blog-card">
-<h3>MSME Digital Transformation</h3>
-<p class="muted">AI • Business</p>
-<a href="paperwork-to-python-msme-transformation.html">Read →</a>
-</article>
-
-<article class="blog-card">
-<h3>Why Digital Trust Matters</h3>
-<p class="muted">Core Concept</p>
-<a href="why-trust-matters.html">Read →</a>
-</article>
-
-<article class="blog-card">
-<h3>Google Maps Mistakes</h3>
-<p class="muted">Local SEO</p>
-<a href="google-maps-mistakes.html">Read →</a>
-</article>
-
-<article class="blog-card">
-<h3>WhatsApp Business Mistakes</h3>
-<p class="muted">Trust • Communication</p>
-<a href="whatsapp-business-mistakes-kill-trust.html">Read →</a>
-</article>
-
-<article class="blog-card">
-<h3>Website Trust Issues</h3>
-<p class="muted">Conversion</p>
-<a href="website-trust-gaps.html">Read →</a>
-</article>
-
-</div>
-
-</div>
+  </div>
 </section>
 
-<!-- CTA BLOCK -->
 <section class="section soft-bg">
-<div class="container narrow">
+  <div class="container">
 
-<div class="cta-box">
+    <h2 style="margin-bottom:40px; text-align: center; font-size: 2rem;">All Articles</h2>
 
-<h2>Reading is good. Fixing is better.</h2>
+    <div class="blog-grid">
 
-<p>
-If your business is facing these issues —
-we can fix them.
-</p>
+      <article class="blog-card">
+        <img src="../assets/images/msme.png" onerror="this.src='../assets/images/default.png'" alt="MSME Transformation" loading="lazy">
+        <div>
+          <h3 style="margin-bottom: 10px;">MSME Digital Transformation</h3>
+          <p class="muted" style="margin-bottom: 10px;">AI • Business</p>
+          <p>How small businesses move from manual work to automation.</p>
+        </div>
+        <a href="paperwork-to-python-msme-transformation.html" style="margin-top: 15px;">Read Article →</a>
+      </article>
 
-<a href="https://wa.me/919702855005"
-   class="btn btn-whatsapp">
-   💬 Talk to Expert
-</a>
+      <article class="blog-card">
+        <img src="../assets/images/trust.png" onerror="this.src='../assets/images/default.png'" alt="Digital Trust" loading="lazy">
+        <div>
+          <h3 style="margin-bottom: 10px;">Why Digital Trust Matters</h3>
+          <p class="muted" style="margin-bottom: 10px;">Core Concept</p>
+          <p>The hidden factor behind customer decisions & conversions.</p>
+        </div>
+        <a href="why-trust-matters.html" style="margin-top: 15px;">Read Article →</a>
+      </article>
 
-<br><br>
+      <article class="blog-card">
+        <img src="../assets/images/google-maps.png" onerror="this.src='../assets/images/default.png'" alt="Google Maps SEO" loading="lazy">
+        <div>
+          <h3 style="margin-bottom: 10px;">Google Maps Mistakes</h3>
+          <p class="muted" style="margin-bottom: 10px;">Local SEO</p>
+          <p>5 mistakes that silently kill your business visibility.</p>
+        </div>
+        <a href="google-maps-mistakes.html" style="margin-top: 15px;">Read Article →</a>
+      </article>
 
-<a href="/audit.html" class="btn btn-primary">
-   🔍 Get Digital Audit
-</a>
+      <article class="blog-card">
+        <img src="../assets/images/whatsapp-biz.png" onerror="this.src='../assets/images/default.png'" alt="WhatsApp Business" loading="lazy">
+        <div>
+          <h3 style="margin-bottom: 10px;">WhatsApp Business Mistakes</h3>
+          <p class="muted" style="margin-bottom: 10px;">Trust • Communication</p>
+          <p>Why slow replies are costing you customers daily.</p>
+        </div>
+        <a href="whatsapp-business-mistakes-kill-trust.html" style="margin-top: 15px;">Read Article →</a>
+      </article>
 
-</div>
+      <article class="blog-card">
+        <img src="../assets/images/website-trust.png" onerror="this.src='../assets/images/default.png'" alt="Website Trust" loading="lazy">
+        <div>
+          <h3 style="margin-bottom: 10px;">Website Trust Issues</h3>
+          <p class="muted" style="margin-bottom: 10px;">Conversion</p>
+          <p>Fix hidden trust gaps that reduce leads and sales.</p>
+        </div>
+        <a href="website-trust-gaps.html" style="margin-top: 15px;">Read Article →</a>
+      </article>
 
-</div>
+    </div>
+
+  </div>
 </section>
 
-<!-- STICKY CTA -->
-<a href="https://wa.me/919702855005" class="sticky-cta">
-💬 Chat Now
+<section class="section">
+  <div class="container narrow" style="text-align:center;">
+
+    <h2 style="margin-bottom: 20px; font-size: 2rem;">Why This Blog is Different</h2>
+
+    <p style="font-size: 1.15rem; max-width: 650px; margin: 0 auto; line-height: 1.8;">
+      Written from real experience in IT support, stock market infrastructure,
+      and DevOps environments — <strong style="color: var(--accent);">not generic theory.</strong>
+    </p>
+
+  </div>
+</section>
+
+<section class="section soft-bg">
+  <div class="container narrow">
+
+    <div class="promo-box">
+
+      <h2 style="margin-bottom: 15px; font-size: 2rem;">Reading is good. Fixing is better.</h2>
+
+      <p style="font-size: 1.1rem; margin-bottom: 30px;">
+        If you're facing these issues in your business —
+        we can help you solve them fast.
+      </p>
+
+      <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20Blog%20Index%20and%20need%20expert%20help"
+           class="btn btn-whatsapp">
+           💬 Talk to an Expert
+        </a>
+
+        <a href="/audit.html" class="btn btn-primary">
+           🔍 Get Digital Audit
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20Blog%20Index%20and%20need%20help" class="sticky-cta">
+  💬 Get Leads Now
 </a>
 
-<!-- FOOTER -->
 <footer class="site-footer">
-<div class="container footer-grid">
+  <div class="container footer-grid">
 
-<div>
-<h4>SaXhamAI</h4>
-<p>Clarity-driven insights for Indian businesses.</p>
-</div>
+    <div>
+      <h4 style="color: #fff; margin-bottom: 15px;">SaXhamAI</h4>
+      <p>Clarity-driven insights for Indian businesses.</p>
+    </div>
 
-<div>
-<h4>Services</h4>
-<a href="https://saxhamai.com">SaXham Technologies</a>
-<a href="/audit.html">Digital Audit</a>
-</div>
+    <div>
+      <h4 style="color: #fff; margin-bottom: 15px;">Services</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 8px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
+        <li><a href="/audit.html">Digital Audit</a></li>
+      </ul>
+    </div>
 
-<div>
-<h4>Contact</h4>
-<p>📧 founder@saxhamai.com</p>
-<p>📍 Navi Mumbai</p>
-</div>
+    <div>
+      <h4 style="color: #fff; margin-bottom: 15px;">Contact</h4>
+      <p style="margin-bottom: 8px;">📧 founder@saxhamai.com</p>
+      <p>📍 Navi Mumbai</p>
+    </div>
 
-</div>
+  </div>
 
-<p class="copyright">
-© 2026 SaXhamAI | Powered by SaXham Technologies
-</p>
+  <p class="copyright">
+    © 2026 SaXhamAI | Built with real IT experience
+  </p>
 </footer>
+
+<script>
+  // Dark Mode Logic with Memory & Icon Update
+  function toggleDark(){
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
+    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
+  }
+
+  // Check theme on page load & set correct icon
+  window.onload = function() {
+    if(localStorage.getItem("saxham_theme") === "dark"){
+      document.body.classList.add("dark-mode");
+      document.getElementById("theme-btn").innerText = "☀️";
+    }
+  };
+
+  // Progress Bar Logic
+  window.onscroll = function(){
+    let winScroll = document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%";
+  };
+</script>
 
 </body>
 </html>
