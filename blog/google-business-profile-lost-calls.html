@@ -45,8 +45,7 @@
     }
   }
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9771104122165922"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9771104122165922" crossorigin="anonymous"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Track WhatsApp Clicks
@@ -71,44 +70,102 @@
       });
     });
   </script>
+
+  <style>
+    /* Unbreakable Grid List for Perfect Alignment */
+    .feature-list { list-style: none; padding: 0; margin-top: 15px; margin-bottom: 25px; }
+    .feature-list li { 
+      margin-bottom: 12px; 
+      font-size: 1.05rem; 
+      display: grid; 
+      grid-template-columns: 24px 1fr; 
+      gap: 12px; 
+      align-items: start; 
+      text-align: left;
+    }
+    .feature-list li span.text-content { color: var(--text-main); display: block; line-height: 1.6; }
+    
+    /* Article Specific Styling for Readability */
+    .article-content h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--primary-navy); }
+    .article-content p { font-size: 1.1rem; margin-bottom: 1.25rem; color: var(--text-main); line-height: 1.8; }
+    .article-content ul:not(.feature-list) { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-content ul:not(.feature-list) li { margin-bottom: 0.6rem; font-size: 1.1rem; color: var(--text-main); }
+    
+    /* Dark Mode Text Fixes */
+    body.dark-mode .feature-list li span.text-content { color: var(--text-main); }
+    body.dark-mode .article-content h2 { color: #ffffff; }
+
+    /* Mobile Hamburger Menu Logic */
+    @media (max-width: 768px) {
+      nav {
+        display: none !important; 
+        flex-direction: column;
+        width: 100%;
+        background: var(--bg-white);
+        padding: 15px 0;
+      }
+      nav.nav-active {
+        display: flex !important; 
+      }
+    }
+  </style>
+
 </head>
 
 <body>
 
+<div id="progress-bar"></div>
+
 <header class="site-header">
-  <div class="container nav">
+  <div class="nav">
+    
     <div class="logo">
-      <a href="/">SaXhamAI</a>
-      <span class="tagline">Blog</span>
+      <a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Blog</span></a>
     </div>
-    <nav>
+
+    <div class="mobile-toggle" onclick="toggleMobileMenu()">
+      ☰
+    </div>
+
+    <nav id="mainNav">
       <a href="/">Home</a>
-      <a href="/blog/">All Articles</a>
+      <a href="/blog/" class="active">Blog</a>
       <a href="/resources.html">Resources</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
+      <a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
+      
+      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer; margin-top: 2px;">
+        🌙
+      </button>
     </nav>
+
   </div>
 </header>
 
 <main>
-  <article class="section">
-    <div class="container narrow">
+  <article class="section" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="container narrow" style="max-width: 800px; margin: 0 auto;">
 
       <p style="margin-bottom: 2rem;">
-        <a href="/blog/" style="color: var(--text-light); font-size: 0.9rem;">← Back to All Articles</a>
+        <a href="/blog/" style="color: var(--text-gray); font-size: 0.95rem; font-weight: 500;">← Back to All Articles</a>
       </p>
 
-      <header style="margin-bottom: 2rem;">
-        <span class="tagline" style="margin-left: 0; background: #e2e8f0; color: #475569;">Local SEO Analysis</span>
-        <h1 style="font-size: 2.5rem; margin-top: 1rem; color: var(--primary);">Why Google Business Profile Listings Lose Calls After Verification</h1>
-        <p class="muted" style="font-size: 0.9rem;">
-          Published on Jan 03, 2026 • By Nitin Pawar
+      <header style="margin-bottom: 2.5rem;">
+        <span style="background: var(--border); color: var(--text-main); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">
+          Local SEO Analysis
+        </span>
+        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-top: 1rem; color: var(--primary-navy);" itemprop="headline">
+          Why Google Business Profile Listings Lose Calls After Verification
+        </h1>
+        <p style="color: var(--text-gray); font-size: 0.95rem; margin-top: 15px;">
+          Published on <time datetime="2026-01-03" itemprop="datePublished">Jan 03, 2026</time> • By <span itemprop="author" style="font-weight: 600;">Nitin Pawar</span>
         </p>
       </header>
 
-      <div class="content">
-        <p style="font-size: 1.15rem; color: var(--text-main);">
+      <div class="article-content" itemprop="articleBody">
+        
+        <p style="font-size: 1.25rem; font-weight: 600; color: var(--primary-navy);">
           I recently tried to visit a computer repair shop in Navi Mumbai.
           Google Maps showed <strong>“Open.”</strong>
         </p>
@@ -120,15 +177,15 @@
 
         <p>
           After verification, many Indian businesses ask:
-          <em>“Profile verified ho gaya, phir bhi calls kam kyu ho gaye?”</em>
+          <em style="color: var(--text-gray);">“Profile verified ho gaya, phir bhi calls kam kyu ho gaye?”</em>
         </p>
 
         <p>
           The answer is simple but uncomfortable.
-          <strong>Verification doesn’t only activate your listing — it tests your credibility.</strong>
+          <strong style="color: var(--accent-blue);">Verification doesn’t only activate your listing — it tests your credibility.</strong>
         </p>
 
-        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 3rem 0;">
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 3rem 0;">
 
         <h2>1. Temporary Ranking Drop After Verification</h2>
         <p>
@@ -151,9 +208,9 @@
           The profile stays verified — but visibility drops.
         </p>
 
-        <div style="background: #f0f9ff; padding: 1rem; border-left: 4px solid var(--accent); margin: 1.5rem 0;">
+        <div class="cta-box" style="text-align: left; padding: 20px; border-left: 4px solid var(--accent-blue); border-radius: 4px; margin: 2rem 0;">
           <strong>Related Read:</strong> If you haven't already, check out 
-          <a href="google-maps-mistakes.html" style="font-weight: 700;">Common Google Maps Mistakes That Hurt Local Businesses</a> 
+          <a href="google-maps-mistakes.html" style="font-weight: 700; color: var(--accent-blue);">Common Google Maps Mistakes That Hurt Local Businesses</a> 
           to understand how small errors silently kill leads.
         </div>
 
@@ -174,18 +231,34 @@
           This makes many businesses feel calls vanished, even when interest is similar.
         </p>
 
-        <div style="background: var(--bg-light); padding: 1.5rem; border-left: 4px solid var(--accent); margin: 1.5rem 0; border-radius: 4px;">
+        <div class="cta-box" style="text-align: left; padding: 20px; border-left: 4px solid var(--whatsapp); border-radius: 4px; margin: 2.5rem 0;">
           <strong>The Real Truth:</strong> Verification is not a reward. It is an audit.
           Google does not punish short hours. It punishes inconsistency and misleading signals.
         </div>
 
         <h2>6. 5-Minute Checklist After Call Drop</h2>
-        <ul style="margin-bottom: 2rem;">
-          <li>✅ Is your business name & phone consistent everywhere?</li>
-          <li>✅ Are working hours accurate?</li>
-          <li>✅ Do your first photos show the real shop or team?</li>
-          <li>✅ Are negative reviews replied to?</li>
-          <li>✅ Is your primary category truly correct?</li>
+        
+        <ul class="feature-list">
+          <li>
+            <span>✅</span>
+            <span class="text-content">Is your business name & phone consistent everywhere?</span>
+          </li>
+          <li>
+            <span>✅</span>
+            <span class="text-content">Are working hours accurate?</span>
+          </li>
+          <li>
+            <span>✅</span>
+            <span class="text-content">Do your first photos show the real shop or team?</span>
+          </li>
+          <li>
+            <span>✅</span>
+            <span class="text-content">Are negative reviews replied to?</span>
+          </li>
+          <li>
+            <span>✅</span>
+            <span class="text-content">Is your primary category truly correct?</span>
+          </li>
         </ul>
 
         <p>
@@ -193,50 +266,93 @@
           If signals look weak, customers — and Google — move on.
         </p>
 
-        <div style="background: var(--primary); color: #fff; padding: 2rem; border-radius: 8px; margin-top: 3rem; text-align: center;">
-          <h3 style="color: #fff; margin-bottom: 1rem;">👉 Lost Rankings?</h3>
-          <p style="color: #cbd5e1; margin-bottom: 1.5rem;">
+        <div class="cta-box" style="margin-top:3.5rem; text-align: center; border-color: var(--accent-blue); padding: 40px 30px;">
+          <h3 style="margin-bottom: 15px; font-size: 1.8rem;">👉 Lost Rankings?</h3>
+          <p style="margin-bottom: 25px; font-size: 1.1rem; color: var(--text-gray);">
             If your Google Maps profile has stopped getting calls after verification, don't guess. 
             We audit and fix verification issues for local businesses.
           </p>
-          <a href="../contact.html" style="background: #fff; color: var(--primary); padding: 10px 20px; border-radius: 6px; font-weight: 700; text-decoration: none;">
-            Get a Profile Audit
-          </a>
+          <div class="cta-buttons">
+            <a href="../contact.html" class="btn btn-primary" style="padding: 14px 28px; font-size: 1.05rem;">
+              Get a Profile Audit
+            </a>
+          </div>
         </div>
 
       </div>
 
-      <div style="margin-top: 4rem; text-align: center;">
-        <p class="muted">Read Previous Article</p>
-        <h4><a href="why-systems-beat-motivation.html" style="color: var(--primary);">Why Systems Beat Motivation →</a></h4>
+      <div style="margin-top: 4rem; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border);">
+        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 10px;">Read Previous Article</p>
+        <h4 style="font-size: 1.3rem;">
+          <a href="why-systems-beat-motivation.html" style="color: var(--accent-blue);">
+            Why Systems Beat Motivation →
+          </a>
+        </h4>
       </div>
 
     </div>
   </article>
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <h4>SaXhamAI</h4>
-      <p class="muted">Founder-led technology consulting.</p>
-      <a href="https://saxhamai.com">Visit main site →</a>
+<footer>
+  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+    
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-bottom: 15px;">SaXhamAI</h3>
+      <p>Clarity-driven insights for Indian businesses.</p>
     </div>
 
-    <div>
-      <h4>Ecosystem</h4>
-      <a href="https://ops.saxhamai.com">SaXhamOps</a>
-      <a href="https://saxhamai.com">SaXham Technologies</a>
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-bottom: 15px;">Services</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
+        <li><a href="/audit.html">Digital Audit</a></li>
+      </ul>
     </div>
 
-    <div>
-      <h4>Contact</h4>
-      <p class="muted">founder@saxhamai.com</p>
-      <p class="muted">Navi Mumbai, India</p>
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-bottom: 15px;">Contact</h3>
+      <p style="margin-bottom: 8px;">📧 founder@saxhamai.com</p>
+      <p>📍 Navi Mumbai, Maharashtra</p>
     </div>
+
   </div>
-  <p class="copyright">© 2026 SaXhamAI. Built for clarity.</p>
+
+  <div class="container" style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <p style="margin: 0;">© 2026 SaXhamAI | Powered by SaXham Technologies</p>
+  </div>
 </footer>
+
+<script>
+  // Hamburger Menu Logic
+  function toggleMobileMenu() {
+    const nav = document.getElementById("mainNav");
+    nav.classList.toggle("nav-active");
+  }
+
+  // Dark Mode Logic
+  function toggleDark(){
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
+    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
+  }
+
+  // Check theme on page load
+  window.onload = function() {
+    if(localStorage.getItem("saxham_theme") === "dark"){
+      document.body.classList.add("dark-mode");
+      document.getElementById("theme-btn").innerText = "☀️";
+    }
+  };
+
+  // Progress Bar Logic
+  window.onscroll = function(){
+    let winScroll = document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%";
+  };
+</script>
 
 </body>
 </html>
