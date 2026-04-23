@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>SaXhamAI Blog | Digital Trust & Practical Technology</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Founder-led insights on digital trust by Nitin Pawar. Focusing on IT operations, Linux support, and practical systems for Indian businesses.">
+<meta name="description" content="Founder-led insights on IT operations, DevOps, digital trust, and business systems by Nitin Pawar. Practical knowledge for Indian businesses.">
 <meta name="author" content="Nitin Pawar">
 
 <link rel="canonical" href="https://blog.saxhamai.com/">
-
 <link rel="stylesheet" href="assets/css/style.css">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
-
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-
-gtag(&#39;config&#39;, &#39;G-B22TGFQD60&#39;);
+gtag('config', 'G-B22TGFQD60');
 </script>
 
 <meta name="google-adsense-account" content="ca-pub-9771104122165922">
@@ -27,39 +23,35 @@ gtag(&#39;config&#39;, &#39;G-B22TGFQD60&#39;);
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Track WhatsApp Clicks
-  document.querySelectorAll(&#39;a[href*=&quot;wa.me&quot;], a[href*=&quot;api.whatsapp.com&quot;]&#39;).forEach(function(el){
-    el.addEventListener(&quot;click&quot;, function(){
-      gtag(&#39;event&#39;, &#39;whatsapp_click&#39;, {
-        &#39;page_path&#39;: window.location.pathname,
-        &#39;link_type&#39;: &#39;social&#39;
+  document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(el){
+    el.addEventListener("click", function(){
+      gtag('event', 'whatsapp_click', {
+        'page_path': window.location.pathname,
+        'link_type': 'social'
       });
     });
   });
 
-  // Track Email Clicks
-  document.querySelectorAll(&#39;a[href^=&quot;mailto:&quot;]&#39;).forEach(function(el){
-    el.addEventListener(&quot;click&quot;, function(){
-      gtag(&#39;event&#39;, &#39;email_click&#39;, {
-        &#39;page_path&#39;: window.location.pathname,
-        &#39;link_type&#39;: &#39;contact&#39;
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
+    el.addEventListener("click", function(){
+      gtag('event', 'email_click', {
+        'page_path': window.location.pathname,
+        'link_type': 'contact'
       });
     });
   });
 
-  // Track Audit/Nav Clicks
-  document.querySelectorAll(&#39;a[href*=&quot;audit.html&quot;]&#39;).forEach(function(el){
-    el.addEventListener(&quot;click&quot;, function(){
-      gtag(&#39;event&#39;, &#39;audit_cta_click&#39;, {
-        &#39;page_path&#39;: window.location.pathname,
-        &#39;intent&#39;: &#39;navigation&#39;
+  document.querySelectorAll('a[href*="audit.html"]').forEach(function(el){
+    el.addEventListener("click", function(){
+      gtag('event', 'audit_cta_click', {
+        'page_path': window.location.pathname,
+        'intent': 'navigation'
       });
     });
   });
 
 });
 </script>
-
 </head>
 
 <body>
@@ -72,12 +64,12 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 
 <nav aria-label="Primary Navigation">
-  <a href="/" class="active">Home</a>
-  <a href="/blog/">Blog</a>
-  <a href="/audit.html" style="color:var(--accent); font-weight:700;">Audit</a>
-  <a href="/resources.html">Resources</a>
-  <a href="/about.html">About</a>
-  <a href="/contact.html">Contact</a>
+<a href="/" class="active">Home</a>
+<a href="/blog/">Blog</a>
+<a href="/audit.html" style="color:var(--accent); font-weight:700;">Audit</a>
+<a href="/resources.html">Resources</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
 </nav>
 </div>
 </header>
@@ -87,14 +79,13 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Clear Thinking for Digital Businesses in India</h1>
 
 <p>
-  Founder-led writing by <strong>Nitin Pawar</strong> — based on real IT operations, 
-  Linux systems, and on-ground business support.
+Founder-led writing by <strong>Nitin Pawar</strong> — based on real IT operations, DevOps systems, and practical business support.
 </p>
 
 <p class="muted" style="margin-top: 15px; font-size: 0.9rem; color: #94a3b8;">
-  Insights from the ecosystem of 
-  <a href="[https://ops.saxhamai.com](https://ops.saxhamai.com)" style="color: #cbd5e1; text-decoration: underline;" rel="noopener">SaXhamOps</a> and 
-  <a href="[https://technostar.saxhamai.com](https://technostar.saxhamai.com)" style="color: #cbd5e1; text-decoration: underline;" rel="noopener">TechnoStar Infotech</a>.
+Insights from the ecosystem of 
+<a href="https://ops.saxhamai.com" style="color: #cbd5e1; text-decoration: underline;" rel="noopener">SaXhamOps</a> and 
+<a href="https://technostar.saxhamai.com" style="color: #cbd5e1; text-decoration: underline;" rel="noopener">TechnoStar Infotech</a>.
 </p>
 </div>
 </section>
@@ -104,102 +95,61 @@ document.addEventListener("DOMContentLoaded", function () {
 <h2>Latest Articles</h2>
 
 <p class="muted" style="margin-bottom: 30px;">
-  New here? Start with <a href="blog/why-trust-matters.html" style="color: var(--accent); text-decoration: underline;">Why Digital Trust Matters</a>.
+New here? Start with <a href="blog/why-trust-matters.html" style="color: var(--accent); text-decoration: underline;">Why Digital Trust Matters</a>.
 </p>
 
 <div class="blog-grid">
 
-  <article class="blog-card">
-    <div>
-      <h3>From Paperwork to Python: The Digital Transformation of Indian MSMEs</h3>
-      <p class="muted" style="font-size: 0.85rem; margin-bottom: 4px;">
-        Digital Transformation • AI
-      </p>
-      <time datetime="2026-04-07" class="muted" style="font-size: 0.8rem; display:block; margin-bottom: 10px;">
-        Apr 07, 2026
-      </time>
-      
-      <p>
-        The roadmap from manual registers to AI-driven automation. Learn how Indian MSMEs are making the shift to smart systems.
-      </p>
-    </div>
-    <a href="blog/paperwork-to-python-msme-transformation.html">Read article →</a>
-  </article>
+<!-- NEW BLOG -->
+<article class="blog-card">
+<div>
+<h3>India’s IT Employees: Protection or Exploitation? A Policy Reform Proposal</h3>
+<p class="muted">Thought Leadership • IT Sector Policy</p>
+<time datetime="2026-01-20" class="muted">Jan 20, 2026</time>
+<p>
+A deep analysis of IT employee challenges in India — layoffs, notice periods, and work culture — with a balanced reform proposal.
+</p>
+</div>
+<a href="blog/it-employees-protection-exploitation-india.html">Read article →</a>
+</article>
 
-  <article class="blog-card">
-    <div>
-      <h3>Macron Praises India’s Innovation: What It Means for MSMEs</h3>
-      <p class="muted" style="font-size: 0.85rem; margin-bottom: 4px;">
-        Innovation • Global Strategy
-      </p>
-      <time datetime="2026-02-20" class="muted" style="font-size: 0.8rem; display:block; margin-bottom: 10px;">
-        Feb 20, 2026
-      </time>
-      
-      <p>
-        French President Macron called India's digital transformation civilization-level. Here is what that global recognition means for MSMEs in India.
-      </p>
-    </div>
-    <a href="blog/macron-praises-india-innovation-msme-impact.html">Read article →</a>
-  </article>
+<article class="blog-card">
+<div>
+<h3>From Paperwork to Python: The Digital Transformation of Indian MSMEs</h3>
+<p class="muted">Digital Transformation • AI</p>
+<time datetime="2026-04-07" class="muted">Apr 07, 2026</time>
+<p>The roadmap from manual registers to AI-driven automation.</p>
+</div>
+<a href="blog/paperwork-to-python-msme-transformation.html">Read article →</a>
+</article>
 
-  <article class="blog-card">
-    <div>
-      <h3>The “Patil Effect”: How AI Infrastructure Shift Is Reshaping IT</h3>
-      <p class="muted" style="font-size: 0.85rem; margin-bottom: 4px;">
-        AI • Strategy • MSME
-      </p>
-      <time datetime="2026-02-17" class="muted" style="font-size: 0.8rem; display:block; margin-bottom: 10px;">
-        Feb 17, 2026
-      </time>
-      
-      <p>
-        Analysis of how AI infrastructure efficiency is disrupting global IT services and creating massive opportunities for Indian MSMEs.
-      </p>
-    </div>
-    <a href="blog/the-patil-effect-ai-infrastructure-msme-india.html">Read article →</a>
-  </article>
+<article class="blog-card">
+<div>
+<h3>Macron Praises India’s Innovation: What It Means for MSMEs</h3>
+<p class="muted">Innovation • Global Strategy</p>
+<time datetime="2026-02-20" class="muted">Feb 20, 2026</time>
+<p>Global recognition and its impact on Indian MSMEs.</p>
+</div>
+<a href="blog/macron-praises-india-innovation-msme-impact.html">Read article →</a>
+</article>
 
 </div>
 
 <div style="margin-top: 2rem; text-align: center;">
-  <a href="/blog/" style="font-weight: 600; color: var(--accent);">View All Articles →</a>
+<a href="/blog/" style="font-weight: 600; color: var(--accent);">View All Articles →</a>
 </div>
 </div>
 </section>
 
 <section class="container">
-<div class="ecosystem-container" style="text-align: center; padding: 3rem 1.5rem;">
+<div style="text-align: center; padding: 3rem 1.5rem;">
 <h3 style="margin-bottom: 1rem; color: var(--primary);">Explore Our Ecosystem</h3>
-<p style="margin-bottom: 1.5rem; color: var(--text-light); font-size: 1rem;">
-Apart from this blog, we offer specialized services for your business needs.
-</p>
 
 <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-  <a href="[https://saxhamai.com](https://saxhamai.com)" class="ecosystem-btn" rel="noopener">
-    🌐 Visit Main Site
-  </a>
-  <a href="[https://ops.saxhamai.com](https://ops.saxhamai.com)" class="ecosystem-btn" rel="noopener">
-    ⚙️ SaXhamOps
-  </a>
-  <a href="[https://technostar.saxhamai.com](https://technostar.saxhamai.com)" class="ecosystem-btn" rel="noopener">
-    💻 TechnoStar Infotech
-  </a>
+<a href="https://saxhamai.com" class="ecosystem-btn" rel="noopener">🌐 Visit Main Site</a>
+<a href="https://ops.saxhamai.com" class="ecosystem-btn" rel="noopener">⚙️ SaXhamOps</a>
+<a href="https://technostar.saxhamai.com" class="ecosystem-btn" rel="noopener">💻 TechnoStar Infotech</a>
 </div>
-</div>
-</section>
-
-<section class="section soft-bg" style="margin-top: 40px;">
-<div class="container narrow">
-<h2>About the SaXhamAI Blog</h2>
-<p>
-This blog is written from real-world experience — not theory, not trends.
-</p>
-<p>
-It supports SaXhamAI’s mission to help Indian businesses build
-<strong>digital trust, operational clarity, and practical technology</strong> stacks.
-</p>
-<a href="about.html" style="color: var(--accent); font-weight: 600;">More about us →</a>
 </div>
 </section>
 
@@ -207,25 +157,23 @@ It supports SaXhamAI’s mission to help Indian businesses build
 <div class="container footer-grid">
 
 <div>
-  <h4>SaXhamAI</h4>
-  <p class="muted">
-    Founder-led technology consulting  
-    for growing Indian businesses.
-  </p>
-  <a href="[https://saxhamai.com](https://saxhamai.com)" rel="noopener">Visit main website →</a>
+<h4>SaXhamAI</h4>
+<p class="muted">Founder-led technology consulting for growing Indian businesses.</p>
+<a href="https://saxhamai.com" rel="noopener">Visit main website →</a>
 </div>
 
 <div>
-  <h4>Ecosystem</h4>
-  <a href="[https://ops.saxhamai.com](https://ops.saxhamai.com)" rel="noopener">SaXhamOps</a>
-  <a href="[https://technostar.saxhamai.com](https://technostar.saxhamai.com)" rel="noopener">TechnoStar Infotech</a>
+<h4>Ecosystem</h4>
+<a href="https://ops.saxhamai.com" rel="noopener">SaXhamOps</a>
+<a href="https://technostar.saxhamai.com" rel="noopener">TechnoStar Infotech</a>
 </div>
 
 <div>
-  <h4>Contact</h4>
-  <p class="muted">founder@saxhamai.com</p>
-  <p class="muted">Navi Mumbai, India</p>
+<h4>Contact</h4>
+<p class="muted">founder@saxhamai.com</p>
+<p class="muted">Navi Mumbai, India</p>
 </div>
+
 </div>
 
 <p class="copyright">
