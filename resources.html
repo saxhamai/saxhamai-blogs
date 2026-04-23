@@ -2,113 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Resources & Tools | SaXhamAI</title>
+  <title>Free IT Resources & Business Tools | SaXhamAI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Free IT checklists, digital trust guides & tools to grow your business. Powered by SaXham Technologies.">
-  <meta name="author" content="Nitin Pawar">
+  <meta name="description" content="Download free IT checklists, Linux cheat sheets, monitoring tools & digital trust guides. Built for Indian businesses by SaXhamAI.">
+  <meta name="keywords" content="IT checklist, Linux commands PDF, business tools India, digital audit tools, DevOps resources">
+  <meta name="author" content="Swapnil Kinjalkar">
 
   <link rel="canonical" href="https://blog.saxhamai.com/resources.html">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <meta property="og:title" content="Free IT Resources & Tools | SaXhamAI">
+  <meta property="og:description" content="Real-world checklists, tools & guides used in live production environments.">
+  <meta property="og:image" content="https://blog.saxhamai.com/assets/images/msme.png">
+  <meta property="og:type" content="website">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B22TGFQD60');
+  </script>
+
+  <style>
+    .muted { color: var(--text-light); font-size: 0.9rem; }
+    
+    /* Clean Nav Menu Fixes */
+    .nav-menu { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; }
+    
+    /* Audit Button Forced Visibility */
+    .nav-cta { 
+      padding: 8px 18px !important; 
+      font-size: 0.95rem !important; 
+      border-radius: 6px !important; 
+      background-color: var(--primary) !important; 
+      color: #ffffff !important; 
+      font-weight: 600 !important; 
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center;
+    }
+    .nav-cta:hover { background-color: var(--accent) !important; transform: translateY(-2px); }
+    
+    /* Premium List Styling */
+    .feature-list { list-style: none; padding: 0; margin-top: 15px; }
+    .feature-list li { margin-bottom: 12px; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+    
+    .promo-box { text-align: center; padding: 40px 30px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-white); transition: var(--transition); }
+    .promo-box:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    
+    /* 2 Column Flex Layout */
+    .flex-grid { display: flex; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+    .flex-col { flex: 1 1 300px; background: var(--bg-white); padding: 25px; border-radius: 10px; border: 1px solid var(--border); box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+    
+    /* Badge Styling */
+    .badge { display: inline-block; padding: 6px 12px; background: var(--bg-light); color: var(--text-light); border-radius: 4px; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); }
+
+    /* Dark Mode Fixes */
+    .dark-mode .promo-box, .dark-mode .flex-col { background: #0f172a; border-color: #334155; }
+    .dark-mode .badge { background: #1e293b; color: #94a3b8; border-color: #334155; }
+    .dark-mode .muted { color: #94a3b8; }
+
+    /* Mobile Visibility Fix */
+    @media (max-width: 768px) {
+      .nav-menu { flex-direction: column; gap: 12px; width: 100%; padding-top: 15px; }
+      .nav-cta { margin-left: 0 !important; width: auto; justify-content: center; }
+      .site-header .nav { flex-wrap: wrap; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<div id="progress-bar"></div>
+
 <header class="site-header">
-  <div class="container nav">
+  <div class="container nav" style="flex-wrap: wrap;">
     <div class="logo">
       <a href="/">SaXhamAI</a>
       <span class="tagline">Resources</span>
     </div>
 
-    <nav>
+    <nav class="nav-menu">
       <a href="/">Home</a>
       <a href="/blog/">Blog</a>
-      <a href="/audit.html" class="nav-highlight">Audit</a>
       <a href="/resources.html" class="active">Resources</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
+      <a href="/audit.html" class="nav-cta" style="margin-left:20px;">🔍 Audit</a>
     </nav>
+
+    <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.3rem; cursor:pointer; margin-left:15px; transition: transform 0.3s ease;">
+      🌙
+    </button>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="section soft-bg">
-  <div class="container narrow">
-    <h1>Free Resources & Tools</h1>
+  <div class="container narrow" style="text-align: center;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Free Resources for IT & Business Growth</h1>
 
-    <p style="font-size:1.15rem;">
-      Practical guides, checklists & tools we use daily to run IT systems
-      and build real business trust.
+    <p style="font-size:1.2rem; max-width: 650px; margin: 0 auto;">
+      Real-world checklists, tools & guides used in live production environments — <strong style="color: var(--accent);">not theory.</strong>
     </p>
 
-    <p class="muted">
-      Built by <strong>SaXham Technologies</strong>
-    </p>
-
-    <!-- PRIMARY CTA -->
-    <div style="margin-top:25px;">
-      <a href="https://wa.me/919702855005?text=Hi%20I%20need%20help%20with%20my%20business"
-         class="btn btn-whatsapp">
-        💬 Get Help on WhatsApp
+    <div style="margin-top:35px;">
+      <a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20Resources%20page%20and%20need%20a%20Free%20Consultation"
+         class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 12px 25px;">
+        💬 Get Free Consultation
       </a>
     </div>
+
+    <p class="muted" style="margin-top:20px;">
+      Built by <strong style="color: var(--text-main);">SaXham Technologies</strong> | Used by IT & Ops teams
+    </p>
   </div>
 </section>
 
-<!-- RESOURCES GRID -->
 <section class="section">
   <div class="container">
 
     <div class="blog-grid">
 
-      <!-- CARD 1 -->
       <article class="blog-card">
         <div>
-          <h3>📍 Google Maps Audit Checklist</h3>
-          <p class="muted">For Business Owners</p>
+          <h3 style="margin-bottom: 5px;">📍 Google Maps Audit Checklist</h3>
+          <p class="muted" style="margin-bottom: 15px;">For Local Business Owners</p>
           <p>
-            5 critical mistakes that silently kill your leads on Google Maps.
+            Discover 5 hidden mistakes that silently reduce your leads and visibility.
           </p>
         </div>
-        <a href="/blog/google-maps-mistakes.html">Read Guide →</a>
+        <a href="/blog/google-maps-mistakes.html" style="margin-top: 15px;">Read Guide →</a>
       </article>
 
-      <!-- CARD 2 -->
       <article class="blog-card">
         <div>
-          <h3>📲 WhatsApp Business Setup Guide</h3>
-          <p class="muted">For Service Businesses</p>
+          <h3 style="margin-bottom: 5px;">📲 WhatsApp Business Optimization</h3>
+          <p class="muted" style="margin-bottom: 15px;">For Service Businesses</p>
           <p>
-            Fix slow replies, improve trust & convert more customers instantly.
+            Fix delayed replies, increase trust & convert more customers instantly.
           </p>
         </div>
-        <a href="/contact.html">Get Setup Help →</a>
+        <a href="/contact.html" style="margin-top: 15px;">Get Setup Help →</a>
       </article>
 
-      <!-- CARD 3 -->
       <article class="blog-card">
         <div>
-          <h3>🐧 Linux Commands Cheat Sheet</h3>
-          <p class="muted">For IT Support</p>
+          <h3 style="margin-bottom: 5px;">🐧 Linux Commands Cheat Sheet</h3>
+          <p class="muted" style="margin-bottom: 15px;">For IT Engineers & DevOps</p>
           <p>
-            Essential commands used daily for server troubleshooting.
+            Daily-use commands for troubleshooting, monitoring & server management.
           </p>
         </div>
-        <span class="coming">Download PDF (Coming Soon)</span>
+        <div style="margin-top: 15px;">
+          <span class="badge">📥 PDF Coming Soon</span>
+        </div>
       </article>
 
-      <!-- CARD 4 -->
       <article class="blog-card">
         <div>
-          <h3>📋 Daily IT Ops Checklist</h3>
-          <p class="muted">For Teams & Managers</p>
+          <h3 style="margin-bottom: 5px;">📋 Daily IT Operations Checklist</h3>
+          <p class="muted" style="margin-bottom: 15px;">For IT Teams & Managers</p>
           <p>
-            Prevent issues before they happen using structured daily checks.
+            Prevent downtime using structured daily checks (BOD/EOD ready).
           </p>
         </div>
-        <a href="https://ops.saxhamai.com">Visit Ops Portal →</a>
+        <a href="https://ops.saxhamai.com" target="_blank" style="margin-top: 15px;">Visit Ops Portal →</a>
       </article>
 
     </div>
@@ -116,27 +176,26 @@
   </div>
 </section>
 
-<!-- TOOLS SECTION -->
 <section class="section soft-bg">
   <div class="container narrow">
 
-    <h2 style="text-align:center;">Recommended Tools</h2>
+    <h2 style="text-align:center; font-size: 2rem; margin-bottom: 10px;">Recommended Tools We Actually Use</h2>
 
-    <div class="cols-2" style="margin-top:30px;">
+    <div class="flex-grid">
 
-      <div>
-        <h3>Monitoring</h3>
-        <ul>
-          <li><strong>Htop</strong> – Live system monitoring</li>
-          <li><strong>UptimeRobot</strong> – Website alerts</li>
+      <div class="flex-col">
+        <h3 style="color: var(--primary); margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">📊 Monitoring</h3>
+        <ul class="feature-list">
+          <li>✅ <span><strong>htop</strong> – Real-time Linux monitoring</span></li>
+          <li>✅ <span><strong>UptimeRobot</strong> – Website uptime alerts</span></li>
         </ul>
       </div>
 
-      <div>
-        <h3>Security</h3>
-        <ul>
-          <li><strong>Bitwarden</strong> – Password manager</li>
-          <li><strong>UFW</strong> – Linux firewall</li>
+      <div class="flex-col">
+        <h3 style="color: var(--primary); margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">🔒 Security</h3>
+        <ul class="feature-list">
+          <li>✅ <span><strong>Bitwarden</strong> – Secure password manager</span></li>
+          <li>✅ <span><strong>UFW</strong> – Simple Linux firewall</span></li>
         </ul>
       </div>
 
@@ -145,57 +204,69 @@
   </div>
 </section>
 
-<!-- HIGH CONVERSION CTA -->
 <section class="section">
+  <div class="container narrow" style="text-align:center;">
+
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Why These Resources Work</h2>
+
+    <p style="font-size: 1.15rem; max-width: 650px; margin: 0 auto; line-height: 1.8;">
+      Built from real experience in stock market infra, IT operations & DevOps environments.
+      These are not generic templates — <strong style="color: var(--accent);">these are battle-tested workflows.</strong>
+    </p>
+
+  </div>
+</section>
+
+<section class="section soft-bg">
   <div class="container narrow">
 
-    <div class="cta-box">
+    <div class="promo-box">
 
-      <h2>Need Help Fixing Your Business Setup?</h2>
+      <h2 style="margin-bottom: 15px; font-size: 2rem;">Need Help Implementing These?</h2>
 
-      <p>
-        Tools are useful — but execution matters.
+      <p style="font-size: 1.1rem; margin-bottom: 30px;">
+        Tools don’t fix businesses. <strong>Execution does.</strong>
       </p>
 
-      <a href="https://wa.me/919702855005?text=Hi%20I%20need%20help%20with%20my%20business"
-         class="btn btn-whatsapp">
-        💬 Talk to Expert
-      </a>
+      <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20Resources%20page%20and%20need%20execution%20help"
+           class="btn btn-whatsapp">
+          💬 Talk to an Expert
+        </a>
 
-      <br><br>
-
-      <a href="/audit.html" class="btn btn-primary">
-        🔍 Get Digital Audit
-      </a>
+        <a href="/audit.html" class="btn btn-primary">
+          🔍 Get Digital Audit
+        </a>
+      </div>
 
     </div>
 
   </div>
 </section>
 
-<!-- STICKY CTA -->
-<a href="https://wa.me/919702855005" class="sticky-cta">
-  💬 Chat Now
+<a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20Resources%20page%20and%20need%20help" class="sticky-cta">
+  💬 Get Leads Now
 </a>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-grid">
 
     <div>
-      <h4>SaXhamAI</h4>
+      <h4 style="color: #fff; margin-bottom: 15px;">SaXhamAI</h4>
       <p>Clarity-driven insights for Indian businesses.</p>
     </div>
 
     <div>
-      <h4>Services</h4>
-      <a href="https://saxhamai.com">SaXham Technologies</a>
-      <a href="/audit.html">Digital Audit</a>
+      <h4 style="color: #fff; margin-bottom: 15px;">Services</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 8px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
+        <li><a href="/audit.html">Digital Audit</a></li>
+      </ul>
     </div>
 
     <div>
-      <h4>Contact</h4>
-      <p>📧 founder@saxhamai.com</p>
+      <h4 style="color: #fff; margin-bottom: 15px;">Contact</h4>
+      <p style="margin-bottom: 8px;">📧 founder@saxhamai.com</p>
       <p>📍 Navi Mumbai</p>
     </div>
 
@@ -205,6 +276,31 @@
     © 2026 SaXhamAI | Powered by SaXham Technologies
   </p>
 </footer>
+
+<script>
+  // Dark Mode Logic with Memory & Icon Update
+  function toggleDark(){
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
+    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
+  }
+
+  // Check theme on page load & set correct icon
+  window.onload = function() {
+    if(localStorage.getItem("saxham_theme") === "dark"){
+      document.body.classList.add("dark-mode");
+      document.getElementById("theme-btn").innerText = "☀️";
+    }
+  };
+
+  // Progress Bar Logic
+  window.onscroll = function(){
+    let winScroll = document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%";
+  };
+</script>
 
 </body>
 </html>
