@@ -36,13 +36,23 @@
   </script>
 
   <style>
-    /* Specific HTML overrides for perfect mobile menu & lists */
+    /* Unbreakable Grid List for Perfect Alignment */
     .feature-list { list-style: none; padding: 0; margin-top: 15px; }
-    .feature-list li { margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: flex-start; gap: 10px; }
-    .feature-list li span { color: var(--text-main); }
-    .feature-list li strong { color: var(--primary-navy); }
+    .feature-list li { 
+      margin-bottom: 20px; 
+      font-size: 1.05rem; 
+      display: grid; 
+      grid-template-columns: 24px 1fr; /* Exact 24px for icon, rest for text */
+      gap: 12px; 
+      align-items: start; 
+      text-align: left;
+    }
+    .feature-list li span.text-content { color: var(--text-main); display: block; line-height: 1.5; }
+    .feature-list li strong { color: var(--primary-navy); font-family: 'Poppins', sans-serif; display: block; margin-bottom: 2px; }
     
-    body.dark-mode .feature-list li strong { color: #fff; }
+    /* Dark Mode Text Fixes for HTML elements */
+    body.dark-mode .feature-list li span.text-content { color: var(--text-gray); }
+    body.dark-mode .feature-list li strong { color: #ffffff; }
 
     /* Mobile Hamburger Menu Logic */
     @media (max-width: 768px) {
@@ -120,10 +130,22 @@
       
       <div class="cta-box" style="text-align: left; padding: 30px;">
         <ul class="feature-list">
-          <li>❌ <span><strong>Google shows wrong info:</strong> Customers think you are closed.</span></li>
-          <li>❌ <span><strong>WhatsApp replies are slow:</strong> They message your competitor.</span></li>
-          <li>❌ <span><strong>Website looks confusing:</strong> They bounce in 3 seconds.</span></li>
-          <li>❌ <span><strong>No trust after first interaction:</strong> Leads go cold fast.</span></li>
+          <li>
+            <span>❌</span>
+            <span class="text-content"><strong>Google shows wrong info:</strong> Customers think you are closed.</span>
+          </li>
+          <li>
+            <span>❌</span>
+            <span class="text-content"><strong>WhatsApp replies are slow:</strong> They message your competitor.</span>
+          </li>
+          <li>
+            <span>❌</span>
+            <span class="text-content"><strong>Website looks confusing:</strong> They bounce in 3 seconds.</span>
+          </li>
+          <li>
+            <span>❌</span>
+            <span class="text-content"><strong>No trust after first interaction:</strong> Leads go cold fast.</span>
+          </li>
         </ul>
 
         <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center;">
