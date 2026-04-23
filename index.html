@@ -39,10 +39,10 @@
     /* Unbreakable Grid List for Perfect Alignment */
     .feature-list { list-style: none; padding: 0; margin-top: 15px; }
     .feature-list li { 
-      margin-bottom: 20px; 
+      margin-bottom: 15px; 
       font-size: 1.05rem; 
       display: grid; 
-      grid-template-columns: 24px 1fr; /* Exact 24px for icon, rest for text */
+      grid-template-columns: 24px 1fr; 
       gap: 12px; 
       align-items: start; 
       text-align: left;
@@ -50,21 +50,21 @@
     .feature-list li span.text-content { color: var(--text-main); display: block; line-height: 1.5; }
     .feature-list li strong { color: var(--primary-navy); font-family: 'Poppins', sans-serif; display: block; margin-bottom: 2px; }
     
-    /* Dark Mode Text Fixes for HTML elements */
+    /* Dark Mode Text Fixes */
     body.dark-mode .feature-list li span.text-content { color: var(--text-gray); }
     body.dark-mode .feature-list li strong { color: #ffffff; }
 
     /* Mobile Hamburger Menu Logic */
     @media (max-width: 768px) {
       nav {
-        display: none !important; /* Hidden by default on mobile */
+        display: none !important; 
         flex-direction: column;
         width: 100%;
         background: var(--bg-white);
         padding: 15px 0;
       }
       nav.nav-active {
-        display: flex !important; /* Shown when toggled */
+        display: flex !important; 
       }
     }
   </style>
@@ -118,7 +118,7 @@
       </div>
 
       <p style="margin-top:25px; font-size: 0.85rem; color: var(--text-gray);">
-        Powered by <strong>SaXham Technologies</strong>
+        Powered by <strong style="color: var(--primary-navy);">SaXham Technologies</strong>
       </p>
     </div>
   </section>
@@ -163,7 +163,7 @@
       <div class="blog-grid">
         <article class="blog-card">
           <img src="assets/images/it-policy-reform.png" onerror="this.src='assets/images/default.png'" alt="IT Policy Blog" loading="lazy">
-          <div>
+          <div style="flex-grow: 1;">
             <h3 style="font-size: 1.15rem;">India’s IT Employees: Protection or Exploitation?</h3>
             <p style="font-size: 0.85rem; margin-bottom: 10px;">Policy • IT Industry</p>
             <p style="font-size: 0.95rem;">Understanding real issues faced by IT employees.</p>
@@ -173,7 +173,7 @@
 
         <article class="blog-card">
           <img src="assets/images/msme.png" onerror="this.src='assets/images/default.png'" alt="MSME Blog" loading="lazy">
-          <div>
+          <div style="flex-grow: 1;">
             <h3 style="font-size: 1.15rem;">MSME Digital Transformation</h3>
             <p style="font-size: 0.85rem; margin-bottom: 10px;">AI • Business</p>
             <p style="font-size: 0.95rem;">From manual paperwork systems to automation.</p>
@@ -183,7 +183,7 @@
 
         <article class="blog-card">
           <img src="assets/images/trust.png" onerror="this.src='assets/images/default.png'" alt="Trust Blog" loading="lazy">
-          <div>
+          <div style="flex-grow: 1;">
             <h3 style="font-size: 1.15rem;">Why Digital Trust Matters</h3>
             <p style="font-size: 0.85rem; margin-bottom: 10px;">Core Concept</p>
             <p style="font-size: 0.95rem;">The single most important concept for true business growth.</p>
@@ -199,7 +199,7 @@
   </section>
 
   <section class="section section-alt">
-    <div class="container">
+    <div class="container" style="max-width: 800px;">
       
       <div class="cta-box">
         <h2 style="margin-bottom: 15px; font-size: 2rem;">Want Real Results Instead of Reading?</h2>
@@ -219,7 +219,7 @@
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container" style="max-width: 800px;">
       <h3 style="text-align:center; font-size: 1.5rem; margin-bottom: 25px;">Explore Our Ecosystem</h3>
 
       <div class="cta-buttons">
