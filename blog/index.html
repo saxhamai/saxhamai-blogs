@@ -7,7 +7,7 @@
 
   <meta name="description" content="Actionable guides on IT operations, digital trust, Google visibility & WhatsApp conversion. Built for Indian businesses by SaXhamAI.">
   <meta name="keywords" content="IT blog India, digital trust, DevOps guides, business automation, Google visibility, WhatsApp business tips">
-  <meta name="author" content="Swapnil Kinjalkar">
+  <meta name="author" content="Nitin Pawar">
 
   <link rel="canonical" href="https://blog.saxhamai.com/blog/">
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -28,37 +28,36 @@
   </script>
 
   <style>
-    .muted { color: var(--text-light); font-size: 0.9rem; }
-    
-    /* Clean Nav Menu Fixes */
-    .nav-menu { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; }
-    
-    /* Audit Button Forced Visibility */
-    .nav-cta { 
-      padding: 8px 18px !important; 
-      font-size: 0.95rem !important; 
-      border-radius: 6px !important; 
-      background-color: var(--primary) !important; 
-      color: #ffffff !important; 
-      font-weight: 600 !important; 
-      text-decoration: none !important;
-      display: inline-flex !important;
-      align-items: center;
+    /* Unbreakable Grid List for Perfect Alignment */
+    .feature-list { list-style: none; padding: 0; margin-top: 15px; }
+    .feature-list li { 
+      margin-bottom: 15px; 
+      font-size: 1.05rem; 
+      display: grid; 
+      grid-template-columns: 24px 1fr; 
+      gap: 12px; 
+      align-items: start; 
+      text-align: left;
     }
-    .nav-cta:hover { background-color: var(--accent) !important; transform: translateY(-2px); }
+    .feature-list li span.text-content { color: var(--text-main); display: block; line-height: 1.5; }
+    .feature-list li strong { color: var(--primary-navy); font-family: 'Poppins', sans-serif; }
     
-    .promo-box { text-align: center; padding: 40px 30px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-white); transition: var(--transition); }
-    .promo-box:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-    
-    /* Dark Mode Fixes */
-    .dark-mode .promo-box { background: #0f172a; border-color: #334155; }
-    .dark-mode .muted { color: #94a3b8; }
+    /* Dark Mode Text Fixes */
+    body.dark-mode .feature-list li span.text-content { color: var(--text-gray); }
+    body.dark-mode .feature-list li strong { color: #ffffff; }
 
-    /* Mobile Visibility Fix */
+    /* Mobile Hamburger Menu Logic */
     @media (max-width: 768px) {
-      .nav-menu { flex-direction: column; gap: 12px; width: 100%; padding-top: 15px; }
-      .nav-cta { margin-left: 0 !important; width: auto; justify-content: center; }
-      .site-header .nav { flex-wrap: wrap; }
+      nav {
+        display: none !important; 
+        flex-direction: column;
+        width: 100%;
+        background: var(--bg-white);
+        padding: 15px 0;
+      }
+      nav.nav-active {
+        display: flex !important; 
+      }
     }
   </style>
 
@@ -69,40 +68,45 @@
 <div id="progress-bar"></div>
 
 <header class="site-header">
-  <div class="container nav" style="flex-wrap: wrap;">
+  <div class="nav">
+    
     <div class="logo">
-      <a href="/">SaXhamAI</a>
-      <span class="tagline">Blog</span>
+      <a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Blog</span></a>
     </div>
 
-    <nav class="nav-menu">
+    <div class="mobile-toggle" onclick="toggleMobileMenu()">
+      ☰
+    </div>
+
+    <nav id="mainNav">
       <a href="/">Home</a>
       <a href="/blog/" class="active">Blog</a>
       <a href="/resources.html">Resources</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
-      <a href="/audit.html" class="nav-cta" style="margin-left: 20px;">🔍 Audit</a>
+      <a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
+      
+      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer; margin-top: 2px;">
+        🌙
+      </button>
     </nav>
 
-    <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.3rem; cursor:pointer; margin-left:15px; transition: transform 0.3s ease;">
-      🌙
-    </button>
   </div>
 </header>
 
 <section class="section soft-bg">
-  <div class="container narrow" style="text-align: center;">
+  <div class="container" style="text-align: center; max-width: 800px;">
 
-    <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Practical IT & Business Guides</h1>
+    <h1 style="font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 20px;">Practical IT & Business Guides</h1>
 
-    <p style="font-size:1.2rem; max-width: 700px; margin: 0 auto;">
+    <p style="font-size: clamp(1.1rem, 2vw, 1.25rem); max-width: 700px; margin: 0 auto;">
       Real-world insights from IT operations, DevOps & business systems —
-      helping you fix visibility, <strong style="color: var(--accent);">improve conversions & build trust.</strong>
+      helping you fix visibility, <strong style="color: var(--accent-blue);">improve conversions & build trust.</strong>
     </p>
 
-    <div style="margin-top:35px;">
+    <div class="cta-buttons" style="margin-top:35px;">
       <a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20Blog%20Index%20and%20need%20help%20with%20my%20business"
-         class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 12px 25px;">
+         class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 14px 28px;">
          💬 Get Free Help on WhatsApp
       </a>
     </div>
@@ -115,22 +119,24 @@
 
     <h2 style="margin-bottom:30px; text-align: center; font-size: 2rem;">🔥 Featured Insight</h2>
 
-    <article class="blog-card" style="border: 2px solid var(--accent); box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);">
-      <img src="../assets/images/it-policy-reform.png" onerror="this.src='../assets/images/default.png'" alt="IT Employees India" loading="lazy">
+    <article class="blog-card" style="border: 2px solid var(--accent-blue); box-shadow: 0 10px 30px rgba(30, 98, 208, 0.1); max-width: 900px; margin: 0 auto;">
+      <img src="../assets/images/it-policy-reform.png" onerror="this.src='../assets/images/default.png'" alt="IT Employees India" loading="lazy" style="height: auto; max-height: 400px;">
       
-      <div style="margin-top: 15px;">
-        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">India’s IT Employees: Protection or Exploitation?</h3>
-        <p class="muted" style="margin-bottom: 15px;">Policy • IT Industry | <time datetime="2026-04-23">Apr 23, 2026</time></p>
+      <div style="padding: 30px; flex-grow: 1;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">India’s IT Employees: Protection or Exploitation?</h3>
+        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px;">Policy • IT Industry | <time datetime="2026-04-23">Apr 23, 2026</time></p>
 
-        <p style="font-size: 1.1rem; margin-bottom: 20px;">
+        <p style="font-size: 1.1rem; margin-bottom: 25px; color: var(--text-main);">
           A deep breakdown of layoffs, overtime pressure, poor management practices,
           and what policy reforms India actually needs.
         </p>
       </div>
 
-      <a href="it-employees-protection-exploitation-india.html" class="btn btn-outline" style="width: 100%; text-align: center;">
-        Read Full Analysis →
-      </a>
+      <div style="padding: 0 30px 30px;">
+        <a href="it-employees-protection-exploitation-india.html" class="btn btn-primary" style="width: 100%; text-align: center;">
+          Read Full Analysis →
+        </a>
+      </div>
 
     </article>
 
@@ -146,52 +152,52 @@
 
       <article class="blog-card">
         <img src="../assets/images/msme.png" onerror="this.src='../assets/images/default.png'" alt="MSME Transformation" loading="lazy">
-        <div>
-          <h3 style="margin-bottom: 10px;">MSME Digital Transformation</h3>
-          <p class="muted" style="margin-bottom: 10px;">AI • Business</p>
-          <p>How small businesses move from manual work to automation.</p>
+        <div style="flex-grow: 1; padding: 24px;">
+          <h3 style="margin-bottom: 10px; font-size: 1.2rem;">MSME Digital Transformation</h3>
+          <p style="color: var(--text-gray); font-size: 0.85rem; margin-bottom: 15px;">AI • Business</p>
+          <p style="color: var(--text-main); font-size: 0.95rem;">How small businesses move from manual work to automation.</p>
         </div>
-        <a href="paperwork-to-python-msme-transformation.html" style="margin-top: 15px;">Read Article →</a>
+        <a href="paperwork-to-python-msme-transformation.html" style="margin: 0 24px 24px; font-weight: 600;">Read Article →</a>
       </article>
 
       <article class="blog-card">
         <img src="../assets/images/trust.png" onerror="this.src='../assets/images/default.png'" alt="Digital Trust" loading="lazy">
-        <div>
-          <h3 style="margin-bottom: 10px;">Why Digital Trust Matters</h3>
-          <p class="muted" style="margin-bottom: 10px;">Core Concept</p>
-          <p>The hidden factor behind customer decisions & conversions.</p>
+        <div style="flex-grow: 1; padding: 24px;">
+          <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Why Digital Trust Matters</h3>
+          <p style="color: var(--text-gray); font-size: 0.85rem; margin-bottom: 15px;">Core Concept</p>
+          <p style="color: var(--text-main); font-size: 0.95rem;">The hidden factor behind customer decisions & conversions.</p>
         </div>
-        <a href="why-trust-matters.html" style="margin-top: 15px;">Read Article →</a>
+        <a href="why-trust-matters.html" style="margin: 0 24px 24px; font-weight: 600;">Read Article →</a>
       </article>
 
       <article class="blog-card">
         <img src="../assets/images/google-maps.png" onerror="this.src='../assets/images/default.png'" alt="Google Maps SEO" loading="lazy">
-        <div>
-          <h3 style="margin-bottom: 10px;">Google Maps Mistakes</h3>
-          <p class="muted" style="margin-bottom: 10px;">Local SEO</p>
-          <p>5 mistakes that silently kill your business visibility.</p>
+        <div style="flex-grow: 1; padding: 24px;">
+          <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Google Maps Mistakes</h3>
+          <p style="color: var(--text-gray); font-size: 0.85rem; margin-bottom: 15px;">Local SEO</p>
+          <p style="color: var(--text-main); font-size: 0.95rem;">5 mistakes that silently kill your business visibility.</p>
         </div>
-        <a href="google-maps-mistakes.html" style="margin-top: 15px;">Read Article →</a>
+        <a href="google-maps-mistakes.html" style="margin: 0 24px 24px; font-weight: 600;">Read Article →</a>
       </article>
 
       <article class="blog-card">
         <img src="../assets/images/whatsapp-biz.png" onerror="this.src='../assets/images/default.png'" alt="WhatsApp Business" loading="lazy">
-        <div>
-          <h3 style="margin-bottom: 10px;">WhatsApp Business Mistakes</h3>
-          <p class="muted" style="margin-bottom: 10px;">Trust • Communication</p>
-          <p>Why slow replies are costing you customers daily.</p>
+        <div style="flex-grow: 1; padding: 24px;">
+          <h3 style="margin-bottom: 10px; font-size: 1.2rem;">WhatsApp Business Mistakes</h3>
+          <p style="color: var(--text-gray); font-size: 0.85rem; margin-bottom: 15px;">Trust • Communication</p>
+          <p style="color: var(--text-main); font-size: 0.95rem;">Why slow replies are costing you customers daily.</p>
         </div>
-        <a href="whatsapp-business-mistakes-kill-trust.html" style="margin-top: 15px;">Read Article →</a>
+        <a href="whatsapp-business-mistakes-kill-trust.html" style="margin: 0 24px 24px; font-weight: 600;">Read Article →</a>
       </article>
 
       <article class="blog-card">
         <img src="../assets/images/website-trust.png" onerror="this.src='../assets/images/default.png'" alt="Website Trust" loading="lazy">
-        <div>
-          <h3 style="margin-bottom: 10px;">Website Trust Issues</h3>
-          <p class="muted" style="margin-bottom: 10px;">Conversion</p>
-          <p>Fix hidden trust gaps that reduce leads and sales.</p>
+        <div style="flex-grow: 1; padding: 24px;">
+          <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Website Trust Issues</h3>
+          <p style="color: var(--text-gray); font-size: 0.85rem; margin-bottom: 15px;">Conversion</p>
+          <p style="color: var(--text-main); font-size: 0.95rem;">Fix hidden trust gaps that reduce leads and sales.</p>
         </div>
-        <a href="website-trust-gaps.html" style="margin-top: 15px;">Read Article →</a>
+        <a href="website-trust-gaps.html" style="margin: 0 24px 24px; font-weight: 600;">Read Article →</a>
       </article>
 
     </div>
@@ -200,22 +206,22 @@
 </section>
 
 <section class="section">
-  <div class="container narrow" style="text-align:center;">
+  <div class="container" style="text-align:center; max-width: 800px;">
 
     <h2 style="margin-bottom: 20px; font-size: 2rem;">Why This Blog is Different</h2>
 
-    <p style="font-size: 1.15rem; max-width: 650px; margin: 0 auto; line-height: 1.8;">
+    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-gray);">
       Written from real experience in IT support, stock market infrastructure,
-      and DevOps environments — <strong style="color: var(--accent);">not generic theory.</strong>
+      and DevOps environments — <strong style="color: var(--primary-navy);">not generic theory.</strong>
     </p>
 
   </div>
 </section>
 
-<section class="section soft-bg">
-  <div class="container narrow">
+<section class="section section-alt">
+  <div class="container" style="max-width: 800px;">
 
-    <div class="promo-box">
+    <div class="cta-box">
 
       <h2 style="margin-bottom: 15px; font-size: 2rem;">Reading is good. Fixing is better.</h2>
 
@@ -224,7 +230,7 @@
         we can help you solve them fast.
       </p>
 
-      <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+      <div class="cta-buttons">
         <a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20Blog%20Index%20and%20need%20expert%20help"
            class="btn btn-whatsapp">
            💬 Talk to an Expert
@@ -244,37 +250,43 @@
   💬 Get Leads Now
 </a>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-
-    <div>
-      <h4 style="color: #fff; margin-bottom: 15px;">SaXhamAI</h4>
+<footer>
+  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+    
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-bottom: 15px;">SaXhamAI</h3>
       <p>Clarity-driven insights for Indian businesses.</p>
     </div>
 
-    <div>
-      <h4 style="color: #fff; margin-bottom: 15px;">Services</h4>
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-bottom: 15px;">Services</h3>
       <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 8px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
+        <li style="margin-bottom: 10px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
         <li><a href="/audit.html">Digital Audit</a></li>
       </ul>
     </div>
 
-    <div>
-      <h4 style="color: #fff; margin-bottom: 15px;">Contact</h4>
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="margin-bottom: 15px;">Contact</h3>
       <p style="margin-bottom: 8px;">📧 founder@saxhamai.com</p>
-      <p>📍 Navi Mumbai</p>
+      <p>📍 Navi Mumbai, Maharashtra</p>
     </div>
 
   </div>
 
-  <p class="copyright">
-    © 2026 SaXhamAI | Built with real IT experience
-  </p>
+  <div class="container" style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <p style="margin: 0;">© 2026 SaXhamAI | Powered by SaXham Technologies</p>
+  </div>
 </footer>
 
 <script>
-  // Dark Mode Logic with Memory & Icon Update
+  // Hamburger Menu Logic added successfully
+  function toggleMobileMenu() {
+    const nav = document.getElementById("mainNav");
+    nav.classList.toggle("nav-active");
+  }
+
+  // Dark Mode Logic
   function toggleDark(){
     document.body.classList.toggle("dark-mode");
     const isDark = document.body.classList.contains("dark-mode");
@@ -282,7 +294,7 @@
     document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
   }
 
-  // Check theme on page load & set correct icon
+  // Check theme on page load
   window.onload = function() {
     if(localStorage.getItem("saxham_theme") === "dark"){
       document.body.classList.add("dark-mode");
