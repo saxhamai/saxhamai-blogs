@@ -2,79 +2,153 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact | Digital Trust Audit | SaXham Technologies</title>
+  <title>Contact | Get More Leads for Your Business</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Contact SaXham Technologies for Digital Trust Audit. Fix Google visibility, WhatsApp response and increase conversions.">
-  <meta name="author" content="Nitin Pawar">
+  <meta name="description" content="Contact SaXham Technologies to fix Google visibility, WhatsApp response and increase business leads.">
+  <meta name="author" content="Swapnil Kinjalkar">
 
   <link rel="canonical" href="https://blog.saxhamai.com/contact.html">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <meta property="og:title" content="Contact SaXham Technologies | Fix Business Trust">
+  <meta property="og:description" content="Get fast, practical solutions to fix your business trust and increase conversions today.">
+  <meta property="og:image" content="https://blog.saxhamai.com/assets/images/trust.png">
+  <meta property="og:type" content="website">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B22TGFQD60');
+  </script>
+
+  <style>
+    .muted { color: var(--text-light); font-size: 0.9rem; }
+    
+    /* Clean Nav Menu Fixes */
+    .nav-menu { display: flex; align-items: center; flex-wrap: wrap; justify-content: center; }
+    
+    /* Audit Button Forced Visibility */
+    .nav-cta { 
+      padding: 8px 18px !important; 
+      font-size: 0.95rem !important; 
+      border-radius: 6px !important; 
+      background-color: var(--primary) !important; 
+      color: #ffffff !important; 
+      font-weight: 600 !important; 
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center;
+    }
+    .nav-cta:hover { background-color: var(--accent) !important; transform: translateY(-2px); }
+    
+    /* Premium List Styling */
+    .feature-list { list-style: none; padding: 0; margin-top: 15px; }
+    .feature-list li { margin-bottom: 12px; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
+    
+    .promo-box { text-align: center; padding: 40px 30px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-white); transition: var(--transition); }
+    .promo-box:hover { border-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    
+    /* 2 Column Flex Layout */
+    .flex-grid { display: flex; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+    .flex-col { flex: 1 1 300px; background: var(--bg-white); padding: 25px; border-radius: 10px; border: 1px solid var(--border); box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+    
+    /* Trust Alert Box Styling */
+    .alert-box { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 20px; border-radius: 0 8px 8px 0; color: #b45309; font-size: 1.1rem; text-align: center; }
+    
+    /* Dark Mode Fixes */
+    .dark-mode .promo-box, .dark-mode .flex-col { background: #0f172a; border-color: #334155; }
+    .dark-mode .alert-box { background: #451a03; color: #fde68a; border-color: #d97706; }
+    .dark-mode .muted { color: #94a3b8; }
+
+    /* Mobile Visibility Fix */
+    @media (max-width: 768px) {
+      .nav-menu { flex-direction: column; gap: 12px; width: 100%; padding-top: 15px; }
+      .nav-cta { margin-left: 0 !important; width: auto; justify-content: center; }
+      .site-header .nav { flex-wrap: wrap; }
+    }
+  </style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
+<div id="progress-bar"></div>
+
 <header class="site-header">
-  <div class="container nav">
+  <div class="container nav" style="flex-wrap: wrap;">
     <div class="logo">
       <a href="/">SaXhamAI</a>
       <span class="tagline">Contact</span>
     </div>
 
-    <nav>
+    <nav class="nav-menu">
       <a href="/">Home</a>
       <a href="/blog/">Blog</a>
       <a href="/resources.html">Resources</a>
       <a href="/about.html">About</a>
       <a href="/contact.html" class="active">Contact</a>
+      <a href="/audit.html" class="nav-cta" style="margin-left: 20px;">🔍 Audit</a>
     </nav>
+
+    <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.3rem; cursor:pointer; margin-left:15px; transition: transform 0.3s ease;">
+      🌙
+    </button>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="section soft-bg">
-  <div class="container narrow">
-    <h1>Get Your Business Fixed 🚀</h1>
+  <div class="container narrow" style="text-align: center;">
 
-    <p style="font-size:1.15rem;">
-      If your calls are dropping, WhatsApp is silent, or customers are not converting —
+    <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Get More Calls & Leads <br><span style="color: var(--accent);">For Your Business</span></h1>
+
+    <p style="font-size:1.2rem; max-width: 600px; margin: 0 auto;">
+      If your business is online but not converting —  
       <strong>we will fix it.</strong>
     </p>
 
-    <p class="muted">
-      Service provided by <strong>SaXham Technologies</strong>
+    <div style="margin-top:35px;">
+      <a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20Contact%20page%20and%20need%20help"
+         class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 12px 25px;">
+        💬 Start on WhatsApp
+      </a>
+    </div>
+
+    <p class="muted" style="margin-top:20px;">
+      Service by <strong style="color: var(--text-main);">SaXham Technologies</strong>
     </p>
+
   </div>
 </section>
 
-<!-- MAIN CTA -->
 <section class="section">
   <div class="container narrow">
 
-    <div class="cta-box">
+    <div class="promo-box">
 
-      <h2>Talk to Expert Now</h2>
+      <h2 style="margin-bottom: 15px; font-size: 2rem;">Talk Directly with an Expert</h2>
 
-      <p>
-        Fastest way to start → WhatsApp
+      <p style="font-size: 1.1rem; margin-bottom: 30px;">
+        Fastest way to fix your business issues → <strong>WhatsApp</strong>
       </p>
 
-      <!-- WHATSAPP -->
-      <a href="https://wa.me/919702855005?text=Hi%20I%20want%20Digital%20Trust%20Audit"
-         class="btn btn-whatsapp audit-cta">
-        💬 Chat on WhatsApp
-      </a>
+      <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
 
-      <br><br>
+        <a href="https://wa.me/919702855005?text=Hi%20I%20want%20help%20for%20my%20business"
+           class="btn btn-whatsapp audit-cta">
+          💬 Chat on WhatsApp
+        </a>
 
-      <!-- CALL -->
-      <a href="tel:+919702855005" class="btn btn-primary audit-cta">
-        📞 Call Now
-      </a>
+        <a href="tel:+919702855005" class="btn btn-primary audit-cta">
+          📞 Call Now
+        </a>
 
-      <p class="muted" style="margin-top:10px;">
-        ⚡ Instant response • No confusion • Direct support
+      </div>
+
+      <p class="muted" style="margin-top:20px; font-weight: 500;">
+        ⚡ Instant response • Practical solutions • No confusion
       </p>
 
     </div>
@@ -82,29 +156,30 @@
   </div>
 </section>
 
-<!-- DETAILS -->
 <section class="section soft-bg">
   <div class="container narrow">
 
-    <h2 style="text-align:center;">What We Help You Fix</h2>
+    <h2 style="text-align:center; font-size: 2rem; margin-bottom: 10px;">What We Fix for You</h2>
 
-    <div class="cols-2" style="margin-top:2rem;">
+    <div class="flex-grid">
 
-      <div>
-        <ul>
-          <li>✅ Google Maps errors</li>
-          <li>✅ WhatsApp setup & replies</li>
-          <li>✅ Website trust issues</li>
-          <li>✅ Customer conversion gaps</li>
+      <div class="flex-col">
+        <h3 style="color: #ef4444; margin-bottom: 15px; text-align: center;">Before SaXhamAI</h3>
+        <ul class="feature-list">
+          <li>❌ <span>Google shows wrong info</span></li>
+          <li>❌ <span>WhatsApp replies are slow</span></li>
+          <li>❌ <span>Website looks confusing</span></li>
+          <li>❌ <span>Customers don’t trust you</span></li>
         </ul>
       </div>
 
-      <div>
-        <ul>
-          <li>📄 Clear audit report</li>
-          <li>🛠️ Practical fixes</li>
-          <li>🚀 Growth-focused system</li>
-          <li>💼 Business-ready setup</li>
+      <div class="flex-col">
+        <h3 style="color: #22c55e; margin-bottom: 15px; text-align: center;">After SaXhamAI</h3>
+        <ul class="feature-list">
+          <li>✅ <span>More calls & inquiries</span></li>
+          <li>✅ <span>Faster response system</span></li>
+          <li>✅ <span>Clear digital presence</span></li>
+          <li>✅ <span>Better conversion rate</span></li>
         </ul>
       </div>
 
@@ -113,57 +188,72 @@
   </div>
 </section>
 
-<!-- TRUST NOTE -->
 <section class="section">
   <div class="container narrow">
 
     <div class="alert-box">
-      ⚠️ This is not for everyone.  
-      Only for serious business owners who want real results.
+      ⚠️ <strong>Only for serious business owners who want real results.</strong><br>
+      <span style="font-size: 0.95rem;">Not for timepass or free consultation.</span>
     </div>
 
   </div>
 </section>
 
-<!-- SOCIAL -->
 <section class="section soft-bg">
   <div class="container narrow" style="text-align:center;">
 
-    <h3>Follow & Connect</h3>
+    <h3 style="margin-bottom: 25px; font-size: 1.5rem;">Connect With Us</h3>
 
-    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:15px;">
-      <a href="https://www.linkedin.com/company/saxhamai/" target="_blank" class="ecosystem-btn">LinkedIn</a>
-      <a href="https://instagram.com/saxham.ai" target="_blank" class="ecosystem-btn">Instagram</a>
-      <a href="https://github.com/saxhamai" target="_blank" class="ecosystem-btn">GitHub</a>
-      <a href="https://youtube.com/@saxhamai" target="_blank" class="ecosystem-btn">YouTube</a>
+    <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://www.linkedin.com/company/saxhamai/" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://instagram.com/saxham.ai" target="_blank" class="btn btn-outline">Instagram</a>
+      <a href="https://github.com/saxhamai" target="_blank" class="btn btn-outline">GitHub</a>
+      <a href="https://youtube.com/@saxhamai" target="_blank" class="btn btn-outline">YouTube</a>
     </div>
 
   </div>
 </section>
 
-<!-- STICKY CTA -->
-<a href="https://wa.me/919702855005" class="sticky-cta">
-  💬 Chat Now
+<section class="section">
+  <div class="container narrow">
+
+    <div class="promo-box" style="border-color: var(--accent);">
+
+      <h2 style="margin-bottom: 20px;">Ready to Fix Your Business?</h2>
+
+      <a href="https://wa.me/919702855005?text=Hi%20I%20am%20ready%20to%20fix%20my%20business%20presence"
+         class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 12px 25px;">
+        💬 Get Started Now
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20your%20Contact%20page%20and%20need%20help" class="sticky-cta">
+  💬 Get Leads Now
 </a>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container footer-grid">
 
     <div>
-      <h4>SaXhamAI</h4>
+      <h4 style="color: #fff; margin-bottom: 15px;">SaXhamAI</h4>
       <p>Clarity-driven insights for Indian businesses.</p>
     </div>
 
     <div>
-      <h4>Business Services</h4>
-      <a href="https://saxhamai.com">SaXham Technologies</a>
-      <a href="/audit.html">Digital Audit</a>
+      <h4 style="color: #fff; margin-bottom: 15px;">Services</h4>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 8px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
+        <li><a href="/audit.html">Digital Audit</a></li>
+      </ul>
     </div>
 
     <div>
-      <h4>Contact</h4>
-      <p>📧 founder@saxhamai.com</p>
+      <h4 style="color: #fff; margin-bottom: 15px;">Contact</h4>
+      <p style="margin-bottom: 8px;">📧 founder@saxhamai.com</p>
       <p>📍 Navi Mumbai</p>
     </div>
 
@@ -173,6 +263,31 @@
     © 2026 SaXhamAI | Powered by SaXham Technologies
   </p>
 </footer>
+
+<script>
+  // Dark Mode Logic with Memory & Icon Update
+  function toggleDark(){
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
+    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
+  }
+
+  // Check theme on page load & set correct icon
+  window.onload = function() {
+    if(localStorage.getItem("saxham_theme") === "dark"){
+      document.body.classList.add("dark-mode");
+      document.getElementById("theme-btn").innerText = "☀️";
+    }
+  };
+
+  // Progress Bar Logic
+  window.onscroll = function(){
+    let winScroll = document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%";
+  };
+</script>
 
 </body>
 </html>
