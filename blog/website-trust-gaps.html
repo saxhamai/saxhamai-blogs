@@ -2,19 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Website Is Live, But Customers Still Don’t Trust You | SaXhamAI</title>
+  <title>Your Website Is Live, But No Trust? | SaXhamAI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Website live but no calls? Learn why Indian customers don't trust generic websites and how to fix design, content, and consistency gaps.">
   <meta name="author" content="Nitin Pawar">
-  <meta name="keywords" content="website trust India, website no calls, digital trust gaps, business website mistakes India">
 
   <link rel="canonical" href="https://blog.saxhamai.com/blog/website-trust-gaps.html">
-
+  
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
   <link rel="apple-touch-icon" href="../assets/images/favicon.png">
 
   <link rel="stylesheet" href="../assets/css/style.css">
+
+  <meta property="og:title" content="Your Website Is Live, But Customers Still Don’t Trust You">
+  <meta property="og:description" content="Why traffic doesn't convert into calls for Indian businesses due to trust gaps.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://blog.saxhamai.com/assets/images/Website-live-customer-no-trust.png">
+  <meta property="article:published_time" content="2026-01-07">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
   <script>
@@ -24,373 +29,134 @@
     gtag('config', 'G-B22TGFQD60');
   </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Track WhatsApp Clicks
-      document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(el){
-        el.addEventListener("click", function(){
-          gtag('event', 'whatsapp_click', {
-            'page_path': window.location.pathname,
-            'link_type': 'blog_body'
-          });
-        });
-      });
-
-      // Track Audit/CTA Clicks
-      document.querySelectorAll('a[href*="audit.html"]').forEach(function(el){
-        el.addEventListener("click", function(){
-          gtag('event', 'audit_cta_click', {
-            'page_path': window.location.pathname,
-            'intent': 'high'
-          });
-        });
-      });
-    });
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Your Website Is Live, But Customers Still Don’t Trust You",
-    "description": "Why website traffic doesn't convert into calls for Indian businesses due to trust gaps.",
-    "author": {
-      "@type": "Person",
-      "name": "Nitin Pawar"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "SaXhamAI",
-      "url": "https://saxhamai.com"
-    },
-    "datePublished": "2026-01-07",
-    "dateModified": "2026-01-07",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://blog.saxhamai.com/blog/website-trust-gaps.html"
-    }
-  }
-  </script>
-
   <style>
-    /* Unbreakable Grid List for Perfect Alignment */
-    .feature-list { list-style: none; padding: 0; margin-top: 15px; margin-bottom: 25px; }
+    /* Premium Article UI */
+    .article-header { padding: 60px 0 40px; }
+    .feature-list { list-style: none; padding: 0; margin: 25px 0; }
     .feature-list li { 
-      margin-bottom: 12px; 
-      font-size: 1.05rem; 
+      margin-bottom: 15px; 
       display: grid; 
       grid-template-columns: 24px 1fr; 
       gap: 12px; 
       align-items: start; 
-      text-align: left;
     }
-    .feature-list li span.text-content { color: var(--text-main); display: block; line-height: 1.6; }
+    .article-content h2 { font-size: 2rem; margin: 3.5rem 0 1.5rem; color: var(--primary-navy); border-left: 5px solid var(--accent-blue); padding-left: 15px; }
+    .article-content h3 { font-size: 1.4rem; margin: 2rem 0 1rem; color: var(--primary-navy); }
+    .article-content p { font-size: 1.15rem; line-height: 1.8; margin-bottom: 1.5rem; }
     
-    /* Article Specific Styling for Readability */
-    .article-content h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--primary-navy); }
-    .article-content h3 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.8rem; color: var(--primary-navy); }
-    .article-content p { font-size: 1.1rem; margin-bottom: 1.25rem; color: var(--text-main); line-height: 1.8; }
+    .status-box { background: rgba(30, 98, 208, 0.05); padding: 30px; border-radius: 12px; border: 1px solid var(--border); margin: 30px 0; }
     
-    /* Dark Mode Text Fixes */
-    body.dark-mode .feature-list li span.text-content { color: var(--text-main); }
-    body.dark-mode .article-content h2, body.dark-mode .article-content h3 { color: #ffffff; }
-
-    /* Mobile Hamburger Menu Logic */
-    @media (max-width: 768px) {
-      nav {
-        display: none !important; 
-        flex-direction: column;
-        width: 100%;
-        background: var(--bg-white);
-        padding: 15px 0;
-      }
-      nav.nav-active {
-        display: flex !important; 
-      }
-    }
+    body.dark-mode .article-content h2, body.dark-mode .article-content h3 { color: white; }
+    body.dark-mode .status-box { background: #1e293b; }
   </style>
-
 </head>
 
 <body>
-
 <div id="progress-bar"></div>
 
 <header class="site-header">
   <div class="nav">
-    
-    <div class="logo">
-      <a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Blog</span></a>
-    </div>
-
-    <div class="mobile-toggle" onclick="toggleMobileMenu()">
-      ☰
-    </div>
-
+    <div class="logo"><a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Strategic Blog</span></a></div>
+    <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
     <nav id="mainNav">
-      <a href="/">Home</a>
-      <a href="/blog/" class="active">Blog</a>
-      <a href="/resources.html">Resources</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
-      
-      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer; margin-top: 2px;">
-        🌙
-      </button>
+      <a href="/">Home</a><a href="/blog/">All Articles</a><a href="/resources.html">Resources</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
+      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
     </nav>
-
   </div>
 </header>
 
-<main>
-  <article class="section" itemscope itemtype="https://schema.org/BlogPosting">
-    <div class="container narrow" style="max-width: 800px; margin: 0 auto; padding: 0 15px;">
+<main class="section">
+  <div class="container" style="max-width: 850px; margin: 0 auto;">
+    
+    <p style="margin-bottom: 30px;"><a href="/blog/" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">← Back to All Articles</a></p>
 
-      <p style="margin-bottom: 2rem;">
-        <a href="/blog/" style="color: var(--text-gray); font-size: 0.95rem; font-weight: 500;">← Back to All Articles</a>
-      </p>
+    <header class="article-header">
+      <span style="text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--accent-blue); font-size: 0.85rem;">WEB PRESENCE • DIGITAL TRUST</span>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.2; margin-top: 15px;">Your Website Is Live, But Customers Still Don’t Trust You — Here’s Why</h1>
+      <div style="margin-top: 25px; display: flex; align-items: center; gap: 15px; color: var(--text-gray); font-size: 0.95rem;">
+        <img src="../assets/images/favicon.png" alt="Nitin Pawar" style="width: 40px; height: 40px; border-radius: 50%;">
+        <div>By <strong>Nitin Pawar</strong> • Jan 07, 2026 • 7 min read</div>
+      </div>
+    </header>
 
-      <header style="margin-bottom: 2.5rem;">
-        <span style="background: var(--border); color: var(--text-main); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">
-          Web Presence
-        </span>
-        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-top: 1rem; color: var(--primary-navy); line-height: 1.3;" itemprop="headline">
-          Your Website Is Live, But Customers Still Don’t Trust You — Here’s Why
-        </h1>
-        <p style="color: var(--text-gray); font-size: 0.95rem; margin-top: 15px;">
-          Published on <time datetime="2026-01-07" itemprop="datePublished">Jan 07, 2026</time> • By <span itemprop="author" style="font-weight: 600;">Nitin Pawar</span>
-        </p>
-      </header>
+    <div class="article-content">
+      <img src="../assets/images/Website-live-customer-no-trust.png" onerror="this.src='../assets/images/default.png'" alt="Website Trust Gaps" style="width: 100%; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
 
-      <div class="article-content" itemprop="articleBody">
+      <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-blue); line-height: 1.5;">“We built the website, but we aren't getting any calls.”</p>
 
-        <img src="../assets/images/Website-live-customer-no-trust.png" onerror="this.src='../assets/images/Website-live-customer-no-trust.png'"   
-             alt="Website Trust Issues India"   
-             loading="lazy"  
-             style="width: 100%; display: block; margin: 1.5rem auto 2.5rem auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+      <p>I hear this every week from Indian business owners. Once the website is live, the expectation is simple: calls should start coming. But the reason for the silence isn't a lack of traffic—<strong>it is a lack of trust.</strong></p>
 
-        <p style="font-size: 1.25rem; font-weight: 600; color: var(--primary-navy);">
-          “We built the website, but we aren't getting any calls.”
-        </p>
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 3rem 0;">
 
-        <p>
-          I hear this every week from Indian business owners — shop owners, service providers, clinics, and consultants.
-          Once the website is live, the expectation is simple:
-          <em style="color: var(--text-gray);">“Now we look professional, so the calls should start coming.”</em>
-        </p>
+      <h2>Website ≠ Trust</h2>
+      <p>Having a website is a starting point, not proof of credibility. For a customer, your website must answer one specific question: <em>“Is this business real, reliable, and safe to deal with?”</em> If the answer isn't immediately clear, the customer simply clicks on the next Google result.</p>
 
-        <p>
-          But the reality is different. Calls don't come. WhatsApp remains silent.
-          And the reason isn't traffic — <strong style="color: var(--primary-navy);">it is trust.</strong>
-        </p>
-
-        <hr style="border:0; border-top:1px solid var(--border); margin:3rem 0;">
-
-        <h2>Website ≠ Trust (The Biggest Misunderstanding)</h2>
-        <p>
-          Having a website is a starting point, not proof of credibility.
-          For a customer, your website serves to answer only one specific question:
-        </p>
-
-        <div class="cta-box" style="text-align: center; padding: 25px; border-left: 4px solid var(--accent-blue); margin: 2rem 0;">
-          <em style="font-size: 1.2rem; color: var(--primary-navy); font-weight: 500;">
-            “Is this business real, reliable, and safe to deal with?”
-          </em>
-        </div>
-
-        <p>
-          If the answer isn't immediately clear, the customer doesn't complain.
-          They simply click on the next Google result.
-        </p>
-
-        <h2>The First 50 Milliseconds Rule</h2>
-        <p>
-          Studies show that people judge a website within 50 milliseconds.
-          If the design is confusing, slow on mobile, or the text is cluttered — the brain instantly signals: <strong style="color: #dc2626;">“Something feels off.”</strong>
-        </p>
-        <p>
-          Even if your services are genuine, the first impression of your website can break trust immediately.
-        </p>
-
-        <h2>The Silent Trust Killer: Consistency Mismatch</h2>
-        <p>
-          This is where most Indian businesses fail. Here is a common scenario:
-        </p>
-
-        <div class="cta-box" style="text-align: left; padding: 25px; border-left: 4px solid #dc2626; margin: 2rem 0;">
-          <ul class="feature-list" style="margin-bottom: 0;">
-            <li><span>📌</span><span class="text-content"><strong>Google Maps Name:</strong> SaXham Technologies, Panvel</span></li>
-            <li><span>📌</span><span class="text-content"><strong>Website Header:</strong> TSI Services – Navi Mumbai</span></li>
-            <li><span>📌</span><span class="text-content"><strong>WhatsApp Profile:</strong> A festival photo or personal selfie</span></li>
-            <li><span>📌</span><span class="text-content"><strong>Phone Number:</strong> One number on the site, a different one on Google</span></li>
-          </ul>
-        </div>
-
-        <p>
-          The customer immediately wonders: <em style="color: var(--text-gray);">“Is this the same business or are these different people?”</em>
-          And that’s it. Trust is broken.
-        </p>
-        <p>
-          Google research and local SEO audits show that nearly <strong>60–70% of users avoid a business</strong> when contact details are inconsistent.
-        </p>
-
-        <h2>Website Design Signals That Scream “Trust”</h2>
-        <p><strong>Trust-building signals:</strong></p>
-        <ul class="feature-list">
-          <li><span>✅</span><span class="text-content">Fast loading speed (especially on mobile)</span></li>
-          <li><span>✅</span><span class="text-content">Clean layout with readable text</span></li>
-          <li><span>✅</span><span class="text-content">Clear Call / WhatsApp buttons</span></li>
-          <li><span>✅</span><span class="text-content">HTTPS security (the lock icon)</span></li>
-          <li><span>✅</span><span class="text-content">Real address & phone number clearly visible</span></li>
+      <h2>The Silent Trust Killer: Consistency Mismatch</h2>
+      <p>This is where most Indian businesses fail. Imagine this scenario:</p>
+      <div class="status-box">
+        <ul class="feature-list" style="margin: 0;">
+          <li><span>📌</span><span class="text-content"><strong>Google Maps:</strong> SaXham Technologies</span></li>
+          <li><span>📌</span><span class="text-content"><strong>Website Header:</strong> TSI Services</span></li>
+          <li><span>📌</span><span class="text-content"><strong>WhatsApp:</strong> A personal selfie profile</span></li>
+          <li><span>📌</span><span class="text-content"><strong>Phone:</strong> Different numbers on site and Google</span></li>
         </ul>
+      </div>
+      <p>The customer immediately wonders if this is the same business. Trust is broken in seconds. Research shows that nearly <strong>70% of users avoid a business</strong> when contact details are inconsistent.</p>
 
-        <p><strong>Red flags that destroy trust:</strong></p>
-        <ul class="feature-list">
-          <li><span>❌</span><span class="text-content">Stock photos (foreign people, fake offices)</span></li>
-          <li><span>❌</span><span class="text-content">Only an email address on the contact page</span></li>
-          <li><span>❌</span><span class="text-content">No "About Us" page</span></li>
-          <li><span>❌</span><span class="text-content">Outdated content or broken links</span></li>
+      <h2>Aesthetic Signals That Scream “Trust”</h2>
+      <ul class="feature-list">
+        <li><span>✅</span><span class="text-content"><strong>Speed:</strong> Loads within 3 seconds on mobile.</span></li>
+        <li><span>✅</span><span class="text-content"><strong>Security:</strong> HTTPS (the lock icon) is active.</span></li>
+        <li><span>✅</span><span class="text-content"><strong>Clarity:</strong> Clear Call / WhatsApp buttons above the fold.</span></li>
+        <li><span>✅</span><span class="text-content"><strong>Realism:</strong> Real shop or team photos instead of stock images.</span></li>
+      </ul>
+
+      <h2>The India-Specific Context</h2>
+      <p>Indian buyers expect clear phone numbers and familiar payment options. A bare-bones, template-based website often gives off a "scam vibe." They need to know if you are actually in their area and if someone will pick up when they call.</p>
+
+      <div style="background: var(--bg-light); padding: 35px; border-radius: 12px; margin: 40px 0;">
+        <h3 style="margin-top:0;">1-Hour Trust Audit</h3>
+        <ul class="feature-list" style="margin-bottom:0;">
+          <li><span>1️⃣</span><span class="text-content">Does the phone number match Google Maps exactly?</span></li>
+          <li><span>2️⃣</span><span class="text-content">Is the address format identical across all platforms?</span></li>
+          <li><span>3️⃣</span><span class="text-content">Is the WhatsApp button clearly visible on mobile?</span></li>
+          <li><span>4️⃣</span><span class="text-content">Do you have real photos of your workplace?</span></li>
         </ul>
-
-        <h2>India-Specific Trust Gaps</h2>
-        <p>
-          Indian customers are unique. For them, trust isn't just about design.
-          They think: <em style="color: var(--text-gray);">“Is this business actually in my area? Will someone pick up if I call?”</em>
-        </p>
-        <p>
-          Indian buyers expect clear phone numbers, familiar payment options (like UPI), and photos of the real shop or team.
-          A bare-bones, template-based website often gives off a "scam vibe" in this market.
-        </p>
-
-        <h2>7 Trust Signals Missing on Most SME Websites</h2>
-        <p>Quick checklist:</p>
-        <ul class="feature-list">
-          <li><span>❌</span><span class="text-content">WhatsApp button above the fold (top of page)</span></li>
-          <li><span>❌</span><span class="text-content">Real shop or team photos</span></li>
-          <li><span>❌</span><span class="text-content">Testimonials or social proof</span></li>
-          <li><span>❌</span><span class="text-content">Consistent details across Google, Website, and WhatsApp</span></li>
-          <li><span>❌</span><span class="text-content">HTTPS security & payment trust badges</span></li>
-          <li><span>❌</span><span class="text-content">Clear services & pricing structure</span></li>
-          <li><span>❌</span><span class="text-content">Fast mobile experience</span></li>
-        </ul>
-
-        <p>
-          If even 3–4 of these are missing, your website is leaking trust.
-        </p>
-
-        <h2>1-Hour Website Trust Audit (Do This Today)</h2>
-        <ul class="feature-list">
-          <li><span>1️⃣</span><span class="text-content">Does the phone number on your website match Google Maps exactly?</span></li>
-          <li><span>2️⃣</span><span class="text-content">Is the address format the same everywhere?</span></li>
-          <li><span>3️⃣</span><span class="text-content">Is the WhatsApp button clearly visible?</span></li>
-          <li><span>4️⃣</span><span class="text-content">Does the page load within 3 seconds on mobile?</span></li>
-          <li><span>5️⃣</span><span class="text-content">Does the website look like a real local business?</span></li>
-        </ul>
-
-        <p>
-          If the answers are unclear — the problem isn't the website, it's the alignment.
-        </p>
-
-        <hr style="border:0; border-top:1px solid var(--border); margin:3.5rem 0;">
-
-        <h3 style="font-size: 1.6rem; color: var(--primary-navy); margin-bottom: 1rem;">Final Truth</h3>
-        <p>
-          Getting a website live is an achievement. But keeping trust live is what generates revenue.
-          Customers in India compare, cross-check, and move on without saying a word.
-        </p>
-
-        <div class="cta-box" style="margin-top:3.5rem; text-align: center; border-color: var(--accent-blue); padding: 40px 30px;">
-          <h3 style="margin-bottom:15px; font-size: 1.8rem;">Losing Calls Even After Launching Your Website?</h3>
-          <p style="margin-bottom:25px; font-size: 1.1rem; color: var(--text-gray);">
-            The problem is rarely traffic. It is usually trust gaps between your website, Google, and WhatsApp.
-            Our Digital Trust Audit identifies these gaps instantly.
-          </p>
-          <div class="cta-buttons">
-            <a href="../audit.html" class="btn btn-primary" style="padding:14px 28px; font-size: 1.05rem;">
-               🔍 Request a Consistency Audit
-            </a>
-          </div>
-        </div>
-
       </div>
 
-      <div style="margin-top: 4rem; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border);">
-        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 10px;">Read Next Article</p>
-        <h4 style="font-size: 1.3rem;">
-          <a href="why-fast-replies-matter-more-than-discounts.html" style="color: var(--accent-blue);">
-            Why Fast Replies Matter More Than Discounts →
-          </a>
-        </h4>
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 4rem 0;">
+
+      <h2>Final Truth</h2>
+      <p>Getting a website live is an achievement, but keeping trust live is what generates revenue. Customers in India cross-check everything and move on without saying a word if they feel hesitant.</p>
+
+      <div class="cta-box" style="text-align: center; background: var(--primary-navy); color: white; border: none; padding: 50px 30px; margin-top: 5rem; border-radius: 20px;">
+        <h3 style="color: white; margin-bottom: 15px;">Losing Leads Despite Having a Site?</h3>
+        <p style="margin-bottom: 30px; opacity: 0.9;">The problem is rarely traffic. It's usually trust gaps between your digital footprints. Let us identify them instantly.</p>
+        <a href="../audit.html" class="btn btn-primary" style="background: white; color: var(--primary-navy); padding: 16px 32px; font-weight: 700;">🔍 Request a Consistency Audit</a>
       </div>
 
     </div>
-  </article>
+
+    <div style="margin-top: 60px; padding: 40px 0; border-top: 1px solid var(--border); text-align: center;">
+      <p style="color: var(--text-gray); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Read Next Article</p>
+      <h4 style="font-size: 1.5rem; margin-top: 15px;"><a href="why-fast-replies-matter-more-than-discounts.html" style="color: var(--accent-blue); text-decoration: none;">Why Fast Replies Matter More Than Discounts →</a></h4>
+    </div>
+  </div>
 </main>
 
-<a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20the%20Website%20Trust%20Blog%20and%20need%20help" class="sticky-cta">
-  💬 Chat Now
-</a>
-
-<footer>
-  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
-    
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 15px;">SaXhamAI</h3>
-      <p>Clarity-driven insights for Indian businesses.</p>
-    </div>
-
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 15px;">Services</h3>
-      <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 10px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
-        <li><a href="/audit.html">Digital Audit</a></li>
-      </ul>
-    </div>
-
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 15px;">Contact</h3>
-      <p style="margin-bottom: 8px;">📧 founder@saxhamai.com</p>
-      <p>📍 Navi Mumbai, Maharashtra</p>
-    </div>
-
+<footer style="background: #020617; padding: 80px 0 40px; color: #94a3b8;">
+  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1100px; margin: 0 auto;">
+    <div style="flex: 1; min-width: 300px;"><h3 style="color: white; margin-bottom: 20px;">SaXhamAI</h3><p style="line-height: 1.8;">Transforming Indian MSMEs through operational excellence and digital trust systems.</p></div>
+    <div style="flex: 1; min-width: 250px;"><h3 style="color: white; margin-bottom: 20px;">Contact</h3><p>📧 founder@saxhamai.com</p><p>📍 Navi Mumbai, Maharashtra</p></div>
   </div>
-
-  <div class="container" style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-    <p style="margin: 0;">© 2026 SaXhamAI | Powered by SaXham Technologies</p>
-  </div>
+  <div class="container" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);"><p style="margin: 0; font-size: 0.9rem;">© 2026 SaXhamAI | Systems by SaXham Technologies</p></div>
 </footer>
 
 <script>
-  // Hamburger Menu Logic
-  function toggleMobileMenu() {
-    const nav = document.getElementById("mainNav");
-    nav.classList.toggle("nav-active");
-  }
-
-  // Dark Mode Logic
-  function toggleDark(){
-    document.body.classList.toggle("dark-mode");
-    const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
-    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
-  }
-
-  // Check theme on page load
-  window.onload = function() {
-    if(localStorage.getItem("saxham_theme") === "dark"){
-      document.body.classList.add("dark-mode");
-      document.getElementById("theme-btn").innerText = "☀️";
-    }
-  };
-
-  // Progress Bar Logic
-  window.onscroll = function(){
-    let winScroll = document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%";
-  };
+  function toggleMobileMenu() { const nav = document.getElementById("mainNav"); nav.classList.toggle("nav-active"); }
+  function toggleDark(){ document.body.classList.toggle("dark-mode"); const isDark = document.body.classList.contains("dark-mode"); localStorage.setItem("saxham_theme", isDark ? "dark" : "light"); document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙"; }
+  window.onload = function() { if(localStorage.getItem("saxham_theme") === "dark"){ document.body.classList.add("dark-mode"); document.getElementById("theme-btn").innerText = "☀️"; } };
+  window.onscroll = function(){ let winScroll = document.documentElement.scrollTop; let height = document.documentElement.scrollHeight - document.documentElement.clientHeight; document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%"; };
 </script>
-
 </body>
 </html>
