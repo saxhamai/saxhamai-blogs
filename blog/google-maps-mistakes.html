@@ -8,6 +8,20 @@
   <meta name="description" content="Most Indian businesses lose customers due to simple Google Maps errors like wrong hours or stock photos. Learn how to fix them to boost leads.">
   <meta name="author" content="Nitin Pawar">
 
+  <link rel="canonical" href="https://blog.saxhamai.com/blog/google-maps-mistakes.html">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/images/favicon.png">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <meta property="og:title" content="Common Google Maps Mistakes That Hurt Local Businesses">
+  <meta property="og:description" content="Are you leaking leads from Google Maps? Fix these 3 common errors now.">
+  <meta property="og:url" content="https://blog.saxhamai.com/blog/google-maps-mistakes.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://blog.saxhamai.com/assets/images/Common-Google-Maps-Mistakes.png">
+  <meta property="article:published_time" content="2026-01-02">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,386 +30,148 @@
     gtag('config', 'G-B22TGFQD60');
   </script>
 
-  <link rel="canonical" href="https://blog.saxhamai.com/blog/google-maps-mistakes.html">
-
-  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="../assets/images/favicon.png">
-
-  <link rel="stylesheet" href="../assets/css/style.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Common Google Maps Mistakes That Hurt Local Businesses",
-    "author": {
-      "@type": "Person",
-      "name": "Nitin Pawar"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "SaXhamAI",
-      "url": "https://saxhamai.com"
-    },
-    "datePublished": "2026-01-02",
-    "description": "How to fix Google Maps errors that kill local business leads."
-  }
-  </script>
-  
-  <meta name="google-adsense-account" content="ca-pub-9771104122165922">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9771104122165922" crossorigin="anonymous"></script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Track WhatsApp Clicks
-      document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(el){
-        el.addEventListener("click", function(){
-          gtag('event', 'whatsapp_click', { 'event_category': 'Contact', 'event_label': 'WhatsApp' });
-        });
-      });
-
-      // Track Email Clicks
-      document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
-        el.addEventListener("click", function(){
-          gtag('event', 'email_click', { 'event_category': 'Contact', 'event_label': 'Email' });
-        });
-      });
-
-      // Track Audit/Contact Page Clicks
-      document.querySelectorAll('.ecosystem-btn, a[href*="contact.html"]').forEach(function(el){
-        el.addEventListener("click", function(){
-          gtag('event', 'audit_cta_click', { 'event_category': 'Conversion', 'event_label': 'Audit Interest' });
-        });
-      });
-    });
-  </script>
-
   <style>
-    /* Unbreakable Grid List for Perfect Alignment */
-    .feature-list { list-style: none; padding: 0; margin-top: 15px; margin-bottom: 25px; }
+    /* Premium Article UI */
+    .article-header { padding: 60px 0 40px; }
+    .feature-list { list-style: none; padding: 0; margin: 25px 0; }
     .feature-list li { 
-      margin-bottom: 12px; 
-      font-size: 1.05rem; 
+      margin-bottom: 15px; 
       display: grid; 
       grid-template-columns: 24px 1fr; 
       gap: 12px; 
       align-items: start; 
-      text-align: left;
     }
-    .feature-list li span.text-content { color: var(--text-main); display: block; line-height: 1.6; }
+    .article-content h2 { font-size: 2rem; margin: 3.5rem 0 1.5rem; color: var(--primary-navy); border-left: 5px solid var(--accent-blue); padding-left: 15px; }
+    .article-content h3 { font-size: 1.4rem; margin: 2rem 0 1rem; color: var(--primary-navy); }
+    .article-content p { font-size: 1.15rem; line-height: 1.8; margin-bottom: 1.5rem; }
     
-    /* Article Specific Styling for Readability */
-    .article-content h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--primary-navy); }
-    .article-content p { font-size: 1.1rem; margin-bottom: 1.25rem; color: var(--text-main); line-height: 1.8; }
-    .article-content ul:not(.feature-list) { margin-bottom: 1.5rem; padding-left: 1.5rem; }
-    .article-content ul:not(.feature-list) li { margin-bottom: 0.6rem; font-size: 1.1rem; color: var(--text-main); }
+    .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
+    .comp-box { padding: 25px; border-radius: 12px; border: 1px solid var(--border); }
     
-    /* Dark Mode Text Fixes */
-    body.dark-mode .feature-list li span.text-content { color: var(--text-main); }
-    body.dark-mode .article-content h2 { color: #ffffff; }
-
-    /* Mobile Hamburger Menu Logic */
-    @media (max-width: 768px) {
-      nav {
-        display: none !important; 
-        flex-direction: column;
-        width: 100%;
-        background: var(--bg-white);
-        padding: 15px 0;
-      }
-      nav.nav-active {
-        display: flex !important; 
-      }
-    }
+    body.dark-mode .article-content h2, body.dark-mode .article-content h3 { color: white; }
+    body.dark-mode .comp-box { background: #1e293b; }
   </style>
-
 </head>
 
 <body>
-
 <div id="progress-bar"></div>
 
 <header class="site-header">
   <div class="nav">
-    
-    <div class="logo">
-      <a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Blog</span></a>
-    </div>
-
-    <div class="mobile-toggle" onclick="toggleMobileMenu()">
-      ☰
-    </div>
-
+    <div class="logo"><a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Strategic Blog</span></a></div>
+    <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
     <nav id="mainNav">
-      <a href="/">Home</a>
-      <a href="/blog/" class="active">Blog</a>
-      <a href="/resources.html">Resources</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
-      
-      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer; margin-top: 2px;">
-        🌙
-      </button>
+      <a href="/">Home</a><a href="/blog/">All Articles</a><a href="/resources.html">Resources</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
+      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
     </nav>
-
   </div>
 </header>
 
-<main>
-  <article class="section" itemscope itemtype="https://schema.org/BlogPosting">
-    <div class="container narrow" style="max-width: 800px; margin: 0 auto; padding: 0 15px;">
+<main class="section">
+  <div class="container" style="max-width: 850px; margin: 0 auto;">
+    
+    <p style="margin-bottom: 30px;"><a href="/blog/" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">← Back to All Articles</a></p>
 
-      <p style="margin-bottom: 2rem;">
-        <a href="/blog/" style="color: var(--text-gray); font-size: 0.95rem; font-weight: 500;">← Back to All Articles</a>
-      </p>
+    <header class="article-header">
+      <span style="text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--accent-blue); font-size: 0.85rem;">LOCAL SEO • BUSINESS GROWTH</span>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.2; margin-top: 15px;">Common Google Maps Mistakes That Hurt Local Businesses</h1>
+      <div style="margin-top: 25px; display: flex; align-items: center; gap: 15px; color: var(--text-gray); font-size: 0.95rem;">
+        <img src="../assets/images/favicon.png" alt="Nitin Pawar" style="width: 40px; height: 40px; border-radius: 50%;">
+        <div>By <strong>Nitin Pawar</strong> • Jan 02, 2026 • 5 min read</div>
+      </div>
+    </header>
 
-      <header style="margin-bottom: 2.5rem;">
-        <span style="background: var(--border); color: var(--text-main); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">
-          Local SEO
-        </span>
-        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-top: 1rem; color: var(--primary-navy);" itemprop="headline">
-          Common Google Maps Mistakes That Hurt Local Businesses
-        </h1>
-        <p style="color: var(--text-gray); font-size: 0.95rem; margin-top: 15px;">
-          Published on <time datetime="2026-01-02" itemprop="datePublished">Jan 02, 2026</time> • By <span itemprop="author" style="font-weight: 600;">Nitin Pawar</span>
-        </p>
-      </header>
+    <div class="article-content">
+      <img src="../assets/images/Common-Google-Maps-Mistakes.png" onerror="this.src='../assets/images/default.png'" alt="Google Maps Errors" style="width: 100%; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
 
-      <div class="article-content" itemprop="articleBody">
+      <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-blue); line-height: 1.5;">I recently tried to visit a computer repair shop in Navi Mumbai. Google Maps said “Open.”</p>
 
-        <img src="../assets/images/Common-Google-Maps-Mistakes.png" onerror="this.src='../assets/images/Common-Google-Maps-Mistakes.png'"   
-             alt="Google Maps Mistakes"   
-             loading="lazy"  
-             style="width: 100%; display: block; margin: 1.5rem auto 2.5rem auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+      <p>When I reached there at 8:00 PM, the shutter was down. No notice. No update. No apology.</p>
 
-        <p style="font-size: 1.25rem; font-weight: 600; color: var(--primary-navy);">
-          I recently tried to visit a computer repair shop in Navi Mumbai.
-          Google Maps said <strong>“Open.”</strong>
-        </p>
+      <p><strong>Result?</strong> I walked to their competitor nearby. That business didn’t just lose one sale — they lost a lifetime customer.</p>
 
-        <p>
-          When I reached there at 8:00 PM, the shutter was down.
-          No notice. No update. No apology.
-        </p>
+      <p>For local businesses in India, your Google Maps profile is more important than your Instagram page. Because when people search on Google Maps, they are already ready to buy. Yet every day, businesses silently kill their own leads by making basic mistakes.</p>
 
-        <p>
-          <strong>Result?</strong> I walked to their competitor nearby.
-          That business didn’t just lose one sale — they lost a lifetime customer.
-        </p>
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 3rem 0;">
 
-        <p>
-          For local businesses in India, your Google Maps profile is more important than your Instagram page.
-          Because when people search on Google Maps, they are already ready to buy.
-        </p>
+      <h2>1. The “Open 24 Hours” Lie</h2>
+      <p>Many business owners select “Open 24 Hours” thinking it looks impressive. It doesn’t. <strong style="color: #dc2626;">It looks dishonest.</strong></p>
+      <p>Google Maps doesn’t blindly trust owners. If multiple users report that your shop was closed when Google said open, Google trusts the users — not you. This causes your local ranking to drop and may even lead to profile restrictions.</p>
 
-        <p>
-          Yet every day, businesses silently kill their own leads by making basic mistakes.
-          Here are 3 common Google Maps mistakes that hurt local businesses — without them even realizing it.
-        </p>
-
-        <hr style="border: 0; border-top: 1px solid var(--border); margin: 3rem 0;">
-
-        <h2>1. The “Open 24 Hours” Lie</h2>
-        <p>
-          Many business owners select “Open 24 Hours” thinking it looks impressive.
-          It doesn’t. <strong style="color: #dc2626;">It looks dishonest.</strong>
-        </p>
-        <p>
-          Google Maps doesn’t blindly trust business owners. If multiple users report that your shop was closed when Google said open, Google trusts the users — not you.
-        </p>
-
-        <ul style="margin-bottom: 1.5rem;">
-          <li>Your local ranking drops</li>
-          <li>Your profile may stop appearing during peak hours</li>
-          <li>In serious cases, your profile can even be restricted</li>
-        </ul>
-
-        <div class="cta-box" style="text-align: left; padding: 20px; border-left: 4px solid #16a34a; border-radius: 4px; margin: 2rem 0;">
-          <strong>✅ The Fix:</strong> Set accurate working hours. Use "Special Hours" for lunch breaks, weekly offs, and festivals. Accuracy builds trust.
-        </div>
-
-        <h2>2. Using Stock Photos or Only a Logo</h2>
-        <p>
-          When customers open your Google Maps profile, they are asking one question:
-          <em style="color: var(--text-gray);">“Is this place real?”</em>
-        </p>
-        <p>
-          A profile with only a logo or stock photos of “happy Americans in suits” looks fake or risky.
-          People decide within 5 seconds whether to visit you or not. Photos are your first impression.
-        </p>
-
-        <div class="blog-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 2rem; margin-bottom: 2.5rem; gap: 20px;">
-          <div class="cta-box" style="text-align: left; padding: 25px; border-top: 4px solid #16a34a;">
-            <h4 style="color: #16a34a; font-size: 1.25rem; margin-bottom: 15px;">✅ Good Photos</h4>
-            <ul style="font-size: 1rem; margin-bottom: 0; padding-left: 1.2rem;">
-              <li>Shop front (signboard visible)</li>
-              <li>Inside view (counter, equipment)</li>
-              <li>Your team working</li>
-              <li>Real products</li>
-            </ul>
-          </div>
-          <div class="cta-box" style="text-align: left; padding: 25px; border-top: 4px solid #dc2626;">
-            <h4 style="color: #dc2626; font-size: 1.25rem; margin-bottom: 15px;">❌ Bad Photos</h4>
-            <ul style="font-size: 1rem; margin-bottom: 0; padding-left: 1.2rem;">
-              <li>Only logo, no location</li>
-              <li>Stock images from internet</li>
-              <li>Blurry WhatsApp photos</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2>3. Ignoring Negative Reviews</h2>
-        <p>
-          Bad reviews are painful. But ignoring them is worse.
-          You cannot delete genuine negative reviews, but you can control how future customers see you.
-        </p>
-        <p>
-          <strong>Remember:</strong> You are not replying for the angry customer.
-          You are replying for the 100 silent people reading that review later.
-        </p>
-
-        <div class="cta-box" style="text-align: left; padding: 25px; margin: 2rem 0; border-left: 4px solid var(--accent-blue);">
-          <strong style="font-size: 1.15rem; color: var(--primary-navy);">✅ How to reply properly:</strong>
-          <ol style="margin-top: 15px; margin-bottom: 20px; padding-left: 1.5rem; color: var(--text-main); font-size: 1.05rem;">
-            <li style="margin-bottom: 8px;">Acknowledge the feedback</li>
-            <li style="margin-bottom: 8px;">Apologize briefly (if genuine issue)</li>
-            <li style="margin-bottom: 8px;">Offer a solution or contact option</li>
-          </ol>
-          <p style="margin-bottom: 0; font-style: italic; color: var(--text-gray); border-left: 2px solid var(--border); padding-left: 15px;">
-            "Thank you for your feedback. We’re sorry for the inconvenience. Please contact us on WhatsApp so we can resolve this properly."
-          </p>
-        </div>
-
-        <h2 style="margin-top: 3.5rem;">A Quick 5-Minute Google Maps Audit</h2>
-        <p>Before closing this article, quickly check:</p>
-
-        <ul class="feature-list" style="margin-top: 20px;">
-          <li>
-            <span>🔍</span>
-            <span class="text-content"><strong>Search your name:</strong> Does it match your signboard exactly?</span>
-          </li>
-          <li>
-            <span>⏰</span>
-            <span class="text-content"><strong>Check Hours:</strong> Are they realistic and updated?</span>
-          </li>
-          <li>
-            <span>📸</span>
-            <span class="text-content"><strong>Check Photos:</strong> Do the first 3 photos show your real shop?</span>
-          </li>
-          <li>
-            <span>⭐</span>
-            <span class="text-content"><strong>Reviews:</strong> Have you replied to your last 5 reviews?</span>
-          </li>
-        </ul>
-
-        <p style="margin-top: 1.5rem;">
-          If even one answer is “No”, you’re leaking leads daily.
-        </p>
-
-        <hr style="border: 0; border-top: 1px solid var(--border); margin: 3.5rem 0;">
-
-        <h3 style="font-size: 1.6rem; color: var(--primary-navy); margin-bottom: 1rem;">Final Thought</h3>
-        <p>
-          Google Maps is not a formality. It is your digital shopfront.
-          People trust Maps more than ads or banners.
-        </p>
-        <p>
-          <strong style="color: var(--accent-blue);">One wrong setting = lost call = lost customer.</strong><br>
-          Fix the basics. The leads will follow.
-        </p>
-
-        <div class="cta-box" style="margin-top:3.5rem; text-align: center; border-color: var(--accent-blue); padding: 40px 30px;">
-          <h3 style="margin-bottom: 15px; font-size: 1.8rem;">👉 Need Help?</h3>
-          <p style="margin-bottom: 25px; font-size: 1.1rem; color: var(--text-gray);">
-            If you want a professional Google Maps audit or fix, reach out to us. 
-            Sometimes one small correction brings months of business.
-          </p>
-          <div class="cta-buttons">
-            <a href="../contact.html" class="btn btn-primary" style="padding: 14px 28px; font-size: 1.05rem;">
-              Contact Us for Audit
-            </a>
-          </div>
-        </div>
-
+      <div style="background: rgba(22, 163, 74, 0.05); padding: 25px; border-radius: 12px; border-left: 4px solid #16a34a; margin: 30px 0;">
+        <strong style="color: #16a34a;">✅ The Fix:</strong> Set accurate working hours. Use "Special Hours" for lunch breaks, weekly offs, and festivals. Accuracy builds long-term trust.
       </div>
 
-      <div style="margin-top: 4rem; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border);">
-        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 10px;">Read Previous Article</p>
-        <h4 style="font-size: 1.3rem;">
-          <a href="why-trust-matters.html" style="color: var(--accent-blue);">
-            Why Digital Trust Matters →
-          </a>
-        </h4>
+      <h2>2. Using Stock Photos or Only a Logo</h2>
+      <p>When customers open your profile, they ask: <em>“Is this place real?”</em> A profile with only a logo or generic internet photos looks fake or risky. People decide within 5 seconds whether to visit you or not.</p>
+
+      <div class="comparison-grid">
+        <div class="comp-box" style="border-top: 4px solid #16a34a;">
+          <h4 style="color: #16a34a; margin-top:0;">✅ Good Photos</h4>
+          <ul class="feature-list" style="margin: 15px 0 0;">
+            <li><span>✔️</span><span class="text-content">Shop front with signboard</span></li>
+            <li><span>✔️</span><span class="text-content">Real team working inside</span></li>
+            <li><span>✔️</span><span class="text-content">Authentic products</span></li>
+          </ul>
+        </div>
+        <div class="comp-box" style="border-top: 4px solid #dc2626;">
+          <h4 style="color: #dc2626; margin-top:0;">❌ Bad Photos</h4>
+          <ul class="feature-list" style="margin: 15px 0 0;">
+            <li><span>✖️</span><span class="text-content">Only logo, no location context</span></li>
+            <li><span>✖️</span><span class="text-content">Blurry internet images</span></li>
+            <li><span>✖️</span><span class="text-content">Random WhatsApp screenshots</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>3. Ignoring Negative Reviews</h2>
+      <p>Bad reviews are painful, but ignoring them is worse. You cannot delete genuine feedback, but you can control how future customers see your brand. You aren't replying for the angry customer; you're replying for the 100 people reading that review later.</p>
+
+      <div style="background: var(--bg-light); padding: 30px; border-radius: 12px; margin: 40px 0;">
+        <h4 style="margin-top:0; color: var(--primary-navy);">How to reply properly:</h4>
+        <p><em>"Thank you for your feedback. We’re sorry for the inconvenience. Please contact us on WhatsApp so we can resolve this properly."</em></p>
+      </div>
+
+      <h2>5-Minute Google Maps Audit</h2>
+      <ul class="feature-list">
+        <li><span>🔍</span><span class="text-content">Does your name match your signboard exactly?</span></li>
+        <li><span>⏰</span><span class="text-content">Are your hours realistic and updated today?</span></li>
+        <li><span>📸</span><span class="text-content">Do the first 3 photos show your real shop?</span></li>
+        <li><span>⭐</span><span class="text-content">Have you replied to your last 5 reviews?</span></li>
+      </ul>
+
+      <p style="margin-top: 30px;">If even one answer is “No”, you’re leaking leads daily. Fix the basics. The leads will follow.</p>
+
+      <div class="cta-box" style="text-align: center; background: var(--primary-navy); color: white; border: none; padding: 50px 30px; margin-top: 5rem;">
+        <h3 style="color: white; margin-bottom: 15px;">👉 Need a Professional Fix?</h3>
+        <p style="margin-bottom: 30px; opacity: 0.9;">Sometimes one small correction brings months of business. Let us audit your Google footprint.</p>
+        <a href="../contact.html" class="btn btn-primary" style="background: white; color: var(--primary-navy); padding: 16px 32px; font-weight: 700;">🔍 Request Profile Audit</a>
       </div>
 
     </div>
-  </article>
+
+    <div style="margin-top: 60px; padding: 40px 0; border-top: 1px solid var(--border); text-align: center;">
+      <p style="color: var(--text-gray); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Read Previous Article</p>
+      <h4 style="font-size: 1.5rem; margin-top: 15px;"><a href="why-trust-matters.html" style="color: var(--accent-blue); text-decoration: none;">Why Digital Trust Matters →</a></h4>
+    </div>
+  </div>
 </main>
 
-<a href="https://wa.me/919702855005?text=Hi%20I%20came%20from%20the%20Google%20Maps%20Blog%20and%20need%20help" class="sticky-cta">
-  💬 Chat Now
-</a>
+<a href="https://wa.me/919702855005?text=Hi%20Nitin,%20I%20want%20help%20fixing%20my%20Google%20Maps%20mistakes" class="sticky-cta">💬 Fix My Profile</a>
 
-<footer>
-  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
-    
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 15px;">SaXhamAI</h3>
-      <p>Clarity-driven insights for Indian businesses.</p>
-    </div>
-
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 15px;">Services</h3>
-      <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 10px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
-        <li><a href="/audit.html">Digital Audit</a></li>
-      </ul>
-    </div>
-
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 15px;">Contact</h3>
-      <p style="margin-bottom: 8px;">📧 founder@saxhamai.com</p>
-      <p>📍 Navi Mumbai, Maharashtra</p>
-    </div>
-
+<footer style="background: #020617; padding: 80px 0 40px; color: #94a3b8;">
+  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1100px; margin: 0 auto;">
+    <div style="flex: 1; min-width: 300px;"><h3 style="color: white; margin-bottom: 20px;">SaXhamAI</h3><p style="line-height: 1.8;">Transforming Indian MSMEs through operational excellence and digital trust systems.</p></div>
+    <div style="flex: 1; min-width: 250px;"><h3 style="color: white; margin-bottom: 20px;">Contact</h3><p>📧 founder@saxhamai.com</p><p>📍 Navi Mumbai, Maharashtra</p></div>
   </div>
-
-  <div class="container" style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-    <p style="margin: 0;">© 2026 SaXhamAI | Powered by SaXham Technologies</p>
-  </div>
+  <div class="container" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);"><p style="margin: 0; font-size: 0.9rem;">© 2026 SaXhamAI | Systems by SaXham Technologies</p></div>
 </footer>
 
 <script>
-  // Hamburger Menu Logic
-  function toggleMobileMenu() {
-    const nav = document.getElementById("mainNav");
-    nav.classList.toggle("nav-active");
-  }
-
-  // Dark Mode Logic
-  function toggleDark(){
-    document.body.classList.toggle("dark-mode");
-    const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
-    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
-  }
-
-  // Check theme on page load
-  window.onload = function() {
-    if(localStorage.getItem("saxham_theme") === "dark"){
-      document.body.classList.add("dark-mode");
-      document.getElementById("theme-btn").innerText = "☀️";
-    }
-  };
-
-  // Progress Bar Logic
-  window.onscroll = function(){
-    let winScroll = document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%";
-  };
+  function toggleMobileMenu() { const nav = document.getElementById("mainNav"); nav.classList.toggle("nav-active"); }
+  function toggleDark(){ document.body.classList.toggle("dark-mode"); const isDark = document.body.classList.contains("dark-mode"); localStorage.setItem("saxham_theme", isDark ? "dark" : "light"); document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙"; }
+  window.onload = function() { if(localStorage.getItem("saxham_theme") === "dark"){ document.body.classList.add("dark-mode"); document.getElementById("theme-btn").innerText = "☀️"; } };
+  window.onscroll = function(){ let winScroll = document.documentElement.scrollTop; let height = document.documentElement.scrollHeight - document.documentElement.clientHeight; document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%"; };
 </script>
-
 </body>
 </html>
