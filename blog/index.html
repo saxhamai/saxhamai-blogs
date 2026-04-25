@@ -4,25 +4,24 @@
   <meta charset="UTF-8">
   <title>Strategic Insights | SaXhamAI Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Real-world insights on IT operations, digital trust, and business automation by Nitin Pawar.">
+  <meta name="description" content="Read all articles on digital trust, IT operations, and business growth by Nitin Pawar.">
   <meta name="author" content="Nitin Pawar">
-
   <link rel="canonical" href="https://blog.saxhamai.com/blog/">
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
   <link rel="apple-touch-icon" href="../assets/images/favicon.png">
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    /* Advanced Blog UI Enhancements */
     .blog-header { padding: 80px 0 40px; text-align: center; background: var(--bg-light); border-bottom: 1px solid var(--border); }
     .filter-tags { display: flex; justify-content: center; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
-    .tag { padding: 8px 20px; background: var(--bg-white); border: 1px solid var(--border); border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--text-gray); transition: all 0.3s ease; text-decoration: none; }
+    .tag { padding: 8px 20px; background: var(--bg-white); border: 1px solid var(--border); border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--text-gray); transition: all 0.3s ease; text-decoration: none; cursor: pointer; }
     .tag.active, .tag:hover { background: var(--accent-blue); color: white; border-color: var(--accent-blue); }
 
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 40px; padding: 60px 0; }
     .blog-card { background: var(--bg-white); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); display: flex; flex-direction: column; height: 100%; }
+    .blog-card.hide { display: none; }
+    
     .blog-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--accent-blue); }
-
     .card-img-wrapper { width: 100%; height: 220px; overflow: hidden; border-bottom: 1px solid var(--border); }
     .blog-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     .blog-card:hover img { transform: scale(1.08); }
@@ -31,20 +30,16 @@
     .meta-info { font-size: 0.75rem; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: flex; justify-content: space-between; }
     .blog-card h3 { font-size: 1.35rem; line-height: 1.3; margin-bottom: 12px; color: var(--primary-navy); }
     .blog-card p { font-size: 0.95rem; line-height: 1.6; color: var(--text-main); margin-bottom: 25px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-    
     .read-more { font-weight: 700; font-size: 0.9rem; color: var(--primary-navy); text-decoration: none; display: flex; align-items: center; gap: 8px; margin-top: auto; border-top: 1px solid var(--border); padding-top: 15px; }
 
-    .newsletter-box { background: linear-gradient(135deg, var(--primary-navy), #0a192f); color: white; padding: 60px 40px; border-radius: 24px; text-align: center; margin: 60px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    .newsletter-box { background: linear-gradient(135deg, var(--primary-navy), #0a192f); color: white; padding: 60px 40px; border-radius: 24px; text-align: center; margin: 60px 0; }
 
     body.dark-mode .blog-card { background: #1e293b; border-color: #334155; }
     body.dark-mode .blog-card h3 { color: white; }
     body.dark-mode .tag { background: #1e293b; border-color: #334155; }
     body.dark-mode .read-more { color: white; }
 
-    @media (max-width: 768px) {
-      .featured-card { display: block !important; }
-      .featured-card .card-content { padding: 30px !important; }
-    }
+    @media (max-width: 768px) { .featured-card { display: block !important; } .featured-card .card-content { padding: 30px !important; } }
   </style>
 </head>
 
@@ -69,150 +64,140 @@
 
 <section class="blog-header">
   <div class="container">
-    <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; color: var(--accent-blue);">Expert Insights</span>
-    <h1 style="font-size: clamp(2.5rem, 6vw, 3.5rem); margin-top: 10px;">Knowledge Hub</h1>
-    <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 15px auto;">Founder-led systems engineering for Indian businesses.</p>
+    <h1 style="font-size: clamp(2.5rem, 6vw, 3.5rem);">Knowledge Hub</h1>
+    <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 15px auto;">Founder-led writing on DevOps, digital trust, and IT operations.</p>
     
     <div class="filter-tags">
-      <a href="#" class="tag active">All Insights</a>
-      <a href="#" class="tag">Digital Trust</a>
-      <a href="#" class="tag">IT Operations</a>
-      <a href="#" class="tag">MSME Growth</a>
+      <span class="tag active" onclick="filterBlog('all')">All Insights</span>
+      <span class="tag" onclick="filterBlog('Digital Trust')">Digital Trust</span>
+      <span class="tag" onclick="filterBlog('IT Operations')">IT Operations</span>
+      <span class="tag" onclick="filterBlog('Business Growth')">Business Growth</span>
+      <span class="tag" onclick="filterBlog('MSME Tech')">MSME Tech</span>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container" style="max-width: 1200px; margin: 0 auto;">
+
     <h2 style="font-size: 1.8rem; margin-bottom: 40px; border-left: 5px solid var(--accent-blue); padding-left: 20px;">Featured Analysis</h2>
 
-    <article class="blog-card featured-card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); border: 2px solid var(--accent-blue);">
+    <article class="blog-card featured-card" data-category="IT Operations" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); border: 2px solid var(--accent-blue);">
       <div class="card-img-wrapper" style="height: 100%;"><img src="../assets/images/it-policy-reform.png" onerror="this.src='../assets/images/default.png'" alt="IT Reform"></div>
       <div class="card-content" style="padding: 50px;">
         <div class="meta-info"><span>POLICY & CULTURE</span><span>APRIL 23, 2026 • 12 MIN READ</span></div>
         <h3 style="font-size: 2.2rem;">India’s IT Employees: Protection or Exploitation?</h3>
-        <p>A deep dive into the systemic issues of the Indian IT sector. We analyze layoffs, overtime culture, and a proposed roadmap for sustainable employee-employer growth.</p>
+        <p>A deep dive into layoffs, overtime culture, and a proposed roadmap for sustainable growth in India's IT sector.</p>
         <a href="it-employees-protection-exploitation-india.html" class="btn btn-primary" style="align-self: flex-start; margin-top: 20px;">Read Analysis</a>
       </div>
     </article>
 
-    <div class="blog-grid">
-      <article class="blog-card">
+    <div class="blog-grid" id="blogGrid">
+      
+      <article class="blog-card" data-category="MSME Tech">
         <div class="card-img-wrapper"><img src="../assets/images/From-Paperwork-to-Python.png" onerror="this.src='../assets/images/default.png'" alt="MSME"></div>
         <div class="card-content">
           <div class="meta-info"><span>TRANSFORMATION</span><span>5 MIN READ</span></div>
-          <h3>From Paperwork to Python</h3>
-          <p>The roadmap from manual registers to AI-driven automation for Indian businesses.</p>
+          <h3>From Paperwork to Python</h3><p>The roadmap from manual registers to AI-driven automation for Indian businesses.</p>
           <a href="paperwork-to-python-msme-transformation.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="Business Growth">
         <div class="card-img-wrapper"><img src="../assets/images/Macron-Praises-India's-Innovation.png" onerror="this.src='../assets/images/default.png'" alt="Macron"></div>
         <div class="card-content">
           <div class="meta-info"><span>STRATEGY</span><span>4 MIN READ</span></div>
-          <h3>Macron Praises India’s Innovation Impact</h3>
-          <p>What global recognition of India's digital infrastructure means for small businesses.</p>
+          <h3>Macron Praises India’s Innovation Impact</h3><p>Global recognition of India's digital infrastructure and small businesses.</p>
           <a href="macron-praises-india-innovation-msme-impact.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="MSME Tech">
         <div class="card-img-wrapper"><img src="../assets/images/Patil-Effects.png" onerror="this.src='../assets/images/default.png'" alt="Patil"></div>
         <div class="card-content">
           <div class="meta-info"><span>AI INFRASTRUCTURE</span><span>6 MIN READ</span></div>
-          <h3>The “Patil Effect”: AI Reshaping IT</h3>
-          <p>How efficiency is dramatically reshaping IT services through AI-driven operations.</p>
+          <h3>The “Patil Effect”: AI Reshaping IT</h3><p>How efficiency is reshapeing IT services through AI-driven operations.</p>
           <a href="the-patil-effect-ai-infrastructure-msme-india.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="Business Growth">
         <div class="card-img-wrapper"><img src="../assets/images/Budget2026.png" onerror="this.src='../assets/images/default.png'" alt="Budget"></div>
         <div class="card-content">
           <div class="meta-info"><span>ECONOMY</span><span>5 MIN READ</span></div>
-          <h3>Budget 2026: Growth Roadmap</h3>
-          <p>Impact of Budget 2026 on MSMEs, infrastructure, and India's growth strategy.</p>
+          <h3>Budget 2026: India’s Growth Roadmap</h3><p>Impact of Budget 2026 on MSMEs and growth strategy.</p>
           <a href="budget-2026-india-business-growth.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
-        <div class="card-img-wrapper"><img src="../assets/images/Recharge-comp.png" onerror="this.src='../assets/images/default.png'" alt="Telecom"></div>
+      <article class="blog-card" data-category="Business Growth">
+        <div class="card-img-wrapper"><img src="../assets/images/Recharge-comp.png" onerror="this.src='../assets/images/default.png'" alt="Recharge"></div>
         <div class="card-content">
           <div class="meta-info"><span>CONSUMER RIGHTS</span><span>3 MIN READ</span></div>
-          <h3>Recharge Compulsory for Incoming?</h3>
-          <p>Why incoming calls require mandatory recharge — a serious consumer rights issue.</p>
+          <h3>Recharge Compulsory for Incoming Calls?</h3><p>Why incoming calls require mandatory recharge — consumer issue.</p>
           <a href="recharge-compulsory-consumer-rights-india.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="Digital Trust">
         <div class="card-img-wrapper"><img src="../assets/images/Website-live-customer-no-trust.png" onerror="this.src='../assets/images/default.png'" alt="Trust"></div>
         <div class="card-content">
           <div class="meta-info"><span>WEB PRESENCE</span><span>5 MIN READ</span></div>
-          <h3>Website Live, But No Trust?</h3>
-          <p>Why professional websites fail to convert customers into leads in India.</p>
+          <h3>Website Live, But No Trust?</h3><p>Why professional websites fail to convert leads in India.</p>
           <a href="website-trust-gaps.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="Digital Trust">
         <div class="card-img-wrapper"><img src="../assets/images/Why-Fast-Replies-Matter.png" onerror="this.src='../assets/images/default.png'" alt="Replies"></div>
         <div class="card-content">
           <div class="meta-info"><span>CUSTOMER EXPERIENCE</span><span>3 MIN READ</span></div>
-          <h3>Why Fast Replies Matter More</h3>
-          <p>In India, response speed builds trust faster than discounts ever will.</p>
+          <h3>Why Fast Replies Matter More</h3><p>Response speed builds trust faster than aggressive pricing.</p>
           <a href="why-fast-replies-matter-more-than-discounts.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="IT Operations">
         <div class="card-img-wrapper"><img src="../assets/images/Why-Systems-Beat-Motivation.png" onerror="this.src='../assets/images/default.png'" alt="Systems"></div>
         <div class="card-content">
           <div class="meta-info"><span>OPERATIONS</span><span>5 MIN READ</span></div>
-          <h3>Why Systems Beat Motivation</h3>
-          <p>Motivation fades. Systems scale for consistent and quiet business growth.</p>
+          <h3>Why Systems Beat Motivation</h3><p>Motivation fades. Systems scale for consistent growth.</p>
           <a href="why-systems-beat-motivation.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="Digital Trust">
         <div class="card-img-wrapper"><img src="../assets/images/WhatsApp-Business-Mistakes.png" onerror="this.src='../assets/images/default.png'" alt="WhatsApp"></div>
         <div class="card-content">
           <div class="meta-info"><span>COMMUNICATION</span><span>4 MIN READ</span></div>
-          <h3>WhatsApp Business Mistakes</h3>
-          <p>Common mistakes local businesses make when texting potential customers.</p>
+          <h3>WhatsApp Business Mistakes</h3><p>Common mistakes local businesses make when texting customers.</p>
           <a href="whatsapp-business-mistakes-kill-trust.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="Digital Trust">
         <div class="card-img-wrapper"><img src="../assets/images/Why-Google-Business-Profile.png" onerror="this.src='../assets/images/default.png'" alt="GBP"></div>
         <div class="card-content">
           <div class="meta-info"><span>LOCAL SEO</span><span>5 MIN READ</span></div>
-          <h3>GBP Listings Lose Calls?</h3>
-          <p>The real reasons why calls drop right after Google verification.</p>
+          <h3>GBP Listings Lose Calls After Verification</h3><p>Real reasons why calls drop right after Google verification.</p>
           <a href="google-business-profile-lost-calls.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="Digital Trust">
         <div class="card-img-wrapper"><img src="../assets/images/Common-Google-Maps-Mistakes.png" onerror="this.src='../assets/images/default.png'" alt="Maps"></div>
         <div class="card-content">
           <div class="meta-info"><span>LOCAL SEO</span><span>5 MIN READ</span></div>
-          <h3>Common Google Maps Mistakes</h3>
-          <p>5 basic mistakes that are silently killing your local business visibility.</p>
+          <h3>Common Google Maps Mistakes</h3><p>5 basic mistakes that are killing your local business visibility.</p>
           <a href="google-maps-mistakes.html" class="read-more">Full Article →</a>
         </div>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="Digital Trust">
         <div class="card-img-wrapper"><img src="../assets/images/Why-Digital-Trust-Matters.png" onerror="this.src='../assets/images/default.png'" alt="Trust"></div>
         <div class="card-content">
           <div class="meta-info"><span>CORE BASICS</span><span>4 MIN READ</span></div>
-          <h3>Why Digital Trust Matters</h3>
-          <p>The hidden factor behind customer decisions and your business revenue.</p>
+          <h3>Why Digital Trust Matters</h3><p>The hidden factor behind customer decisions and revenue.</p>
           <a href="why-trust-matters.html" class="read-more">Full Article →</a>
         </div>
       </article>
@@ -220,45 +205,45 @@
     </div>
 
     <div class="newsletter-box">
-      <h2 style="font-size: 2.2rem; margin-bottom: 15px;">Stay Ahead of the System</h2>
-      <p style="opacity: 0.9; font-size: 1.1rem; margin-bottom: 35px;">Get one practical system tip every month. Direct to your WhatsApp.</p>
-      <a href="https://wa.me/919702855005?text=Hi%20Nitin,%20I%20want%20to%20subscribe%20to%20SaXhamAI%20insights" class="btn btn-primary" style="background: white; color: var(--primary-navy); padding: 15px 45px; font-weight: 700; border: none;">Subscribe via WhatsApp</a>
+      <h2 style="font-size: 2rem; margin-bottom: 15px;">Stay Ahead of the System</h2>
+      <p style="opacity: 0.8; margin-bottom: 30px;">Get one practical IT & business growth tip every month. No spam.</p>
+      <a href="https://wa.me/919702855005?text=Hi%20Nitin,%20I%20want%20to%20subscribe%20to%20SaXhamAI%20insights" class="btn btn-primary" style="background: white; color: var(--primary-navy); padding: 15px 40px; font-weight: 700; border: none;">Subscribe via WhatsApp</a>
     </div>
 
   </div>
 </section>
 
-<a href="https://wa.me/919702855005?text=Hi%20Nitin,%20I%20need%20expert%20help%20with%20my%20business" class="sticky-cta">💬 Get Leads Now</a>
-
-<footer style="background: #020617; padding: 80px 0 40px; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.05);">
+<footer style="background: #020617; padding: 80px 0 40px; color: #94a3b8;">
   <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1100px; margin: 0 auto;">
-    <div style="flex: 1; min-width: 300px;">
-      <h3 style="color: white; margin-bottom: 20px;">SaXhamAI</h3>
-      <p style="line-height: 1.8;">Transforming Indian MSMEs through operational excellence and digital trust systems. Engineering by Nitin Pawar.</p>
-    </div>
-    <div style="flex: 1; min-width: 200px;">
-      <h3 style="color: white; margin-bottom: 20px;">Support</h3>
-      <ul style="list-style: none; padding: 0; line-height: 2;">
-        <li><a href="/audit.html" style="color: inherit; text-decoration: none;">Free Audit</a></li>
-        <li><a href="/resources.html" style="color: inherit; text-decoration: none;">Resources</a></li>
-        <li><a href="/contact.html" style="color: inherit; text-decoration: none;">Contact</a></li>
-      </ul>
-    </div>
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="color: white; margin-bottom: 20px;">Contact</h3>
-      <p>📧 founder@saxhamai.com</p>
-      <p>📍 Navi Mumbai, MH, India</p>
-    </div>
+    <div style="flex: 1; min-width: 300px;"><h3 style="color: white; margin-bottom: 20px;">SaXhamAI</h3><p>Transforming Indian MSMEs through operational excellence and digital trust systems. Designed by Nitin Pawar.</p></div>
+    <div style="flex: 1; min-width: 200px;"><h3 style="color: white; margin-bottom: 20px;">Quick Links</h3><ul style="list-style: none; padding: 0;"><li><a href="/audit.html" style="color: inherit; text-decoration: none;">Free Audit</a></li><li><a href="/resources.html" style="color: inherit; text-decoration: none;">Resources</a></li><li><a href="/contact.html" style="color: inherit; text-decoration: none;">Contact</a></li></ul></div>
+    <div style="flex: 1; min-width: 250px;"><h3 style="color: white; margin-bottom: 20px;">Contact</h3><p>📧 founder@saxhamai.com</p><p>📍 Navi Mumbai, Maharashtra</p></div>
   </div>
-  <div class="container" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);">
-    <p style="margin: 0; font-size: 0.9rem;">© 2026 SaXhamAI | Systems by SaXham Technologies</p>
-  </div>
+  <div class="container" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);"><p style="margin: 0; font-size: 0.9rem;">© 2026 SaXhamAI | Powered by SaXham Technologies</p></div>
 </footer>
 
 <script>
   function toggleMobileMenu() { const nav = document.getElementById("mainNav"); nav.classList.toggle("nav-active"); }
   function toggleDark(){ document.body.classList.toggle("dark-mode"); const isDark = document.body.classList.contains("dark-mode"); localStorage.setItem("saxham_theme", isDark ? "dark" : "light"); document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙"; }
   window.onload = function() { if(localStorage.getItem("saxham_theme") === "dark"){ document.body.classList.add("dark-mode"); document.getElementById("theme-btn").innerText = "☀️"; } };
+
+  // JS Filter Logic
+  function filterBlog(category) {
+    const cards = document.querySelectorAll('.blog-card');
+    const tags = document.querySelectorAll('.tag');
+    
+    // Update active tag UI
+    tags.forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+
+    cards.forEach(card => {
+      if(category === 'all' || card.getAttribute('data-category') === category) {
+        card.classList.remove('hide');
+      } else {
+        card.classList.add('hide');
+      }
+    });
+  }
 </script>
 </body>
 </html>
