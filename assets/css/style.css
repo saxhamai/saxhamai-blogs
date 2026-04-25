@@ -219,3 +219,72 @@ body.dark-mode .sticky-cta { background: var(--accent-blue); }
   }
   .sticky-cta:hover { transform: translateX(50%) scale(1.02); }
 }
+/* ================= PROGRESS BAR ================= */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background: linear-gradient(90deg, #3B82F6, #06B6D4, #3B82F6);
+  background-size: 200% 100%;
+  animation: flow 3s linear infinite;
+  box-shadow: 0 0 20px rgba(59,130,246,0.7);
+  z-index: 9999;
+}
+@keyframes flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ================= GLASS HEADER ================= */
+.site-header {
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.85);
+}
+body.dark-mode .site-header {
+  background: rgba(11,17,33,0.85);
+}
+
+/* ================= CARD UPGRADE ================= */
+.blog-card:hover, .cta-box:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* ================= IMAGE PREMIUM ================= */
+.content img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.content img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* ================= SMOOTH FADE ================= */
+.section {
+  animation: fadeUp 0.6s ease;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= HR GLOW ================= */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #3B82F6, transparent);
+}
+
+/* ================= SELECTION ================= */
+::selection {
+  background: #3B82F6;
+  color: #fff;
+}
+
+/* ================= STICKY CTA PREMIUM ================= */
+.sticky-cta {
+  backdrop-filter: blur(10px);
+  background: rgba(10,25,49,0.85);
+}
