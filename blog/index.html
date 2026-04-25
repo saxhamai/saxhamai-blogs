@@ -88,7 +88,6 @@
     </article>
 
     <div class="blog-grid" id="blogGrid">
-      
       <article class="blog-card" data-category="MSME Tech">
         <div class="card-img-wrapper"><img src="../assets/images/From-Paperwork-to-Python.png" onerror="this.src='../assets/images/default.png'" alt="MSME"></div>
         <div class="card-content">
@@ -108,7 +107,7 @@
       </article>
 
       <article class="blog-card" data-category="Business Growth">
-        <div class="card-img-wrapper"><img src="../assets/images/Macron-Praises-India’s-Innovation.png" onerror="this.src='../assets/images/Macron-Praises-India’s-Innovation.png'" alt="Macron"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Macron-Praises-India’s-Innovation.png" onerror="this.src='../assets/images/default.png'" alt="Macron"></div>
         <div class="card-content">
           <div class="meta-info"><span>STRATEGY</span><span>10 MIN READ</span></div>
           <h3>Macron Praises India’s Innovation Impact</h3><p>Global recognition of India's digital infrastructure and small businesses.</p>
@@ -196,7 +195,19 @@
           <a href="why-systems-beat-motivation.html" class="read-more">Full Article →</a>
         </div>
       </article>
+    </div>
 
+    <div class="news-sidebar">
+      <div class="news-header">
+        <div class="live-dot"></div>
+        <h3 style="margin: 0; font-size: 1.1rem; color: var(--primary-navy);">LIVE: MSME Industry Pulse</h3>
+      </div>
+      <div id="msme-news-container">
+        <div class="shimmer"></div>
+        <div class="shimmer" style="width: 80%;"></div>
+        <div class="shimmer"></div>
+      </div>
+      <p style="font-size: 0.7rem; color: var(--text-gray); margin-top: 15px; text-align: right;">Source: Economic Times MSME</p>
     </div>
 
     <div class="newsletter-box">
@@ -227,28 +238,36 @@
     const tags = document.querySelectorAll('.tag');
     const fCard = document.getElementById('featuredCard');
     const fTitle = document.getElementById('featuredTitle');
-
     tags.forEach(t => t.classList.remove('active'));
-    event.target.classList.add('active');
-
-    // Hide Featured section if a specific category is selected
-    if (category === 'all') {
-      fCard.style.display = 'grid';
-      fTitle.style.display = 'block';
-    } else {
-      fCard.style.display = 'none';
-      fTitle.style.display = 'none';
-    }
-
+    if(event) event.target.classList.add('active');
+    if (category === 'all') { fCard.style.display = 'grid'; fTitle.style.display = 'block'; } 
+    else { fCard.style.display = 'none'; fTitle.style.display = 'none'; }
     cards.forEach(card => {
       if (card.id === 'featuredCard') return; 
-      if (category === 'all' || card.getAttribute('data-category') === category) {
-        card.classList.remove('hide');
-      } else {
-        card.classList.add('hide');
-      }
+      if (category === 'all' || card.getAttribute('data-category') === category) { card.classList.remove('hide'); } 
+      else { card.classList.add('hide'); }
     });
   }
+
+  // LIVE NEWS FETCH SCRIPT
+  async function fetchMSMENews() {
+    const container = document.getElementById('msme-news-container');
+    const rssUrl = encodeURIComponent('https://economictimes.indiatimes.com/small-biz/rssfeeds/51111535.cms');
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      if (data.status === 'ok') {
+        container.innerHTML = '';
+        data.items.slice(0, 5).forEach(item => {
+          const date = new Date(item.pubDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+          const newsHtml = `<a href="${item.link}" target="_blank" class="news-item"><span class="news-title">${item.title}</span><span class="news-meta">${date} • Industry Update</span></a>`;
+          container.insertAdjacentHTML('beforeend', newsHtml);
+        });
+      } else { container.innerHTML = '<p style="font-size: 0.9rem; color: var(--text-gray);">Updates temporarily unavailable.</p>'; }
+    } catch (error) { container.innerHTML = '<p style="font-size: 0.9rem; color: var(--text-gray);">Unable to load live pulse.</p>'; }
+  }
+  window.addEventListener('DOMContentLoaded', fetchMSMENews);
 </script>
 </body>
 </html>
