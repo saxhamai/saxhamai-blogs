@@ -17,6 +17,13 @@
 
   <link rel="stylesheet" href="../assets/css/style.css">
 
+  <meta property="og:title" content="Why Google Business Profile Listings Lose Calls After Verification">
+  <meta property="og:description" content="Identify what's killing your Google visibility after verification.">
+  <meta property="og:url" content="https://blog.saxhamai.com/blog/google-business-profile-lost-calls.html">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://blog.saxhamai.com/assets/images/Why-Google-Business-Profile.png">
+  <meta property="article:published_time" content="2026-01-03">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B22TGFQD60"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,342 +32,126 @@
     gtag('config', 'G-B22TGFQD60');
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Why Google Business Profile Listings Lose Calls After Verification",
-    "description": "Why calls drop after Google Business Profile verification and how Indian local businesses can recover visibility.",
-    "author": {
-      "@type": "Person",
-      "name": "Nitin Pawar"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "SaXhamAI",
-      "url": "https://saxhamai.com"
-    },
-    "datePublished": "2026-01-03",
-    "dateModified": "2026-01-03",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://blog.saxhamai.com/blog/google-business-profile-lost-calls.html"
-    }
-  }
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9771104122165922" crossorigin="anonymous"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Track WhatsApp Clicks
-      document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(el){
-        el.addEventListener("click", function(){
-          gtag('event', 'whatsapp_click', { 'event_category': 'Contact', 'event_label': 'WhatsApp' });
-        });
-      });
-
-      // Track Email Clicks
-      document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
-        el.addEventListener("click", function(){
-          gtag('event', 'email_click', { 'event_category': 'Contact', 'event_label': 'Email' });
-        });
-      });
-
-      // Track Audit/Contact Page Clicks
-      document.querySelectorAll('.ecosystem-btn, a[href*="contact.html"]').forEach(function(el){
-        el.addEventListener("click", function(){
-          gtag('event', 'audit_cta_click', { 'event_category': 'Conversion', 'event_label': 'Audit Interest' });
-        });
-      });
-    });
-  </script>
-
   <style>
-    /* Unbreakable Grid List for Perfect Alignment */
-    .feature-list { list-style: none; padding: 0; margin-top: 15px; margin-bottom: 25px; }
+    /* Premium Article UI */
+    .article-header { padding: 60px 0 40px; }
+    .feature-list { list-style: none; padding: 0; margin: 25px 0; }
     .feature-list li { 
-      margin-bottom: 12px; 
-      font-size: 1.05rem; 
+      margin-bottom: 15px; 
       display: grid; 
       grid-template-columns: 24px 1fr; 
       gap: 12px; 
       align-items: start; 
-      text-align: left;
     }
-    .feature-list li span.text-content { color: var(--text-main); display: block; line-height: 1.6; }
+    .article-content h2 { font-size: 2rem; margin: 3.5rem 0 1.5rem; color: var(--primary-navy); border-left: 5px solid var(--accent-blue); padding-left: 15px; }
+    .article-content p { font-size: 1.15rem; line-height: 1.8; margin-bottom: 1.5rem; }
     
-    /* Article Specific Styling for Readability */
-    .article-content h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--primary-navy); }
-    .article-content p { font-size: 1.1rem; margin-bottom: 1.25rem; color: var(--text-main); line-height: 1.8; }
-    .article-content ul:not(.feature-list) { margin-bottom: 1.5rem; padding-left: 1.5rem; }
-    .article-content ul:not(.feature-list) li { margin-bottom: 0.6rem; font-size: 1.1rem; color: var(--text-main); }
+    blockquote { margin: 3rem 0; padding: 30px; background: var(--bg-light); border-radius: 12px; font-style: italic; border-left: 4px solid var(--accent-blue); }
     
-    /* Dark Mode Text Fixes */
-    body.dark-mode .feature-list li span.text-content { color: var(--text-main); }
-    body.dark-mode .article-content h2 { color: #ffffff; }
-
-    /* Mobile Hamburger Menu Logic */
-    @media (max-width: 768px) {
-      nav {
-        display: none !important; 
-        flex-direction: column;
-        width: 100%;
-        background: var(--bg-white);
-        padding: 15px 0;
-      }
-      nav.nav-active {
-        display: flex !important; 
-      }
-    }
+    body.dark-mode .article-content h2 { color: white; }
+    body.dark-mode blockquote { background: #1e293b; }
   </style>
-
 </head>
 
 <body>
-
 <div id="progress-bar"></div>
 
 <header class="site-header">
   <div class="nav">
-    
-    <div class="logo">
-      <a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Blog</span></a>
-    </div>
-
-    <div class="mobile-toggle" onclick="toggleMobileMenu()">
-      ☰
-    </div>
-
+    <div class="logo"><a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Strategic Blog</span></a></div>
+    <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
     <nav id="mainNav">
-      <a href="/">Home</a>
-      <a href="/blog/" class="active">Blog</a>
-      <a href="/resources.html">Resources</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
-      
-      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer; margin-top: 2px;">
-        🌙
-      </button>
+      <a href="/">Home</a><a href="/blog/">All Articles</a><a href="/resources.html">Resources</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
+      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
     </nav>
-
   </div>
 </header>
 
-<main>
-  <article class="section" itemscope itemtype="https://schema.org/BlogPosting">
-    <div class="container narrow" style="max-width: 800px; margin: 0 auto; padding: 0 15px;">
+<main class="section">
+  <div class="container" style="max-width: 850px; margin: 0 auto;">
+    
+    <p style="margin-bottom: 30px;"><a href="/blog/" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">← Back to All Articles</a></p>
 
-      <p style="margin-bottom: 2rem;">
-        <a href="/blog/" style="color: var(--text-gray); font-size: 0.95rem; font-weight: 500;">← Back to All Articles</a>
-      </p>
+    <header class="article-header">
+      <span style="text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--accent-blue); font-size: 0.85rem;">LOCAL SEO • ANALYSIS</span>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.2; margin-top: 15px;">Why Google Business Profile Listings Lose Calls After Verification</h1>
+      <div style="margin-top: 25px; display: flex; align-items: center; gap: 15px; color: var(--text-gray); font-size: 0.95rem;">
+        <img src="../assets/images/favicon.png" alt="Nitin Pawar" style="width: 40px; height: 40px; border-radius: 50%;">
+        <div>By <strong>Nitin Pawar</strong> • Jan 03, 2026 • 6 min read</div>
+      </div>
+    </header>
 
-      <header style="margin-bottom: 2.5rem;">
-        <span style="background: var(--border); color: var(--text-main); padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 600;">
-          Local SEO Analysis
-        </span>
-        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-top: 1rem; color: var(--primary-navy);" itemprop="headline">
-          Why Google Business Profile Listings Lose Calls After Verification
-        </h1>
-        <p style="color: var(--text-gray); font-size: 0.95rem; margin-top: 15px;">
-          Published on <time datetime="2026-01-03" itemprop="datePublished">Jan 03, 2026</time> • By <span itemprop="author" style="font-weight: 600;">Nitin Pawar</span>
-        </p>
-      </header>
+    <div class="article-content">
+      <img src="../assets/images/Why-Google-Business-Profile.png" onerror="this.src='../assets/images/default.png'" alt="GBP Verification Issues" style="width: 100%; border-radius: 16px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
 
-      <div class="article-content" itemprop="articleBody">
+      <p style="font-size: 1.3rem; font-weight: 600; color: var(--accent-blue); line-height: 1.5;">I recently tried to visit a computer repair shop in Navi Mumbai. Google Maps showed “Open.”</p>
 
-        <img src="../assets/images/Why-Google-Business-Profile.png" onerror="this.src='../assets/images/Why-Google-Business-Profile.png'"   
-             alt="Google Business Profile Lost Calls"   
-             loading="lazy"  
-             style="width: 100%; display: block; margin: 1.5rem auto 2.5rem auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-        
-        <p style="font-size: 1.25rem; font-weight: 600; color: var(--primary-navy);">
-          I recently tried to visit a computer repair shop in Navi Mumbai.
-          Google Maps showed <strong>“Open.”</strong>
-        </p>
+      <p>When I reached there at 8 PM, the shutter was down. I didn’t wait. I searched again and went to their competitor. That business didn’t just lose one sale — they lost a repeat customer.</p>
 
-        <p>
-          When I reached there at 8 PM, the shutter was down. I didn’t wait. I searched again and went to their competitor.
-          That business didn’t just lose one sale — they lost a repeat customer.
-        </p>
+      <p>After verification, many Indian businesses ask: <em>“Profile verified ho gaya, phir bhi calls kam kyu ho gaye?”</em></p>
 
-        <p>
-          After verification, many Indian businesses ask:
-          <em style="color: var(--text-gray);">“Profile verified ho gaya, phir bhi calls kam kyu ho gaye?”</em>
-        </p>
+      <p>The answer is simple but uncomfortable. <strong>Verification doesn’t only activate your listing — it tests your credibility.</strong></p>
 
-        <p>
-          The answer is simple but uncomfortable.
-          <strong style="color: var(--accent-blue);">Verification doesn’t only activate your listing — it tests your credibility.</strong>
-        </p>
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 3rem 0;">
 
-        <hr style="border: 0; border-top: 1px solid var(--border); margin: 3rem 0;">
+      <h2>1. Temporary Ranking Drop</h2>
+      <p>When a Google Business Profile is verified or re-verified, Google often re-evaluates the listing. Trust signals are recalculated and spam filters are re-applied.</p>
+      <p>During this phase, businesses often drop from top results. This does not mean verification failed. It means Google is checking if you deserve visibility.</p>
 
-        <h2>1. Temporary Ranking Drop After Verification</h2>
-        <p>
-          When a Google Business Profile is verified or re-verified, Google often re-evaluates the listing.
-        </p>
-        <ul class="feature-list">
-          <li><span>📌</span><span class="text-content">Trust signals are recalculated</span></li>
-          <li><span>📌</span><span class="text-content">Spam filters are re-applied</span></li>
-          <li><span>📌</span><span class="text-content">Local Pack and Maps rankings may shift</span></li>
+      <h2>2. Stronger Quality Filters Activate</h2>
+      <p>Verification allows Google to cross-check your data across the web. Issues like mismatched phone numbers, duplicate listings, or inconsistent business names can quietly reduce rankings. The profile stays verified — but visibility drops.</p>
+
+      <blockquote>Verification is not a reward. It is an audit. Google does not punish short hours; it punishes inconsistency and misleading signals.</blockquote>
+
+      <h2>3. Address & Category Reality Check</h2>
+      <p>Local search rankings depend heavily on correct category selection and precise address location. After verification, Google becomes stricter about proximity. Businesses slightly outside core areas often lose reach.</p>
+
+      <h2>4. Phone Number & Call Trust</h2>
+      <p>Phone numbers act as identity signals. If the same number is used across multiple listings or does not match other citations (Justdial, Facebook, etc.), Google may suppress call visibility to protect users.</p>
+
+      <h2>5. Reporting Logic Changes</h2>
+      <p>Google now counts interactions more strictly. Multiple views by the same user are often counted once. This makes many businesses feel calls vanished, even when interest is similar.</p>
+
+      <div style="background: rgba(30, 98, 208, 0.05); padding: 35px; border-radius: 12px; margin: 40px 0;">
+        <h3 style="margin-top:0; color: var(--primary-navy);">Post-Verification Checklist</h3>
+        <ul class="feature-list" style="margin-bottom:0;">
+          <li><span>✅</span><span class="text-content">Is your business name & phone consistent everywhere?</span></li>
+          <li><span>✅</span><span class="text-content">Are working hours 100% accurate?</span></li>
+          <li><span>✅</span><span class="text-content">Do your first photos show the real shopfront?</span></li>
+          <li><span>✅</span><span class="text-content">Are negative reviews replied to with empathy?</span></li>
         </ul>
-        <p>
-          During this phase, businesses often drop from top results. This does not mean verification failed.
-          It means Google is checking if you deserve visibility.
-        </p>
-
-        <h2>2. Stronger Spam & Quality Filters Activate</h2>
-        <p>
-          Verification allows Google to cross-check your data across the web.
-          Issues like mismatched phone numbers, duplicate listings, or inconsistent business names can quietly reduce rankings.
-          The profile stays verified — but visibility drops.
-        </p>
-
-        <div class="cta-box" style="text-align: left; padding: 20px; border-left: 4px solid var(--accent-blue); border-radius: 4px; margin: 2rem 0;">
-          <strong>Related Read:</strong> If you haven't already, check out 
-          <a href="google-maps-mistakes.html" style="font-weight: 700; color: var(--accent-blue);">Common Google Maps Mistakes That Hurt Local Businesses</a> 
-          to understand how small errors silently kill leads.
-        </div>
-
-        <h2>3. Address & Category Reality Check</h2>
-        <p>
-          Local search rankings depend heavily on correct category selection and precise address location.
-          After verification, Google becomes stricter about proximity. Businesses slightly outside core areas often lose reach.
-        </p>
-
-        <h2>4. Phone Number & Call Trust Problems</h2>
-        <p>
-          Phone numbers act as identity signals. If the same number is used across multiple listings or does not match other citations (Justdial, Facebook), Google may suppress call visibility.
-        </p>
-
-        <h2>5. Reporting Changes (Looks Worse Than Reality)</h2>
-        <p>
-          Google now counts interactions more strictly. Multiple views by the same user are often counted once.
-          This makes many businesses feel calls vanished, even when interest is similar.
-        </p>
-
-        <div class="cta-box" style="text-align: left; padding: 20px; border-left: 4px solid #16a34a; border-radius: 4px; margin: 2.5rem 0;">
-          <strong style="color: #16a34a;">The Real Truth:</strong> Verification is not a reward. It is an audit.
-          Google does not punish short hours. It punishes inconsistency and misleading signals.
-        </div>
-
-        <h2>6. 5-Minute Checklist After Call Drop</h2>
-        
-        <ul class="feature-list">
-          <li>
-            <span>✅</span>
-            <span class="text-content">Is your business name & phone consistent everywhere?</span>
-          </li>
-          <li>
-            <span>✅</span>
-            <span class="text-content">Are working hours accurate?</span>
-          </li>
-          <li>
-            <span>✅</span>
-            <span class="text-content">Do your first photos show the real shop or team?</span>
-          </li>
-          <li>
-            <span>✅</span>
-            <span class="text-content">Are negative reviews replied to?</span>
-          </li>
-          <li>
-            <span>✅</span>
-            <span class="text-content">Is your primary category truly correct?</span>
-          </li>
-        </ul>
-
-        <p style="margin-top: 1.5rem;">
-          For Indian local businesses, Google Maps is your digital shopfront.
-          If signals look weak, customers — and Google — move on.
-        </p>
-
-        <div class="cta-box" style="margin-top:3.5rem; text-align: center; border-color: var(--accent-blue); padding: 40px 30px;">
-          <h3 style="margin-bottom: 15px; font-size: 1.8rem;">👉 Lost Rankings?</h3>
-          <p style="margin-bottom: 25px; font-size: 1.1rem; color: var(--text-gray);">
-            If your Google Maps profile has stopped getting calls after verification, don't guess. 
-            We audit and fix verification issues for local businesses.
-          </p>
-          <div class="cta-buttons">
-            <a href="../contact.html" class="btn btn-primary" style="padding: 14px 28px; font-size: 1.05rem;">
-              Get a Profile Audit
-            </a>
-          </div>
-        </div>
-
       </div>
 
-      <div style="margin-top: 4rem; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border);">
-        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 10px;">Read Previous Article</p>
-        <h4 style="font-size: 1.3rem;">
-          <a href="why-systems-beat-motivation.html" style="color: var(--accent-blue);">
-            Why Systems Beat Motivation →
-          </a>
-        </h4>
+      <p>For Indian local businesses, Google Maps is your digital shopfront. If signals look weak, customers — and Google — move on.</p>
+
+      <div class="cta-box" style="text-align: center; background: var(--primary-navy); color: white; border: none; padding: 50px 30px; margin-top: 5rem;">
+        <h3 style="color: white; margin-bottom: 15px;">Lost Your Local Rankings?</h3>
+        <p style="margin-bottom: 30px; opacity: 0.9;">If your calls stopped after verification, don't guess. Let us audit your profile and fix the trust gaps.</p>
+        <a href="../contact.html" class="btn btn-primary" style="background: white; color: var(--primary-navy); padding: 16px 32px; font-weight: 700;">🔍 Get a Profile Audit</a>
       </div>
 
     </div>
-  </article>
+
+    <div style="margin-top: 60px; padding: 40px 0; border-top: 1px solid var(--border); text-align: center;">
+      <p style="color: var(--text-gray); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Read Previous Article</p>
+      <h4 style="font-size: 1.5rem; margin-top: 15px;"><a href="why-systems-beat-motivation.html" style="color: var(--accent-blue); text-decoration: none;">Why Systems Beat Motivation →</a></h4>
+    </div>
+  </div>
 </main>
 
-<footer>
-  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
-    
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 15px;">SaXhamAI</h3>
-      <p>Clarity-driven insights for Indian businesses.</p>
-    </div>
-
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 15px;">Services</h3>
-      <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 10px;"><a href="https://saxhamai.com">SaXham Technologies</a></li>
-        <li><a href="/audit.html">Digital Audit</a></li>
-      </ul>
-    </div>
-
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 15px;">Contact</h3>
-      <p style="margin-bottom: 8px;">📧 founder@saxhamai.com</p>
-      <p>📍 Navi Mumbai, Maharashtra</p>
-    </div>
-
+<footer style="background: #020617; padding: 80px 0 40px; color: #94a3b8;">
+  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1100px; margin: 0 auto;">
+    <div style="flex: 1; min-width: 300px;"><h3 style="color: white; margin-bottom: 20px;">SaXhamAI</h3><p style="line-height: 1.8;">Transforming Indian MSMEs through operational excellence and digital trust systems.</p></div>
+    <div style="flex: 1; min-width: 250px;"><h3 style="color: white; margin-bottom: 20px;">Contact</h3><p>📧 founder@saxhamai.com</p><p>📍 Navi Mumbai, Maharashtra</p></div>
   </div>
-
-  <div class="container" style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-    <p style="margin: 0;">© 2026 SaXhamAI | Powered by SaXham Technologies</p>
-  </div>
+  <div class="container" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);"><p style="margin: 0; font-size: 0.9rem;">© 2026 SaXhamAI | Systems by SaXham Technologies</p></div>
 </footer>
 
 <script>
-  // Hamburger Menu Logic
-  function toggleMobileMenu() {
-    const nav = document.getElementById("mainNav");
-    nav.classList.toggle("nav-active");
-  }
-
-  // Dark Mode Logic
-  function toggleDark(){
-    document.body.classList.toggle("dark-mode");
-    const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
-    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
-  }
-
-  // Check theme on page load
-  window.onload = function() {
-    if(localStorage.getItem("saxham_theme") === "dark"){
-      document.body.classList.add("dark-mode");
-      document.getElementById("theme-btn").innerText = "☀️";
-    }
-  };
-
-  // Progress Bar Logic
-  window.onscroll = function(){
-    let winScroll = document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%";
-  };
+  function toggleMobileMenu() { const nav = document.getElementById("mainNav"); nav.classList.toggle("nav-active"); }
+  function toggleDark(){ document.body.classList.toggle("dark-mode"); const isDark = document.body.classList.contains("dark-mode"); localStorage.setItem("saxham_theme", isDark ? "dark" : "light"); document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙"; }
+  window.onload = function() { if(localStorage.getItem("saxham_theme") === "dark"){ document.body.classList.add("dark-mode"); document.getElementById("theme-btn").innerText = "☀️"; } };
+  window.onscroll = function(){ let winScroll = document.documentElement.scrollTop; let height = document.documentElement.scrollHeight - document.documentElement.clientHeight; document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%"; };
 </script>
-
 </body>
 </html>
