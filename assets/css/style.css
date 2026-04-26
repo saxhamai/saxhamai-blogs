@@ -288,3 +288,98 @@ hr {
   backdrop-filter: blur(10px);
   background: rgba(10,25,49,0.85);
 }
+/* =========================================================
+   LIVE MSME NEWS WIDGET - ADDED SECTION
+========================================================= */
+
+.news-sidebar {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 1200px;
+  transition: var(--transition);
+}
+
+.news-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 15px;
+}
+
+/* Pulsing Red Dot for "Live" effect */
+.live-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ff4d4d;
+  border-radius: 50%;
+  box-shadow: 0 0 0 rgba(255, 77, 77, 0.4);
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 77, 77, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+}
+
+.news-item {
+  display: block;
+  padding: 15px 0;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.news-item:last-child { border-bottom: none; }
+
+.news-item:hover {
+  transform: translateX(10px);
+  opacity: 0.8;
+}
+
+.news-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.news-meta {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+}
+
+/* Shimmer Loading Effect */
+.shimmer {
+  height: 15px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, var(--bg-light) 25%, var(--border) 50%, var(--bg-light) 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Specific Adjustments for Dark Mode */
+body.dark-mode .news-sidebar {
+  background: var(--bg-light);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .news-title {
+  color: #ffffff;
+}
+
+body.dark-mode .news-item {
+  border-color: rgba(255,255,255,0.05);
+}
