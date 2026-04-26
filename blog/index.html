@@ -233,90 +233,253 @@
 </footer>
 
 <script>
-  function toggleMobileMenu() { 
-    const nav = document.getElementById("mainNav"); 
-    nav.classList.toggle("nav-active"); 
-  }
+  // --- SYSTEM CONFIG ---
+  let retryCount = 0;
+  const MAX_RETRY = 2;
+  const CACHE_KEY = "saxham_msme_pulse_vfinal";
 
-  function toggleDark(){ 
-    document.body.classList.toggle("dark-mode"); 
-    const isDark = document.body.classList.contains("dark-mode"); 
-    localStorage.setItem("saxham_theme", isDark ? "dark" : "light"); 
-    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙"; 
-  }
+  let newsTimeout, networkController;
+  let lastHash = 0;
+  let isFetching = false;
+  let isBackgroundRefreshing = false;
 
-  window.onload = function() { 
-    if(localStorage.getItem("saxham_theme") === "dark"){ 
-      document.body.classList.add("dark-mode"); 
-      document.getElementById("theme-btn").innerText = "☀️"; 
-    } 
+  // --- TTL ENGINE ---
+  const getTTL = () => {
+    const hour = new Date().getHours();
+    return (hour >= 9 && hour <= 18) ? 180000 : 600000;
   };
 
-  function filterBlog(category) {
-    const cards = document.querySelectorAll('.blog-card');
-    const tags = document.querySelectorAll('.tag');
-    const fCard = document.getElementById('featuredCard');
-    const fTitle = document.getElementById('featuredTitle');
-    tags.forEach(t => t.classList.remove('active'));
-    if(event) event.target.classList.add('active');
-    if (category === 'all') { fCard.style.display = 'grid'; fTitle.style.display = 'block'; } 
-    else { fCard.style.display = 'none'; fTitle.style.display = 'none'; }
-    cards.forEach(card => {
-      if (card.id === 'featuredCard') return; 
-      if (category === 'all' || card.getAttribute('data-category') === category) { card.classList.remove('hide'); } 
-      else { card.classList.add('hide'); }
-    });
+  // --- CACHE SAFE ---
+  const getSafeCache = () => {
+    try {
+      const data = localStorage.getItem(CACHE_KEY);
+      if (!data) return null;
+
+      const parsed = JSON.parse(data);
+
+      if (Date.now() - parsed.time > getTTL() * 3) {
+        localStorage.removeItem(CACHE_KEY);
+        return null;
+      }
+
+      return parsed;
+    } catch {
+      localStorage.removeItem(CACHE_KEY);
+      return null;
+    }
+  };
+
+  // --- HASH ---
+  const fastHash = (str) => {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      hash = ((hash << 5) - hash) + str.charCodeAt(i);
+      hash |= 0;
+    }
+    return hash;
+  };
+
+  // --- THEME ---
+  function toggleDark() {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
+
+    const btn = document.getElementById("theme-btn");
+    if (btn) btn.innerText = isDark ? "☀️" : "🌙";
   }
 
-  // --- REBUILT LIVE NEWS FETCH LOGIC (More Reliable) ---
-  async function fetchMSMENews() {
-    const container = document.getElementById('msme-news-container');
-    // Using a more robust backup for the RSS Feed
-    const rssUrl = 'https://economictimes.indiatimes.com/small-biz/rssfeeds/51111535.cms';
-    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&api_key=00000000000000000000000000000000`; // Public key proxy
+  // --- BOOT ---
+  document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("saxham_theme") === "dark") {
+      document.body.classList.add("dark-mode");
+      const btn = document.getElementById("theme-btn");
+      if (btn) btn.innerText = "☀️";
+    }
+
+    startEngine();
+  });
+
+  // --- NETWORK + VISIBILITY ---
+  window.addEventListener("online", () => fetchNews(false, true));
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && networkController) {
+      networkController.abort();
+    } else if (!document.hidden) {
+      fetchNews(false, true);
+    }
+  });
+
+  // --- ENGINE ---
+  function startEngine() {
+    fetchNews();
+
+    const scheduleNext = () => {
+      if (newsTimeout) clearTimeout(newsTimeout);
+
+      newsTimeout = setTimeout(() => {
+        retryCount = 0;
+        fetchNews(false, true).finally(scheduleNext);
+      }, getTTL());
+    };
+
+    scheduleNext();
+  }
+
+  // --- MAIN FETCH ---
+  async function fetchNews(isRetry = false, forceFetch = false) {
+    const container = document.getElementById("msme-news-container");
+    if (!container || isFetching) return;
+
+    isFetching = true;
+
+    const cached = getSafeCache();
+
+    // --- SWR CACHE ---
+    if (!forceFetch && !isRetry && cached) {
+      if (Date.now() - cached.time < getTTL()) {
+        renderUI(cached.data, cached.time, cached.source || "ET");
+
+        if (!isBackgroundRefreshing) {
+          isBackgroundRefreshing = true;
+
+          fetchNews(false, true).finally(() => {
+            isBackgroundRefreshing = false;
+          });
+        }
+
+        isFetching = false;
+        return;
+      }
+    }
+
+    // --- NETWORK CONTROL ---
+    if (networkController) networkController.abort();
+    networkController = new AbortController();
 
     try {
-      const response = await fetch(apiUrl);
-      if (!response.ok) throw new Error('Network response was not ok');
-      
-      const data = await response.json();
-      
-      if (data.status === 'ok' && data.items.length > 0) {
-        container.innerHTML = ''; // Remove shimmers
-        data.items.slice(0, 5).forEach(item => {
-          const pubDate = new Date(item.pubDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-          
-          // Creating dynamic clickable element
-          const newsLink = document.createElement('a');
-          newsLink.href = item.link;
-          newsLink.target = "_blank";
-          newsLink.className = "news-item";
-          newsLink.style.display = "block";
-          newsLink.style.textDecoration = "none";
-          newsLink.style.padding = "15px 0";
-          newsLink.style.borderBottom = "1px solid rgba(0,0,0,0.05)";
-          newsLink.style.transition = "all 0.2s ease";
+      const sourceLabel = isRetry ? "NDTV" : "ET";
+      const sourceUrl = isRetry
+        ? "https://feeds.feedburner.com/ndtvprofit-latest"
+        : "https://economictimes.indiatimes.com/small-biz/rssfeeds/51111535.cms";
 
-          newsLink.innerHTML = `
-            <span class="news-title" style="font-weight:600; font-size:1rem; display:block; margin-bottom:5px; color: var(--primary-navy);">${item.title}</span>
-            <span class="news-meta" style="font-size:0.8rem; color:var(--text-gray);">${pubDate} • Industry Update</span>
-          `;
-          
-          // Hover effect via JS to ensure isolation
-          newsLink.onmouseover = () => newsLink.style.paddingLeft = "10px";
-          newsLink.onmouseout = () => newsLink.style.paddingLeft = "0";
+      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(sourceUrl)}&v=${Date.now()}`;
 
-          container.appendChild(newsLink);
-        });
-      } else {
-        container.innerHTML = '<p style="padding:20px; color:gray;">News updates are syncing. Please refresh in a moment.</p>';
+      const response = await fetch(proxyUrl, { signal: networkController.signal });
+      const json = await response.json();
+
+      const xml = new DOMParser().parseFromString(json.contents, "text/xml");
+
+      if (xml.querySelector("parsererror")) throw new Error("XML_ERROR");
+
+      const items = Array.from(xml.querySelectorAll("item"))
+        .slice(0, 5)
+        .map((item) => {
+          const t = item.querySelector("title");
+          const l = item.querySelector("link");
+          const d = item.querySelector("pubDate");
+
+          if (!t || !l) return null;
+
+          return {
+            title: t.textContent,
+            link: l.textContent,
+            date: d ? d.textContent : new Date().toISOString(),
+          };
+        })
+        .filter(Boolean);
+
+      if (items.length > 0) {
+        const hash = fastHash(items.map(i => i.title).join("|")) + items.length;
+
+        if (hash !== lastHash) {
+          lastHash = hash;
+
+          renderUI(items, Date.now(), sourceLabel);
+
+          localStorage.setItem(
+            CACHE_KEY,
+            JSON.stringify({
+              data: items,
+              time: Date.now(),
+              source: sourceLabel,
+            })
+          );
+        }
+
+        retryCount = 0;
+      } else if (retryCount < MAX_RETRY) {
+        retryCount++;
+        isFetching = false;
+        return fetchNews(true);
       }
-    } catch (error) {
-      console.error("Fetch Error:", error);
-      container.innerHTML = '<p style="padding:20px; color:gray;">Latest MSME updates are currently loading from source...</p>';
+
+    } catch (e) {
+      if (e.name === "AbortError") return;
+
+      if (retryCount < MAX_RETRY) {
+        retryCount++;
+        isFetching = false;
+        return fetchNews(true);
+      }
+
+      if (cached) {
+        renderUI(cached.data, cached.time, cached.source || "ET");
+      } else {
+        container.innerHTML = `
+          <p style="padding:20px; text-align:center; color:var(--text-gray);">
+            ⚠️ Live feed unavailable. Retrying shortly...
+          </p>
+        `;
+      }
+    } finally {
+      isFetching = false;
     }
   }
 
-  // Trigger News Fetch
-  document.addEventListener('DOMContentLoaded', fetchMSMENews);
+  // --- RENDER ---
+  function renderUI(items, timestamp, sourceLabel) {
+    const container = document.getElementById("msme-news-container");
+    const fragment = document.createDocumentFragment();
+
+    items.forEach((item, index) => {
+      const link = document.createElement("a");
+
+      link.href = item.link;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer nofollow";
+      link.className = "news-item";
+
+      const dateObj = new Date(item.date);
+      const pubDate = isNaN(dateObj)
+        ? "Update"
+        : dateObj.toLocaleDateString("en-IN", {
+            day: "numeric",
+            month: "short",
+          });
+
+      const title =
+        item.title.length > 85
+          ? item.title.substring(0, 85) + "..."
+          : item.title;
+
+      link.innerHTML = `
+        <span class="news-title">${index === 0 ? "🚨 " : ""}${title}</span>
+        <span class="news-meta">🌐 ${pubDate} • ${sourceLabel}</span>
+      `;
+
+      fragment.appendChild(link);
+    });
+
+    const age = Math.floor((Date.now() - timestamp) / 60000);
+
+    const stamp = document.createElement("p");
+    stamp.className = "news-timestamp";
+    stamp.innerText = `Synced: ${age < 1 ? "Just now" : age + "m ago"} • ${sourceLabel}`;
+
+    fragment.appendChild(stamp);
+
+    container.replaceChildren(fragment);
+  }
 </script>
