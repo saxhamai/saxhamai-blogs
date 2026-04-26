@@ -4,16 +4,112 @@
   <meta charset="UTF-8">
   <title>SaXhamAI | Building Digital Trust & Systems for Indian MSMEs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="description" content="Fix your Google visibility, WhatsApp response and business trust. Advanced IT operations and digital trust footprints by SaXham Technologies.">
   <meta name="author" content="Nitin Pawar">
-
-  <link rel="canonical" href="https://blog.saxhamai.com/">
-  
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="assets/images/favicon.png">
-
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* DESKTOP ALIGNMENT & PREMIUM BUTTONS FIX */
+    .hero {
+      padding: 120px 0 80px;
+      text-align: center;
+      background: radial-gradient(circle at top right, rgba(30, 98, 208, 0.08), transparent);
+    }
+    
+    /* Hero Title - Bold & Professional */
+    .hero h1 {
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    /* Trust Bar - Clean & Wide */
+    .trust-bar {
+      background: var(--bg-light);
+      padding: 25px 0;
+      border-y: 1px solid var(--border);
+    }
+    .trust-flex {
+      display: flex;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 0.7;
+    }
+
+    /* GRID FIX - Making cards look premium on Desktop */
+    .glass-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Force 3 columns on desktop */
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Premium Glass Card */
+    .glass-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      transition: all 0.4s ease;
+      text-align: left;
+    }
+    .glass-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+
+    /* BUTTONS - Not basic, very sleek */
+    .btn-premium {
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-primary-dark { background: var(--primary-navy); color: white; }
+    .btn-primary-dark:hover { background: var(--accent-blue); transform: scale(1.05); }
+
+    .btn-outline { 
+      border: 2px solid var(--primary-navy); 
+      color: var(--primary-navy); 
+      background: transparent;
+    }
+    .btn-outline:hover { background: var(--primary-navy); color: white; }
+
+    /* Blog Grid - Fix for "Bande" (ugly) look */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .blog-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+    .blog-card:hover img { transform: scale(1.05); }
+
+    @media (max-width: 1024px) {
+      .glass-grid, .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .glass-grid, .blog-grid { grid-template-columns: 1fr; }
+      .trust-flex { flex-direction: column; align-items: center; gap: 15px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -21,217 +117,92 @@
 
   <header class="site-header">
     <div class="nav">
-      <div class="logo">
-        <a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Consulting</span></a>
-      </div>
+      <div class="logo"><a href="/">SaXhamAI</a></div>
       <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
       <nav id="mainNav">
-        <a href="/" class="active">Home</a>
+        <a href="/">Home</a>
         <a href="/blog/">Blog</a>
-        <a href="/resources.html">Resources</a>
-        <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
-        <a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
-        <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
+        <a href="/audit.html" class="btn-premium btn-primary-dark" style="padding: 10px 20px; font-size: 0.8rem;">Audit</a>
+        <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; cursor:pointer;">🌙</button>
       </nav>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <span class="reveal" style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; color: #fff; opacity: 0.8;">The Science of Digital Growth</span>
       <h1 class="reveal">Systems That Build Trust,<br>Trust That Drives Sales.</h1>
-      <p class="reveal" style="max-width: 800px; margin: 0 auto 40px;">
-        We bridge the gap between your technical infrastructure and customer confidence. Specialized in <strong>Digital Trust Audits</strong> for Indian local businesses.
+      <p class="reveal" style="max-width: 750px; margin: 0 auto 40px; font-size: 1.2rem;">
+        Specialized Digital Trust Audits for Indian MSMEs. We fix your visibility so you can focus on growth.
       </p>
-
-      <div class="hero-buttons reveal" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-        <a href="/audit.html" class="btn btn-primary btn-glow">
-           🔍 Get Free Digital Audit
-        </a>
-        <a href="https://wa.me/919702855005?text=Hi%20Nitin,%20I%20want%20to%20fix%20my%20business%20digital%20trust" class="btn" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white;">
-           💬 Talk to Founder
-        </a>
+      <div class="reveal" style="display: flex; gap: 20px; justify-content: center;">
+        <a href="/audit.html" class="btn-premium btn-primary-dark">🔍 Free Audit</a>
+        <a href="/contact.html" class="btn-premium btn-outline">Talk to Founder</a>
       </div>
     </div>
   </section>
 
-  <div class="trust-bar reveal">
-    <div class="container">
-      <div class="trust-flex" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.6;">
-        <div class="trust-item">GOOGLE VISIBILITY</div>
-        <div class="trust-item">WHATSAPP AUTOMATION</div>
-        <div class="trust-item">DEVOPS EFFICIENCY</div>
-        <div class="trust-item">MSME SCALABILITY</div>
-      </div>
+  <div class="trust-bar">
+    <div class="trust-flex reveal">
+      <span>GOOGLE VISIBILITY</span>
+      <span>WHATSAPP AUTOMATION</span>
+      <span>DEVOPS EFFICIENCY</span>
+      <span>MSME SCALABILITY</span>
     </div>
   </div>
 
   <section class="section">
-    <div class="container" style="max-width: 1100px; margin: 0 auto;">
+    <div class="container">
       <h2 class="section-title reveal">Common Business Leakages</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        
-        <div class="blog-card reveal-left" style="padding: 40px;">
-          <div style="font-size: 2.5rem; margin-bottom: 20px;">🗺️</div>
-          <h3 style="margin-bottom:15px;">Identity Gaps</h3>
-          <p>When your Google Maps name doesn't match your Website or Board, customers subconsciously mark you as "unreliable".</p>
+      <div class="glass-grid">
+        <div class="glass-card reveal">
+          <div style="font-size: 2rem;">🗺️</div>
+          <h3>Identity Gaps</h3>
+          <p>When your Google Maps name doesn't match your Website, trust drops instantly.</p>
         </div>
-
-        <div class="blog-card reveal" style="padding: 40px;">
-          <div style="font-size: 2.5rem; margin-bottom: 20px;">⏳</div>
-          <h3 style="margin-bottom:15px;">Response Decay</h3>
-          <p>Slow WhatsApp replies aren't just missed chats; they are immediate leads gifted to your competitors.</p>
+        <div class="glass-card reveal">
+          <div style="font-size: 2rem;">⏳</div>
+          <h3>Response Decay</h3>
+          <p>Slow WhatsApp replies give your leads to your competitors on a platter.</p>
         </div>
-
-        <div class="blog-card reveal-right" style="padding: 40px;">
-          <div style="font-size: 2.5rem; margin-bottom: 20px;">📉</div>
-          <h3 style="margin-bottom:15px;">Conversion Void</h3>
-          <p>Traffic is useless without trust signals. If your site doesn't load fast or look secure, users bounce in seconds.</p>
+        <div class="glass-card reveal">
+          <div style="font-size: 2rem;">📉</div>
+          <h3>Conversion Void</h3>
+          <p>A slow website is a broken bucket. Fix the leaks before buying more water.</p>
         </div>
-
       </div>
     </div>
   </section>
 
   <section class="section section-alt">
-    <div class="container" style="max-width: 1100px; margin: 0 auto;">
-      <h2 class="section-title reveal">Latest Strategic Insights</h2>
+    <div class="container">
+      <h2 class="section-title reveal">Latest Insights</h2>
       <div class="blog-grid">
-        
         <article class="blog-card reveal">
-          <div class="card-img-wrapper">
-             <img src="assets/images/it-policy-reform.png" onerror="this.src='assets/images/default.png'" alt="IT Policy">
-          </div>
+          <div class="card-img-wrapper"><img src="assets/images/it-policy-reform.png" alt="IT"></div>
           <div class="card-content">
             <h3>IT Protection or Exploitation?</h3>
-            <p>Analysis of India's current IT work culture and policy reforms.</p>
-            <a href="blog/it-employees-protection-exploitation-india.html" class="read-more">Explore Analysis →</a>
+            <a href="blog/it-employees.html" style="color: var(--accent-blue); font-weight: bold; text-decoration: none;">Read More →</a>
           </div>
         </article>
-
         <article class="blog-card reveal">
-          <div class="card-img-wrapper">
-             <img src="assets/images/From-Paperwork-to-Python.png" onerror="this.src='assets/images/default.png'" alt="MSME">
-          </div>
+          <div class="card-img-wrapper"><img src="assets/images/From-Paperwork-to-Python.png" alt="Python"></div>
           <div class="card-content">
             <h3>Paperwork to Python</h3>
-            <p>The practical digital roadmap for Indian MSMEs in 2026.</p>
-            <a href="blog/paperwork-to-python-msme-transformation.html" class="read-more">View Roadmap →</a>
+            <a href="blog/python.html" style="color: var(--accent-blue); font-weight: bold; text-decoration: none;">Read More →</a>
           </div>
         </article>
-
         <article class="blog-card reveal">
-          <div class="card-img-wrapper">
-             <img src="assets/images/Why-Digital-Trust-Matters.png" onerror="this.src='assets/images/default.png'" alt="Trust">
-          </div>
+          <div class="card-img-wrapper"><img src="assets/images/Why-Digital-Trust-Matters.png" alt="Trust"></div>
           <div class="card-content">
             <h3>Why Trust Matters</h3>
-            <p>The single most important currency for local business growth.</p>
-            <a href="blog/why-trust-matters.html" class="read-more">Read More →</a>
+            <a href="blog/trust.html" style="color: var(--accent-blue); font-weight: bold; text-decoration: none;">Read More →</a>
           </div>
         </article>
-
       </div>
     </div>
   </section>
 
-  <section class="section reveal">
-    <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
-      <div class="newsletter-box">
-        <h2>Stop Guessing. Start Systemizing.</h2>
-        <p>We don't just provide advice. We build the digital footprints and SOPs that make your business un-ignorable.</p>
-        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-          <a href="/contact.html" class="btn btn-primary" style="background: white; color: var(--primary-navy); padding: 15px 35px; font-weight: 700;">Work with SaXham</a>
-          <a href="/audit.html" style="color: white; border: 1px solid white; padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: 600;">Request Audit</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <a href="https://wa.me/919702855005?text=Hi%20Nitin,%20I%20want%20to%20fix%20my%20business%20digital%20trust" class="sticky-cta">💬 Get Leads Now</a>
-
-  <footer>
-    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1100px; margin: 0 auto;">
-      <div style="flex: 1; min-width: 300px;">
-        <h3 style="color: white; margin-bottom: 20px;">SaXhamAI</h3>
-        <p style="line-height: 1.8;">Transforming Indian MSMEs through operational excellence and digital trust systems. Systems designed by Nitin Pawar.</p>
-      </div>
-      <div style="flex: 1; min-width: 200px;">
-        <h3 style="color: white; margin-bottom: 20px;">Navigation</h3>
-        <ul style="list-style: none; padding: 0; line-height: 2;">
-          <li><a href="/blog/" style="color: inherit; text-decoration: none;">Strategic Blog</a></li>
-          <li><a href="/resources.html" style="color: inherit; text-decoration: none;">Resources</a></li>
-          <li><a href="/audit.html" style="color: inherit; text-decoration: none;">Digital Audit</a></li>
-        </ul>
-      </div>
-      <div style="flex: 1; min-width: 250px;">
-        <h3 style="color: white; margin-bottom: 20px;">Direct Support</h3>
-        <p>📧 founder@saxhamai.com</p>
-        <p>📍 Navi Mumbai, MH, India</p>
-      </div>
-    </div>
-    <div class="container" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);">
-      <p>© 2026 SaXhamAI | Engineered by SaXham Technologies</p>
-    </div>
-  </footer>
-
-  <script>
-    /**
-     * SaXhamAI Premium UI Engine v6.0
-     */
-    window.addEventListener("load", () => {
-        document.body.classList.add("loaded");
-    });
-
-    /* SCROLL REVEAL */
-    const revealObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-            }
-        });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-        revealObserver.observe(el);
-    });
-
-    /* CURSOR GLOW (Desktop Only) */
-    if (window.innerWidth > 768) {
-        const glow = document.createElement("div");
-        glow.classList.add("cursor-glow");
-        document.body.appendChild(glow);
-        document.addEventListener("mousemove", e => {
-            glow.style.left = `${e.clientX}px`;
-            glow.style.top = `${e.clientY}px`;
-        });
-    }
-
-    /* SCROLL PROGRESS */
-    window.addEventListener("scroll", () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        const bar = document.getElementById("progress-bar");
-        if (bar) bar.style.width = scrolled + "%";
-    });
-
-    /* MOBILE MENU & UTILS */
-    function toggleMobileMenu() {
-      const nav = document.getElementById("mainNav");
-      nav.classList.toggle("nav-active");
-    }
-    function toggleDark(){
-      document.body.classList.toggle("dark-mode");
-      const isDark = document.body.classList.contains("dark-mode");
-      localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
-      document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
-    }
-    if(localStorage.getItem("saxham_theme") === "dark"){
-        document.body.classList.add("dark-mode");
-        document.getElementById("theme-btn").innerText = "☀️";
-    }
-  </script>
+  <script src="assets/js/engine.js"></script>
 </body>
 </html>
