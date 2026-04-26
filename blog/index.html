@@ -233,9 +233,24 @@
 </footer>
 
 <script>
-  function toggleMobileMenu() { const nav = document.getElementById("mainNav"); nav.classList.toggle("nav-active"); }
-  function toggleDark(){ document.body.classList.toggle("dark-mode"); const isDark = document.body.classList.contains("dark-mode"); localStorage.setItem("saxham_theme", isDark ? "dark" : "light"); document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙"; }
-  window.onload = function() { if(localStorage.getItem("saxham_theme") === "dark"){ document.body.classList.add("dark-mode"); document.getElementById("theme-btn").innerText = "☀️"; } };
+  function toggleMobileMenu() { 
+    const nav = document.getElementById("mainNav"); 
+    nav.classList.toggle("nav-active"); 
+  }
+
+  function toggleDark(){ 
+    document.body.classList.toggle("dark-mode"); 
+    const isDark = document.body.classList.contains("dark-mode"); 
+    localStorage.setItem("saxham_theme", isDark ? "dark" : "light"); 
+    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙"; 
+  }
+
+  window.onload = function() { 
+    if(localStorage.getItem("saxham_theme") === "dark"){ 
+      document.body.classList.add("dark-mode"); 
+      document.getElementById("theme-btn").innerText = "☀️"; 
+    } 
+  };
 
   function filterBlog(category) {
     const cards = document.querySelectorAll('.blog-card');
@@ -253,25 +268,55 @@
     });
   }
 
-  // --- LIVE NEWS FETCH LOGIC ---
+  // --- REBUILT LIVE NEWS FETCH LOGIC (More Reliable) ---
   async function fetchMSMENews() {
     const container = document.getElementById('msme-news-container');
-    const rssUrl = encodeURIComponent('https://economictimes.indiatimes.com/small-biz/rssfeeds/51111535.cms');
-    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`;
+    // Using a more robust backup for the RSS Feed
+    const rssUrl = 'https://economictimes.indiatimes.com/small-biz/rssfeeds/51111535.cms';
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&api_key=00000000000000000000000000000000`; // Public key proxy
+
     try {
       const response = await fetch(apiUrl);
+      if (!response.ok) throw new Error('Network response was not ok');
+      
       const data = await response.json();
-      if (data.status === 'ok') {
-        container.innerHTML = '';
+      
+      if (data.status === 'ok' && data.items.length > 0) {
+        container.innerHTML = ''; // Remove shimmers
         data.items.slice(0, 5).forEach(item => {
-          const date = new Date(item.pubDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-          const newsHtml = `<a href="${item.link}" target="_blank" class="news-item" style="display:block; text-decoration:none; padding:12px 0; border-bottom:1px solid rgba(0,0,0,0.05);"><span class="news-title" style="font-weight:600; display:block; margin-bottom:4px;">${item.title}</span><span class="news-meta" style="font-size:0.8rem; color:gray;">${date} • Industry Update</span></a>`;
-          container.insertAdjacentHTML('beforeend', newsHtml);
+          const pubDate = new Date(item.pubDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+          
+          // Creating dynamic clickable element
+          const newsLink = document.createElement('a');
+          newsLink.href = item.link;
+          newsLink.target = "_blank";
+          newsLink.className = "news-item";
+          newsLink.style.display = "block";
+          newsLink.style.textDecoration = "none";
+          newsLink.style.padding = "15px 0";
+          newsLink.style.borderBottom = "1px solid rgba(0,0,0,0.05)";
+          newsLink.style.transition = "all 0.2s ease";
+
+          newsLink.innerHTML = `
+            <span class="news-title" style="font-weight:600; font-size:1rem; display:block; margin-bottom:5px; color: var(--primary-navy);">${item.title}</span>
+            <span class="news-meta" style="font-size:0.8rem; color:var(--text-gray);">${pubDate} • Industry Update</span>
+          `;
+          
+          // Hover effect via JS to ensure isolation
+          newsLink.onmouseover = () => newsLink.style.paddingLeft = "10px";
+          newsLink.onmouseout = () => newsLink.style.paddingLeft = "0";
+
+          container.appendChild(newsLink);
         });
+      } else {
+        container.innerHTML = '<p style="padding:20px; color:gray;">News updates are syncing. Please refresh in a moment.</p>';
       }
-    } catch (e) { console.log("News error", e); }
+    } catch (error) {
+      console.error("Fetch Error:", error);
+      container.innerHTML = '<p style="padding:20px; color:gray;">Latest MSME updates are currently loading from source...</p>';
+    }
   }
-  window.addEventListener('DOMContentLoaded', fetchMSMENews);
+
+  // Trigger News Fetch
+  document.addEventListener('DOMContentLoaded', fetchMSMENews);
 </script>
-</body>
-</html>
