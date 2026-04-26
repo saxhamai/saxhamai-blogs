@@ -39,7 +39,13 @@
     body.dark-mode .tag { background: #1e293b; border-color: #334155; }
     body.dark-mode .read-more { color: white; }
 
-    @media (max-width: 768px) { .featured-card { display: block !important; } .featured-card .card-content { padding: 30px !important; } }
+    @media (max-width: 768px) { 
+        .featured-card { display: block !important; } 
+        .featured-card .card-content { padding: 30px !important; }
+        /* Fix Mobile Menu Visibility */
+        nav { display: none; }
+        nav.nav-active { display: flex !important; flex-direction: column; width: 100%; gap: 15px; padding: 20px 0; }
+    }
   </style>
 </head>
 
@@ -78,7 +84,7 @@
     <h2 id="featuredTitle" style="font-size: 1.8rem; margin-bottom: 40px; border-left: 5px solid var(--accent-blue); padding-left: 20px;">Featured Analysis</h2>
 
     <article id="featuredCard" class="blog-card featured-card" data-category="IT Operations" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); border: 2px solid var(--accent-blue); margin-bottom: 60px;">
-      <div class="card-img-wrapper" style="height: 100%;"><img src="../assets/images/it-policy-reform.png" onerror="this.src='../assets/images/default.png'" alt="IT Reform"></div>
+      <div class="card-img-wrapper" style="height: 100%;"><img src="../assets/images/it-policy-reform.png" alt="IT Reform"></div>
       <div class="card-content" style="padding: 50px;">
         <div class="meta-info"><span>POLICY & CULTURE</span><span>APRIL 23, 2026 • 12 MIN READ</span></div>
         <h3 style="font-size: 2.2rem;">India’s IT Employees: Protection or Exploitation?</h3>
@@ -89,7 +95,7 @@
 
     <div class="blog-grid" id="blogGrid">
       <article class="blog-card" data-category="MSME Tech">
-        <div class="card-img-wrapper"><img src="../assets/images/From-Paperwork-to-Python.png" onerror="this.src='../assets/images/default.png'" alt="MSME"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/From-Paperwork-to-Python.png" alt="MSME"></div>
         <div class="card-content">
           <div class="meta-info"><span>TRANSFORMATION</span><span>8 MIN READ</span></div>
           <h3>From Paperwork to Python</h3><p>The roadmap from manual registers to AI-driven automation for Indian businesses.</p>
@@ -98,7 +104,7 @@
       </article>
 
       <article class="blog-card" data-category="MSME Tech">
-        <div class="card-img-wrapper"><img src="../assets/images/Patil-Effects.png" onerror="this.src='../assets/images/default.png'" alt="Patil"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Patil-Effects.png" alt="Patil"></div>
         <div class="card-content">
           <div class="meta-info"><span>AI INFRASTRUCTURE</span><span>8 MIN READ</span></div>
           <h3>The “Patil Effect”: AI Reshaping IT</h3><p>How efficiency is reshaping IT services through AI-driven operations.</p>
@@ -107,7 +113,7 @@
       </article>
 
       <article class="blog-card" data-category="Business Growth">
-        <div class="card-img-wrapper"><img src="../assets/images/Macron-Praises-India’s-Innovation.png" onerror="this.src='../assets/images/default.png'" alt="Macron"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Macron-Praises-India’s-Innovation.png" alt="Macron"></div>
         <div class="card-content">
           <div class="meta-info"><span>STRATEGY</span><span>10 MIN READ</span></div>
           <h3>Macron Praises India’s Innovation Impact</h3><p>Global recognition of India's digital infrastructure and small businesses.</p>
@@ -116,7 +122,7 @@
       </article>
 
       <article class="blog-card" data-category="Business Growth">
-        <div class="card-img-wrapper"><img src="../assets/images/Budget2026.png" onerror="this.src='../assets/images/default.png'" alt="Budget"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Budget2026.png" alt="Budget"></div>
         <div class="card-content">
           <div class="meta-info"><span>ECONOMY</span><span>8 MIN READ</span></div>
           <h3>Budget 2026: India’s Growth Roadmap</h3><p>Impact of Budget 2026 on MSMEs and growth strategy.</p>
@@ -125,7 +131,7 @@
       </article>
 
       <article class="blog-card" data-category="Business Growth">
-        <div class="card-img-wrapper"><img src="../assets/images/Recharge-comp.png" onerror="this.src='../assets/images/default.png'" alt="Recharge"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Recharge-comp.png" alt="Recharge"></div>
         <div class="card-content">
           <div class="meta-info"><span>CONSUMER RIGHTS</span><span>6 MIN READ</span></div>
           <h3>Recharge Compulsory for Incoming?</h3><p>Why incoming calls require mandatory recharge — consumer issue.</p>
@@ -134,7 +140,7 @@
       </article>
 
       <article class="blog-card" data-category="Digital Trust">
-        <div class="card-img-wrapper"><img src="../assets/images/Website-live-customer-no-trust.png" onerror="this.src='../assets/images/default.png'" alt="Trust"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Website-live-customer-no-trust.png" alt="Trust"></div>
         <div class="card-content">
           <div class="meta-info"><span>WEB PRESENCE</span><span>7 MIN READ</span></div>
           <h3>Website Live, But No Trust?</h3><p>Why professional websites fail to convert leads in India.</p>
@@ -143,7 +149,7 @@
       </article>
 
       <article class="blog-card" data-category="Digital Trust">
-        <div class="card-img-wrapper"><img src="../assets/images/Why-Fast-Replies-Matter.png" onerror="this.src='../assets/images/default.png'" alt="Replies"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Why-Fast-Replies-Matter.png" alt="Replies"></div>
         <div class="card-content">
           <div class="meta-info"><span>CUSTOMER EXPERIENCE</span><span>6 MIN READ</span></div>
           <h3>Why Fast Replies Matter More</h3><p>Response speed builds trust faster than aggressive pricing.</p>
@@ -152,7 +158,7 @@
       </article>
 
       <article class="blog-card" data-category="Digital Trust">
-        <div class="card-img-wrapper"><img src="../assets/images/WhatsApp-Business-Mistakes.png" onerror="this.src='../assets/images/default.png'" alt="WhatsApp"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/WhatsApp-Business-Mistakes.png" alt="WhatsApp"></div>
         <div class="card-content">
           <div class="meta-info"><span>COMMUNICATION</span><span>6 MIN READ</span></div>
           <h3>WhatsApp Business Mistakes</h3><p>Common mistakes local businesses make when texting customers.</p>
@@ -161,7 +167,7 @@
       </article>
 
       <article class="blog-card" data-category="Digital Trust">
-        <div class="card-img-wrapper"><img src="../assets/images/Why-Google-Business-Profile.png" onerror="this.src='../assets/images/default.png'" alt="GBP"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Why-Google-Business-Profile.png" alt="GBP"></div>
         <div class="card-content">
           <div class="meta-info"><span>LOCAL SEO</span><span>6 MIN READ</span></div>
           <h3>GBP Listings Lose Calls?</h3><p>Real reasons why calls drop right after Google verification.</p>
@@ -170,7 +176,7 @@
       </article>
 
       <article class="blog-card" data-category="Digital Trust">
-        <div class="card-img-wrapper"><img src="../assets/images/Common-Google-Maps-Mistakes.png" onerror="this.src='../assets/images/default.png'" alt="Maps"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Common-Google-Maps-Mistakes.png" alt="Maps"></div>
         <div class="card-content">
           <div class="meta-info"><span>LOCAL SEO</span><span>5 MIN READ</span></div>
           <h3>Common Google Maps Mistakes</h3><p>5 basic mistakes that are killing your local business visibility.</p>
@@ -179,7 +185,7 @@
       </article>
 
       <article class="blog-card" data-category="Digital Trust">
-        <div class="card-img-wrapper"><img src="../assets/images/Why-Digital-Trust-Matters.png" onerror="this.src='../assets/images/default.png'" alt="Trust"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Why-Digital-Trust-Matters.png" alt="Trust"></div>
         <div class="card-content">
           <div class="meta-info"><span>CORE BASICS</span><span>6 MIN READ</span></div>
           <h3>Why Digital Trust Matters</h3><p>The hidden factor behind customer decisions and revenue.</p>
@@ -188,7 +194,7 @@
       </article>
 
       <article class="blog-card" data-category="IT Operations">
-        <div class="card-img-wrapper"><img src="../assets/images/Why-Systems-Beat-Motivation.png" onerror="this.src='../assets/images/default.png'" alt="Systems"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Why-Systems-Beat-Motivation.png" alt="Systems"></div>
         <div class="card-content">
           <div class="meta-info"><span>OPERATIONS</span><span>7 MIN READ</span></div>
           <h3>Why Systems Beat Motivation</h3><p>Motivation fades. Systems scale for consistent growth.</p>
@@ -205,9 +211,7 @@
       <div id="msme-news-container">
         <div class="shimmer"></div>
         <div class="shimmer" style="width: 80%;"></div>
-        <div class="shimmer"></div>
       </div>
-      <p style="font-size: 0.7rem; color: var(--text-gray); margin-top: 15px; text-align: right;">Source: Economic Times MSME</p>
     </div>
 
     <div class="newsletter-box">
@@ -219,7 +223,7 @@
   </div>
 </section>
 
-<footer style="background: #020617; padding: 80px 0 40px; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.05);">
+<footer style="background: #020617; padding: 80px 0 40px; color: #94a3b8;">
   <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1100px; margin: 0 auto;">
     <div style="flex: 1; min-width: 300px;"><h3 style="color: white; margin-bottom: 20px;">SaXhamAI</h3><p style="line-height: 1.8;">Transforming Indian MSMEs through operational excellence and digital trust systems.</p></div>
     <div style="flex: 1; min-width: 200px;"><h3 style="color: white; margin-bottom: 20px;">Quick Links</h3><ul style="list-style: none; padding: 0; line-height: 2;"><li><a href="/audit.html" style="color: inherit; text-decoration: none;">Free Audit</a></li><li><a href="/resources.html" style="color: inherit; text-decoration: none;">Resources</a></li><li><a href="/contact.html" style="color: inherit; text-decoration: none;">Contact</a></li></ul></div>
@@ -249,7 +253,7 @@
     });
   }
 
-  // LIVE NEWS FETCH SCRIPT
+  // --- LIVE NEWS FETCH LOGIC ---
   async function fetchMSMENews() {
     const container = document.getElementById('msme-news-container');
     const rssUrl = encodeURIComponent('https://economictimes.indiatimes.com/small-biz/rssfeeds/51111535.cms');
@@ -261,11 +265,11 @@
         container.innerHTML = '';
         data.items.slice(0, 5).forEach(item => {
           const date = new Date(item.pubDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
-          const newsHtml = `<a href="${item.link}" target="_blank" class="news-item"><span class="news-title">${item.title}</span><span class="news-meta">${date} • Industry Update</span></a>`;
+          const newsHtml = `<a href="${item.link}" target="_blank" class="news-item" style="display:block; text-decoration:none; padding:12px 0; border-bottom:1px solid rgba(0,0,0,0.05);"><span class="news-title" style="font-weight:600; display:block; margin-bottom:4px;">${item.title}</span><span class="news-meta" style="font-size:0.8rem; color:gray;">${date} • Industry Update</span></a>`;
           container.insertAdjacentHTML('beforeend', newsHtml);
         });
-      } else { container.innerHTML = '<p style="font-size: 0.9rem; color: var(--text-gray);">Updates temporarily unavailable.</p>'; }
-    } catch (error) { container.innerHTML = '<p style="font-size: 0.9rem; color: var(--text-gray);">Unable to load live pulse.</p>'; }
+      }
+    } catch (e) { console.log("News error", e); }
   }
   window.addEventListener('DOMContentLoaded', fetchMSMENews);
 </script>
