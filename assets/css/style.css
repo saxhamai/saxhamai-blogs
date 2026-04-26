@@ -1,6 +1,5 @@
 /* =========================================================
-   SaXham AI Blog – ULTIMATE SaaS UI UPGRADE (v6.1 - FIXED)
-   Optimized for: Desktop Alignment, Premium Buttons, No-Boxy Look
+   SaXham AI Blog – FINAL PRODUCTION CSS (FIXED + STABLE)
 ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap');
@@ -9,13 +8,16 @@
   --primary-navy: #0A1931;
   --secondary-navy: #152D54;
   --accent-blue: #1E62D0;
+
   --bg-light: #F8F9FA;
   --bg-white: #FFFFFF;
-  --text-main: #1e293b;
+  
+  --text-main: #333;
+  --text-light: #F4F7F6;
   --text-gray: #64748b;
-  --border: rgba(226, 232, 240, 0.8);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-premium: 0 20px 40px rgba(10, 25, 49, 0.08);
+  --border: #e2e8f0;
+
+  --transition: all 0.25s ease;
 }
 
 /* ================= DARK MODE ================= */
@@ -23,86 +25,57 @@ body.dark-mode {
   --primary-navy: #60A5FA; 
   --secondary-navy: #1E3A8A;
   --accent-blue: #3B82F6;
+
   --bg-white: #0B1121; 
   --bg-light: #151E32; 
-  --text-main: #f1f5f9; 
-  --text-gray: #94a3b8;
-  --border: rgba(30, 41, 59, 0.7);
+  
+  --text-main: #E2E8F0; 
+  --text-gray: #94A3B8; 
+  --border: #1E293B; 
 }
 
-/* ================= RESET & PAGE LOAD ================= */
+/* ================= RESET ================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-thumb { background: var(--accent-blue); border-radius: 10px; }
-
+/* ================= BODY ================= */
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg-white);
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  padding-bottom: 80px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-body.loaded { opacity: 1; transform: translateY(0); }
-
-/* ================= PREMIUM BUTTONS (NOT BASIC) ================= */
-.btn {
-  padding: 14px 32px;
-  border-radius: 50px; /* Modern Pill Shape */
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: var(--transition);
-  text-decoration: none;
-  border: none;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(30, 98, 208, 0.2);
+/* ================= TYPO ================= */
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-navy);
 }
 
-.btn-primary { background: var(--primary-navy); color: #fff !important; }
-.btn-primary:hover { 
-    background: var(--accent-blue); 
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(30, 98, 208, 0.4);
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #fff;
 }
 
-.btn-outline {
-    background: transparent;
-    border: 2px solid var(--primary-navy);
-    color: var(--primary-navy) !important;
-    box-shadow: none;
-}
+p { color: var(--text-gray); }
 
-.btn-outline:hover {
-    background: var(--primary-navy);
-    color: #fff !important;
-}
+/* ================= LAYOUT ================= */
+.section { padding: 80px 5%; }
+.section-alt { background: var(--bg-light); }
 
-.btn:active { transform: scale(0.96); }
-
-/* ================= GLASS NAVBAR ================= */
+/* ================= HEADER (FIXED CLICK ISSUE) ================= */
 .site-header {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
+  background: var(--bg-white);
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 9999; /* 🔥 HIGH PRIORITY */
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
 }
-
-body.dark-mode .site-header { background: rgba(11, 17, 33, 0.8); }
 
 .nav {
   display: flex;
@@ -116,141 +89,214 @@ body.dark-mode .site-header { background: rgba(11, 17, 33, 0.8); }
 .logo a {
   font-family: 'Poppins';
   font-weight: 800;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--primary-navy);
-  text-decoration: none;
 }
 
-nav { display: flex; gap: 30px; align-items: center; }
-nav a { font-weight: 600; color: var(--text-main); text-decoration: none; font-size: 0.95rem; opacity: 0.8; }
-nav a:hover, nav a.active { color: var(--accent-blue); opacity: 1; }
+body.dark-mode .logo a { color: #fff; }
 
-/* ================= DESKTOP ALIGNED GRIDS ================= */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 5%;
+/* 🔥 NAV FIX */
+nav {
+  display: flex;
+  gap: 25px;
+  position: relative;
+  z-index: 1000;
 }
 
-/* 3-Column Layout for Desktop */
-.glass-grid, .blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin: 40px auto;
+nav a { font-weight: 600; color: var(--text-main); }
+nav a:hover { color: var(--accent-blue); }
+
+/* 🔥 MOBILE MENU BUTTON FIX */
+.mobile-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 10000;
+  position: relative;
 }
 
-/* ================= PREMIUM CARDS (CLEAN & SHARP) ================= */
-.blog-card, .glass-card {
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
+/* ================= BUTTON ================= */
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
   transition: var(--transition);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
-.blog-card:hover, .glass-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-premium);
-  border-color: var(--accent-blue);
-}
-
-.card-img-wrapper { 
-  width: 100%;
-  height: 220px; /* Fixed height for alignment */
-  overflow: hidden; 
-}
-
-.card-img-wrapper img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; /* Prevents stretching */
-  transition: transform 0.6s ease; 
-}
-
-.card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-.card-content h3 { margin-bottom: 12px; font-size: 1.25rem; line-height: 1.4; }
-.card-content p { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 20px; }
-
-/* Read More Link Styled as Button */
-.read-more {
-  margin-top: auto;
-  font-weight: 700;
-  color: var(--accent-blue);
-  text-decoration: none;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-/* ================= HERO SECTION (IMPROVED CONTRAST) ================= */
-.hero {
-  text-align: center;
-  padding: 140px 20px 100px;
-  background: radial-gradient(circle at top right, rgba(30, 98, 208, 0.1), transparent),
-              radial-gradient(circle at bottom left, rgba(10, 25, 49, 0.05), transparent);
-}
-
-.hero h1 { 
-    font-size: clamp(2.8rem, 5vw, 4.5rem); 
-    letter-spacing: -1.5px; 
-    color: var(--primary-navy);
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-/* ================= NEWSLETTER & STICKY ================= */
-.newsletter-box {
-  background: linear-gradient(135deg, var(--primary-navy), var(--accent-blue));
-  padding: 80px 5%;
-  border-radius: 30px;
-  text-align: center;
+.btn-primary {
+  background: var(--accent-blue);
   color: #fff;
 }
 
-.newsletter-box .btn { background: #fff; color: var(--primary-navy) !important; margin-top: 30px; }
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
 
+/* ================= BLOG CARDS ================= */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
+}
+
+.blog-card {
+  background: var(--bg-white);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card-img-wrapper {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= NEWS SECTION ================= */
+.news-sidebar {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.news-item {
+  display: block;
+  padding: 14px 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.news-item:hover {
+  transform: translateX(8px);
+  opacity: 0.85;
+}
+
+.news-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+}
+
+.news-meta {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+}
+
+body.dark-mode .news-title { color: #fff; }
+
+/* ================= NEWSLETTER (FIXED ISSUE) ================= */
+.newsletter-box {
+  background: linear-gradient(135deg, #0A1931, #1E62D0);
+  color: #fff;
+  padding: 60px 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 60px auto;
+  max-width: 1200px;
+}
+
+/* 🔥 TEXT VISIBILITY FIX */
+.newsletter-box h1,
+.newsletter-box h2,
+.newsletter-box h3,
+.newsletter-box p {
+  color: #fff !important;
+}
+
+/* 🔥 BUTTON FIX */
+.newsletter-box .btn {
+  background: #fff;
+  color: #0A1931;
+  border-radius: 8px;
+  white-space: nowrap;
+  padding: 12px 20px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/* ================= SHIMMER ================= */
+.shimmer {
+  height: 14px;
+  background: #f6f7f8;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  animation: shimmer 1s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #0A1931;
+  color: #cbd5e1;
+  padding: 50px 5%;
+  border-top: 4px solid var(--accent-blue);
+}
+
+/* ================= STICKY CTA ================= */
 .sticky-cta {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 10000;
-  background: #25D366; /* WhatsApp Green */
-  color: white !important;
-  padding: 15px 30px;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(10,25,49,0.9);
+  color: white;
+  padding: 12px 20px;
   border-radius: 50px;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  text-decoration: none;
-  transition: var(--transition);
+  backdrop-filter: blur(10px);
 }
 
-.sticky-cta:hover { transform: scale(1.05) translateY(-5px); }
-
-/* ================= RESPONSIVE FIXES ================= */
-@media (max-width: 1024px) {
-  .glass-grid, .blog-grid { grid-template-columns: repeat(2, 1fr); }
+.sticky-cta:hover {
+  transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-  .nav { padding: 15px 20px; }
-  .glass-grid, .blog-grid { grid-template-columns: 1fr; }
-  .mobile-toggle { display: block; }
-  nav {
-    display: none !important;
-    position: absolute;
-    top: 100%; left: 0; width: 100%;
-    flex-direction: column; background: var(--bg-white);
-    padding: 30px; border-bottom: 1px solid var(--border);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+/* ================= MOBILE ================= */
+@media (max-width:768px) {
+
+  .mobile-toggle {
+    display: block;
   }
-  nav.nav-active { display: flex !important; animation: slideDown 0.3s ease forwards; }
-  .hero h1 { font-size: 2.8rem; }
-  .sticky-cta { left: 20px; right: 20px; text-align: center; }
-}
 
-@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+  nav {
+    display: none;
+    flex-direction: column;
+    background: var(--bg-white);
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  nav.nav-active {
+    display: flex;
+  }
+
+  .newsletter-box {
+    padding: 40px 20px;
+  }
+
+  .newsletter-box .btn {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .sticky-cta {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
