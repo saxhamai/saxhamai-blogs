@@ -300,3 +300,15 @@ footer {
     transform: translateX(50%);
   }
 }
+
+/* ================= DARK SECTION FIX ================= */
+.dark-section {
+  color: #ffffff;
+}
+
+.dark-section h1,
+.dark-section h2,
+.dark-section h3,
+.dark-section p {
+  color: #ffffff !important;
+}
