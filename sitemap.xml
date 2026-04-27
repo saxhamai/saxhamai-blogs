@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-   <!-- Core Pages -->
    <url>
       <loc>https://blog.saxhamai.com/</loc>
-      <lastmod>2026-04-07</lastmod>
+      <lastmod>2026-04-27</lastmod>
       <priority>1.0</priority>
    </url>
 
    <url>
       <loc>https://blog.saxhamai.com/blog/</loc>
-      <lastmod>2026-04-07</lastmod>
+      <lastmod>2026-04-27</lastmod>
       <priority>0.9</priority>
    </url>
 
@@ -38,14 +37,18 @@
       <priority>0.7</priority>
    </url>
 
-   <!-- Latest Blog -->
+   <url>
+      <loc>https://blog.saxhamai.com/blog/civil-engineer-google-case-study.html</loc>
+      <lastmod>2026-04-27</lastmod>
+      <priority>0.9</priority>
+   </url>
+
    <url>
       <loc>https://blog.saxhamai.com/blog/it-employees-protection-exploitation-india.html</loc>
       <lastmod>2026-04-23</lastmod>
       <priority>0.9</priority>
    </url>
 
-   <!-- Blog Articles -->
    <url>
       <loc>https://blog.saxhamai.com/blog/paperwork-to-python-msme-transformation.html</loc>
       <lastmod>2026-04-07</lastmod>
