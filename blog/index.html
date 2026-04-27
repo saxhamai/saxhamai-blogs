@@ -8,52 +8,36 @@
   <meta name="author" content="Nitin Pawar">
   <link rel="canonical" href="https://blog.saxhamai.com/blog/">
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="../assets/images/favicon.png">
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    /* Premium UI Polish */
+    /* Blog Grid & UI */
     .blog-header { padding: 80px 0 40px; text-align: center; background: var(--bg-light); border-bottom: 1px solid var(--border); }
     .filter-tags { display: flex; justify-content: center; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
     .tag { padding: 8px 20px; background: var(--bg-white); border: 1px solid var(--border); border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--text-gray); transition: all 0.3s ease; cursor: pointer; }
     .tag.active, .tag:hover { background: var(--accent-blue); color: white; border-color: var(--accent-blue); }
-
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 40px; padding: 60px 0; }
     .blog-card { background: var(--bg-white); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); transition: all 0.4s ease; display: flex; flex-direction: column; height: 100%; opacity: 1; }
     .blog-card.hide { display: none; opacity: 0; }
-    
     .blog-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--accent-blue); }
     .card-img-wrapper { width: 100%; height: 220px; overflow: hidden; border-bottom: 1px solid var(--border); }
     .blog-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-    .blog-card:hover img { transform: scale(1.08); }
-
     .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
     .meta-info { font-size: 0.75rem; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: flex; justify-content: space-between; }
-    .blog-card h3 { font-size: 1.35rem; line-height: 1.3; margin-bottom: 12px; color: var(--primary-navy); }
-    .blog-card p { font-size: 0.95rem; line-height: 1.6; color: var(--text-main); margin-bottom: 25px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     .read-more { font-weight: 700; font-size: 0.9rem; color: var(--primary-navy); text-decoration: none; display: flex; align-items: center; gap: 8px; margin-top: auto; border-top: 1px solid var(--border); padding-top: 15px; }
 
-    /* Live Feed Sidebar Styling */
-    .news-sidebar { background: var(--bg-white); border: 1px solid var(--border); border-radius: 16px; padding: 25px; margin-bottom: 40px; }
-    .news-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
-    .live-dot { width: 10px; height: 10px; background: #ef4444; border-radius: 50%; animation: pulse 1.5s infinite; }
-    .news-item { display: block; text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--border-light); transition: all 0.2s; }
-    .news-item:hover { transform: translateX(5px); }
-    .news-title { display: block; font-size: 0.95rem; color: var(--text-main); font-weight: 600; line-height: 1.4; margin-bottom: 5px; }
-    .news-meta { font-size: 0.75rem; color: var(--text-gray); }
-    .news-timestamp { font-size: 0.7rem; color: var(--accent-blue); margin-top: 15px; font-weight: 700; }
-
+    /* Live News Sidebar Styles */
+    .news-sidebar { background: var(--bg-white); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 40px; }
+    .news-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .live-dot { width: 8px; height: 8px; background: #dc2626; border-radius: 50%; animation: pulse 1.5s infinite; }
     @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+    .news-item { display: block; text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .news-item:last-child { border: none; }
+    .news-title { display: block; font-size: 0.95rem; font-weight: 600; color: var(--text-main); line-height: 1.4; margin-bottom: 5px; }
+    .news-meta { font-size: 0.75rem; color: var(--text-gray); }
 
-    .newsletter-box { background: linear-gradient(135deg, var(--primary-navy), #0a192f); color: white; padding: 60px 40px; border-radius: 24px; text-align: center; margin: 60px 0; }
     body.dark-mode .blog-card, body.dark-mode .news-sidebar { background: #1e293b; border-color: #334155; }
-    body.dark-mode .blog-card h3, body.dark-mode .news-title { color: white; }
-    
-    @media (max-width: 768px) { 
-        .featured-card { display: block !important; } 
-        nav { display: none; }
-        nav.nav-active { display: flex !important; flex-direction: column; width: 100%; padding: 20px 0; }
-    }
+    body.dark-mode .news-title { color: #f1f5f9; }
   </style>
 </head>
 
@@ -65,8 +49,8 @@
     <div class="logo"><a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Strategic Blog</span></a></div>
     <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
     <nav id="mainNav">
-      <a href="/">Home</a><a href="/blog/" class="active">All Articles</a><a href="/resources.html">Resources</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
-      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
+      <a href="/">Home</a><a href="/blog/" class="active">All Articles</a><a href="/resources.html">Resources</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/audit.html" class="btn btn-primary">🔍 Audit</a>
+      <button id="theme-btn" onclick="toggleDark()">🌙</button>
     </nav>
   </div>
 </header>
@@ -74,13 +58,13 @@
 <section class="blog-header">
   <div class="container">
     <h1>Knowledge Hub</h1>
-    <p style="color: var(--text-gray);">Founder-led writing on DevOps, digital trust, and IT operations.</p>
-    
+    <p>Founder-led writing on DevOps, digital trust, and IT operations.</p>
     <div class="filter-tags">
       <span class="tag active" onclick="filterBlog('all')">All Insights</span>
       <span class="tag" onclick="filterBlog('Digital Trust')">Digital Trust</span>
       <span class="tag" onclick="filterBlog('IT Operations')">IT Operations</span>
       <span class="tag" onclick="filterBlog('Business Growth')">Business Growth</span>
+      <span class="tag" onclick="filterBlog('MSME Tech')">MSME Tech</span>
     </div>
   </div>
 </section>
@@ -89,43 +73,30 @@
   <div class="container" style="max-width: 1200px; margin: 0 auto;">
 
     <h2 style="font-size: 1.8rem; margin-bottom: 40px; border-left: 5px solid var(--accent-blue); padding-left: 20px;">Featured Analysis</h2>
-
     <article class="blog-card featured-card" data-category="IT Operations" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); border: 2px solid var(--accent-blue); margin-bottom: 60px;">
-      <div class="card-img-wrapper" style="height: 100%;"><img src="../assets/images/it-policy-reform.png" alt="IT Reform"></div>
+      <div class="card-img-wrapper" style="height: 100%;"><img src="../assets/images/it-policy-reform.png" onerror="this.src='../assets/images/default.png'" alt="IT Reform"></div>
       <div class="card-content" style="padding: 50px;">
         <div class="meta-info"><span>POLICY & CULTURE</span><span>APRIL 23, 2026</span></div>
         <h3 style="font-size: 2.2rem;">India’s IT Employees: Protection or Exploitation?</h3>
-        <p>A deep dive into layoffs, overtime culture, and a proposed roadmap for sustainable growth in India's IT sector.</p>
+        <p>A deep dive into layoffs, overtime culture, and a proposed roadmap for sustainable growth.</p>
         <a href="it-employees-protection-exploitation-india.html" class="btn btn-primary" style="align-self: flex-start; margin-top: 20px;">Read Analysis</a>
       </div>
     </article>
 
-    <div class="news-sidebar">
-      <div class="news-header">
-        <div class="live-dot"></div>
-        <h3 style="margin: 0; font-size: 1.1rem; color: var(--primary-navy);">LIVE: MSME Industry Pulse</h3>
-      </div>
-      <div id="msme-news-container">
-        <p style="padding:10px; color:var(--text-gray);">Fetching latest industry updates...</p>
-      </div>
-    </div>
-
     <div class="blog-grid" id="blogGrid">
       
       <article class="blog-card" data-category="Business Growth">
-        <div class="card-img-wrapper">
-          <img src="../assets/images/civil-engineer-case-study.png" onerror="this.onerror=null; this.src='../assets/images/default.png';" alt="Case Study">
-        </div>
+        <div class="card-img-wrapper"><img src="../assets/images/civil-engineer-case-study.png" onerror="this.src='../assets/images/default.png'" alt="Civil Engineer"></div>
         <div class="card-content">
-          <div class="meta-info"><span>CASE STUDY</span><span>APRIL 27, 2026</span></div>
-          <h3>How a Civil Engineer Won ₹25 Lakh Project</h3>
-          <p>Real-world breakdown of moving from "Luck" to "Systems" using Google visibility and digital trust.</p>
-          <a href="civil-engineer-google-case-study.html" class="read-more">Full Article →</a>
+          <div class="meta-info"><span>REAL CASE STUDY</span><span>APRIL 27, 2026</span></div>
+          <h3>How a Civil Engineer Won a ₹25 Lakh Project</h3>
+          <p>How systemizing Google visibility and trust leads to high-value projects without references.</p>
+          <a href="civil-engineer-google-case-study.html" class="read-more">See Results →</a>
         </div>
       </article>
 
-      <article class="blog-card" data-category="Digital Trust">
-        <div class="card-img-wrapper"><img src="../assets/images/From-Paperwork-to-Python.png" alt="MSME"></div>
+      <article class="blog-card" data-category="MSME Tech">
+        <div class="card-img-wrapper"><img src="../assets/images/From-Paperwork-to-Python.png" onerror="this.src='../assets/images/default.png'" alt="MSME"></div>
         <div class="card-content">
           <div class="meta-info"><span>TRANSFORMATION</span><span>8 MIN READ</span></div>
           <h3>From Paperwork to Python</h3>
@@ -134,8 +105,28 @@
         </div>
       </article>
 
+      <article class="blog-card" data-category="MSME Tech">
+        <div class="card-img-wrapper"><img src="../assets/images/Patil-Effects.png" onerror="this.src='../assets/images/default.png'" alt="Patil"></div>
+        <div class="card-content">
+          <div class="meta-info"><span>AI INFRASTRUCTURE</span><span>8 MIN READ</span></div>
+          <h3>The “Patil Effect”: AI Reshaping IT</h3>
+          <p>How efficiency is reshaping IT services through AI-driven operations.</p>
+          <a href="the-patil-effect-ai-infrastructure-msme-india.html" class="read-more">Full Article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="Digital Trust">
+        <div class="card-img-wrapper"><img src="../assets/images/Website-live-customer-no-trust.png" onerror="this.src='../assets/images/default.png'" alt="Trust"></div>
+        <div class="card-content">
+          <div class="meta-info"><span>WEB PRESENCE</span><span>7 MIN READ</span></div>
+          <h3>Website Live, But No Trust?</h3>
+          <p>Why professional websites fail to convert leads in India.</p>
+          <a href="website-trust-gaps.html" class="read-more">Full Article →</a>
+        </div>
+      </article>
+
       <article class="blog-card" data-category="IT Operations">
-        <div class="card-img-wrapper"><img src="../assets/images/Why-Systems-Beat-Motivation.png" alt="Systems"></div>
+        <div class="card-img-wrapper"><img src="../assets/images/Why-Systems-Beat-Motivation.png" onerror="this.src='../assets/images/default.png'" alt="Systems"></div>
         <div class="card-content">
           <div class="meta-info"><span>OPERATIONS</span><span>7 MIN READ</span></div>
           <h3>Why Systems Beat Motivation</h3>
@@ -144,43 +135,79 @@
         </div>
       </article>
 
+      </div>
+
+    <div class="news-sidebar">
+      <div class="news-header">
+        <div class="live-dot"></div>
+        <h3 style="margin: 0; font-size: 1.1rem; color: var(--primary-navy);">LIVE: MSME Industry Pulse</h3>
+      </div>
+      <div id="msme-news-container">
+        <div class="shimmer"></div>
+        <div class="shimmer" style="width: 80%;"></div>
+      </div>
     </div>
 
-    <div class="newsletter-box">
-      <h2 style="color: white;">Stay Ahead of the System</h2>
-      <p style="color: white; opacity: 0.9;">One practical IT & business growth tip every month. Direct to your WhatsApp.</p>
-      <a href="https://wa.me/919702855005" class="btn btn-primary" style="background: white; color: var(--primary-navy); border: none; margin-top: 20px;">Subscribe via WhatsApp</a>
+    <div class="newsletter-box" style="background: linear-gradient(135deg, var(--primary-navy), #0a192f); color: white; padding: 60px 40px; border-radius: 24px; text-align: center; margin: 60px 0;">
+      <h2 style="color:white;">Stay Ahead of the System</h2>
+      <p style="margin-bottom: 30px;">Practical IT & growth tips direct to your WhatsApp.</p>
+      <a href="https://wa.me/919702855005" class="btn btn-primary" style="background: white; color: var(--primary-navy); border:none;">Subscribe via WhatsApp</a>
     </div>
 
   </div>
 </section>
 
-<footer style="background: #020617; padding: 60px 0; color: #94a3b8; text-align: center;">
-  <p>© 2026 SaXhamAI | Systems by SaXham Technologies</p>
+<footer style="background: #020617; padding: 80px 0 40px; color: #94a3b8;">
+  <div class="container" style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px;">
+    <p>© 2026 SaXhamAI | Systems by SaXham Technologies</p>
+  </div>
 </footer>
 
 <script>
-  // --- NEWS ENGINE ---
+  // Filter Logic
+  function filterBlog(category) {
+    const cards = document.querySelectorAll('.blog-card');
+    const tags = document.querySelectorAll('.tag');
+    tags.forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+    cards.forEach(card => {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.classList.remove('hide');
+      } else {
+        card.classList.add('hide');
+      }
+    });
+  }
+
+  function toggleMobileMenu() { document.getElementById("mainNav").classList.toggle("nav-active"); }
+  function toggleDark() {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
+    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
+  }
+
+  // --- LIVE NEWS SCRIPT ---
   let retryCount = 0;
   const MAX_RETRY = 2;
   const CACHE_KEY = "saxham_msme_pulse_vfinal";
+  let newsTimeout, networkController;
   let isFetching = false;
 
-  const getTTL = () => {
-    const hour = new Date().getHours();
-    return (hour >= 9 && hour <= 18) ? 180000 : 600000;
-  };
+  const getTTL = () => (new Date().getHours() >= 9 && new Date().getHours() <= 18) ? 180000 : 600000;
 
   async function fetchNews(isRetry = false) {
     const container = document.getElementById("msme-news-container");
     if (!container || isFetching) return;
     isFetching = true;
+    
+    if (networkController) networkController.abort();
+    networkController = new AbortController();
 
     try {
       const sourceUrl = isRetry ? "https://feeds.feedburner.com/ndtvprofit-latest" : "https://economictimes.indiatimes.com/small-biz/rssfeeds/51111535.cms";
       const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(sourceUrl)}&v=${Date.now()}`;
-      
-      const response = await fetch(proxyUrl);
+      const response = await fetch(proxyUrl, { signal: networkController.signal });
       const json = await response.json();
       const xml = new DOMParser().parseFromString(json.contents, "text/xml");
       const items = Array.from(xml.querySelectorAll("item")).slice(0, 5).map(item => ({
@@ -189,47 +216,32 @@
         date: item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : new Date().toISOString()
       }));
 
-      if (items.length > 0) renderUI(items, isRetry ? "NDTV" : "ET");
-      else if (retryCount < MAX_RETRY) { retryCount++; isFetching = false; fetchNews(true); }
+      if (items.length > 0) {
+        renderUI(items, isRetry ? "NDTV" : "ET");
+      } else if (retryCount < MAX_RETRY) {
+        retryCount++;
+        isFetching = false;
+        return fetchNews(true);
+      }
     } catch (e) {
       if (retryCount < MAX_RETRY) { retryCount++; isFetching = false; fetchNews(true); }
     } finally { isFetching = false; }
   }
 
-  function renderUI(items, sourceLabel) {
+  function renderUI(items, source) {
     const container = document.getElementById("msme-news-container");
-    container.innerHTML = items.map((item, index) => `
+    container.innerHTML = items.map(item => `
       <a href="${item.link}" target="_blank" class="news-item">
-        <span class="news-title">${index === 0 ? "🚨 " : ""}${item.title}</span>
-        <span class="news-meta">🌐 ${sourceLabel} • ${new Date(item.date).toLocaleDateString('en-IN', {day:'numeric', month:'short'})}</span>
+        <span class="news-title">🚨 ${item.title}</span>
+        <span class="news-meta">🌐 ${source}</span>
       </a>
-    `).join("") + `<p class="news-timestamp">Synced: Just now</p>`;
-  }
-
-  // --- UI LOGIC ---
-  function toggleDark() {
-    document.body.classList.toggle("dark-mode");
-    const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
-    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
-  }
-
-  function filterBlog(cat) {
-    document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
-    event.target.classList.add('active');
-    document.querySelectorAll('.blog-card').forEach(card => {
-      card.style.display = (cat === 'all' || card.dataset.category === cat) ? "flex" : "none";
-    });
+    `).join('');
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     if(localStorage.getItem("saxham_theme") === "dark") document.body.classList.add("dark-mode");
     fetchNews();
-    setInterval(fetchNews, getTTL());
   });
-
-  function toggleMobileMenu() { document.getElementById("mainNav").classList.toggle("nav-active"); }
 </script>
-
 </body>
 </html>
