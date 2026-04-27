@@ -83,13 +83,7 @@
 
     <h2 id="featuredTitle" style="font-size: 1.8rem; margin-bottom: 40px; border-left: 5px solid var(--accent-blue); padding-left: 20px;">Featured Analysis</h2>
 
-    <!-- OLD BLOG -->
-<article class="blog-card" data-category="IT Operations" data-date="2026-04-23">
-
-<!-- NEW BLOG -->
-<article class="blog-card" data-category="Business Growth" data-date="2026-04-27">
-  
-  <article id="featuredCard" class="blog-card featured-card" data-category="IT Operations" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); border: 2px solid var(--accent-blue); margin-bottom: 60px;">
+    <article id="featuredCard" class="blog-card featured-card" data-category="IT Operations" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); border: 2px solid var(--accent-blue); margin-bottom: 60px;">
       <div class="card-img-wrapper" style="height: 100%;"><img src="../assets/images/it-policy-reform.png" alt="IT Reform"></div>
       <div class="card-content" style="padding: 50px;">
         <div class="meta-info"><span>POLICY & CULTURE</span><span>APRIL 23, 2026 • 12 MIN READ</span></div>
@@ -249,39 +243,6 @@
 </footer>
 
 <script>
-
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const grid = document.getElementById("blogGrid");
-  const cards = Array.from(grid.querySelectorAll(".blog-card"));
-
-  // Sort by date (latest first)
-  cards.sort((a, b) => {
-    return new Date(b.dataset.date) - new Date(a.dataset.date);
-  });
-
-  // Clear grid
-  grid.innerHTML = "";
-
-  // First card = Featured
-  const featured = cards.shift();
-
-  featured.classList.add("featured-card");
-  featured.style.gridColumn = "1 / -1";
-  featured.style.display = "grid";
-  featured.style.gridTemplateColumns = "repeat(auto-fit, minmax(400px, 1fr))";
-  featured.style.border = "2px solid var(--accent-blue)";
-  featured.style.marginBottom = "60px";
-
-  // Insert featured on top
-  grid.parentNode.insertBefore(featured, grid);
-
-  // Add rest normally
-  cards.forEach(card => grid.appendChild(card));
-
-});
-</script>
   // --- SYSTEM CONFIG ---
   let retryCount = 0;
   const MAX_RETRY = 2;
