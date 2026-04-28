@@ -57,7 +57,7 @@
     <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
     <nav id="mainNav">
       <a href="/">Home</a><a href="/blog/" class="active">All Articles</a><a href="/resources.html">Resources</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
-      <button id="theme-btn" onclick="toggleDark()">🌙</button>
+      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
     </nav>
   </div>
 </header>
@@ -65,12 +65,13 @@
 <section class="blog-header">
   <div class="container">
     <h1 style="font-size: clamp(2.5rem, 6vw, 3.5rem);">Knowledge Hub</h1>
-    <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 15px auto;">Founder-led writing on DevOps, digital trust, and IT operations.</p>
+    <p style="font-size: 1.2rem; color: var(--text-gray); max-width: 700px; margin: 15px auto;">Founder-led writing on DevOps, digital trust, and India's growing economy.</p>
     
     <div class="filter-tags">
       <span class="tag active" onclick="filterBlog(event, 'all')">All Insights</span>
       <span class="tag" onclick="filterBlog(event, 'Digital Trust')">Digital Trust</span>
       <span class="tag" onclick="filterBlog(event, 'IT Operations')">IT Operations</span>
+      <span class="tag" onclick="filterBlog(event, 'Policy & Economy')">Policy & Economy</span>
       <span class="tag" onclick="filterBlog(event, 'Business Growth')">Business Growth</span>
       <span class="tag" onclick="filterBlog(event, 'MSME Tech')">MSME Tech</span>
     </div>
@@ -82,27 +83,27 @@
 
     <h2 id="featuredTitle" style="font-size: 1.8rem; margin-bottom: 40px; border-left: 5px solid var(--accent-blue); padding-left: 20px;">Featured Analysis</h2>
 
-    <article id="featuredCard" class="blog-card featured-card" data-category="Business Growth" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); border: 2px solid var(--accent-blue); margin-bottom: 60px;">
-      <div class="card-img-wrapper" style="height: 100%;"><img src="../assets/images/india-development-crisis.png" onerror="this.src='../assets/images/default.png'" alt="India Development Crisis"></div>
+    <article id="featuredCard" class="blog-card featured-card" data-category="IT Operations" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); border: 2px solid var(--accent-blue); margin-bottom: 60px;">
+      <div class="card-img-wrapper" style="height: 100%;"><img src="../assets/images/it-policy-reform.png" alt="IT Reform"></div>
       <div class="card-content" style="padding: 50px;">
-        <div class="meta-info"><span>RESEARCH & SYSTEMS</span><span>APRIL 28, 2026 • 10 MIN READ</span></div>
-        <h3 style="font-size: 2.2rem;">India’s Development Crisis: Beyond Politics</h3>
-        <p>A deep-dive analysis into the systemic, behavioral, and structural bottlenecks that slow down India's real development at ground level.</p>
-        <a href="indias-development-crisis.html" class="btn btn-primary" style="align-self: flex-start; margin-top: 20px;">Read Full Analysis</a>
+        <div class="meta-info"><span>POLICY & CULTURE</span><span>APRIL 23, 2026 • 12 MIN READ</span></div>
+        <h3 style="font-size: 2.2rem;">India’s IT Employees: Protection or Exploitation?</h3>
+        <p>A deep dive into layoffs, overtime culture, and a proposed roadmap for sustainable growth in India's IT sector.</p>
+        <a href="it-employees-protection-exploitation-india.html" class="btn btn-primary" style="align-self: flex-start; margin-top: 20px;">Read Analysis</a>
       </div>
     </article>
 
     <div class="blog-grid" id="blogGrid">
       
-      <article class="blog-card" data-category="IT Operations"> 
+      <article class="blog-card" data-category="Policy & Economy">
         <div class="card-img-wrapper">
-          <img src="../assets/images/it-policy-reform.png" onerror="this.src='../assets/images/default.png'" alt="IT Reform">
+          <img src="../assets/images/india-development-crisis.png" onerror="this.src='../assets/images/default.png'" alt="India Development Crisis">
         </div>
         <div class="card-content">
-          <div class="meta-info"><span>POLICY & CULTURE</span><span>APRIL 23, 2026 • 12 MIN READ</span></div>
-          <h3>India’s IT Employees: Protection or Exploitation?</h3>
-          <p>Analyzing layoffs and overtime culture with a proposed roadmap for India's IT sector.</p>
-          <a href="it-employees-protection-exploitation-india.html" class="read-more">Read Analysis →</a>
+          <div class="meta-info"><span>RESEARCH ANALYSIS</span><span>APRIL 28, 2026 • 10 MIN READ</span></div>
+          <h3>India’s Development Crisis: Beyond Politics</h3>
+          <p>A deep research analysis on why real development feels slow despite rapid growth—focusing on systemic and behavioral bottlenecks.</p>
+          <a href="indias-development-crisis.html" class="read-more">Read Analysis →</a>
         </div>
       </article>
 
@@ -112,8 +113,8 @@
         </div>
         <div class="card-content">
           <div class="meta-info"><span>REAL CASE STUDY</span><span>APRIL 27, 2026 • 6 MIN READ</span></div>
-          <h3>From Google Search to ₹25 Lakh Project</h3>
-          <p>How a local civil engineer broke the reference loop and won a high-value project via Google search.</p>
+          <h3>From Google Search to ₹25 Lakh Project in 15 Days</h3>
+          <p>A real-world breakdown of how a civil engineer got a high-value client through Google — without references or contacts.</p>
           <a href="civil-engineer-google-case-study.html" class="read-more">Read Case Study →</a>
         </div>
       </article>
@@ -176,7 +177,7 @@
         <div class="card-img-wrapper"><img src="../assets/images/Why-Fast-Replies-Matter.png" alt="Replies"></div>
         <div class="card-content">
           <div class="meta-info"><span>CUSTOMER EXPERIENCE</span><span>6 MIN READ</span></div>
-          <h3>Why Fast Replies Matter More</h3><p>Response speed builds trust faster than discounts.</p>
+          <h3>Why Fast Replies Matter More</h3><p>Response speed builds trust faster than aggressive pricing.</p>
           <a href="why-fast-replies-matter-more-than-discounts.html" class="read-more">Full Article →</a>
         </div>
       </article>
@@ -257,24 +258,12 @@
 </footer>
 
 <script>
-  // Filter Logic
   function filterBlog(event, category) {
-    const cards = document.querySelectorAll(".blog-grid .blog-card");
-    const featuredCard = document.getElementById("featuredCard");
-    const featuredTitle = document.getElementById("featuredTitle");
+    const cards = document.querySelectorAll(".blog-card");
     const tags = document.querySelectorAll(".tag");
 
     tags.forEach(tag => tag.classList.remove("active"));
     event.target.classList.add("active");
-
-    // Toggle Featured Card Visibility
-    if (category !== "all") {
-        featuredCard.style.display = "none";
-        featuredTitle.style.display = "none";
-    } else {
-        featuredCard.style.display = "grid";
-        featuredTitle.style.display = "block";
-    }
 
     cards.forEach(card => {
       const cardCategory = card.getAttribute("data-category");
@@ -284,56 +273,130 @@
         card.classList.add("hide");
       }
     });
+
+    // Handle Featured Card visibility during filter
+    const featuredCard = document.getElementById("featuredCard");
+    const featuredTitle = document.getElementById("featuredTitle");
+    if (category !== "all") {
+      featuredCard.style.display = "none";
+      featuredTitle.style.display = "none";
+    } else {
+      featuredCard.style.display = "grid";
+      featuredTitle.style.display = "block";
+    }
   }
 
-  // Hamburger Menu
+  // (The rest of the script for News Fetch, Theme, etc. remains exactly the same as provided in your snippet)
+  // ... (retryCount, MAX_RETRY, startEngine, fetchNews, renderUI, toggleDark, toggleMobileMenu etc.)
+  
   function toggleMobileMenu() {
-    document.getElementById("mainNav").classList.toggle("nav-active");
+    const nav = document.getElementById("mainNav");
+    nav.classList.toggle("nav-active");
   }
 
-  // Theme Logic
   function toggleDark() {
     document.body.classList.toggle("dark-mode");
     const isDark = document.body.classList.contains("dark-mode");
     localStorage.setItem("saxham_theme", isDark ? "dark" : "light");
-    document.getElementById("theme-btn").innerText = isDark ? "☀️" : "🌙";
+    const btn = document.getElementById("theme-btn");
+    if (btn) btn.innerText = isDark ? "☀️" : "🌙";
   }
 
-  // Auto Boot
   document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("saxham_theme") === "dark") {
       document.body.classList.add("dark-mode");
-      document.getElementById("theme-btn").innerText = "☀️";
+      const btn = document.getElementById("theme-btn");
+      if (btn) btn.innerText = "☀️";
     }
-    startEngine(); // SWR Engine Call
+    startEngine();
   });
 
-  // --- SWR NEWS ENGINE LOGIC (Purana Wala) ---
+  // --- REUSE YOUR NEWS ENGINE LOGIC FROM SNIPPET BELOW ---
+  let retryCount = 0;
+  const MAX_RETRY = 2;
   const CACHE_KEY = "saxham_msme_pulse_vfinal";
-  function startEngine() { fetchNews(); setInterval(fetchNews, 300000); }
-  async function fetchNews() {
+  let newsTimeout, networkController;
+  let lastHash = 0;
+  let isFetching = false;
+  let isBackgroundRefreshing = false;
+  const getTTL = () => { const hour = new Date().getHours(); return (hour >= 9 && hour <= 18) ? 180000 : 600000; };
+  const getSafeCache = () => { try { const data = localStorage.getItem(CACHE_KEY); if (!data) return null; const parsed = JSON.parse(data); if (Date.now() - parsed.time > getTTL() * 3) { localStorage.removeItem(CACHE_KEY); return null; } return parsed; } catch { localStorage.removeItem(CACHE_KEY); return null; } };
+  const fastHash = (str) => { let hash = 0; for (let i = 0; i < str.length; i++) { hash = ((hash << 5) - hash) + str.charCodeAt(i); hash |= 0; } return hash; };
+  window.addEventListener("online", () => fetchNews(false, true));
+  document.addEventListener("visibilitychange", () => { if (document.hidden && networkController) { networkController.abort(); } else if (!document.hidden) { fetchNews(false, true); } });
+
+  function startEngine() {
+    fetchNews();
+    const scheduleNext = () => {
+      if (newsTimeout) clearTimeout(newsTimeout);
+      newsTimeout = setTimeout(() => { retryCount = 0; fetchNews(false, true).finally(scheduleNext); }, getTTL());
+    };
+    scheduleNext();
+  }
+
+  async function fetchNews(isRetry = false, forceFetch = false) {
     const container = document.getElementById("msme-news-container");
-    const sourceUrl = "https://economictimes.indiatimes.com/small-biz/rssfeeds/51111535.cms";
+    if (!container || isFetching) return;
+    isFetching = true;
+    const cached = getSafeCache();
+    if (!forceFetch && !isRetry && cached) {
+      if (Date.now() - cached.time < getTTL()) {
+        renderUI(cached.data, cached.time, cached.source || "ET");
+        if (!isBackgroundRefreshing) { isBackgroundRefreshing = true; fetchNews(false, true).finally(() => { isBackgroundRefreshing = false; }); }
+        isFetching = false; return;
+      }
+    }
+    if (networkController) networkController.abort();
+    networkController = new AbortController();
     try {
-      const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(sourceUrl)}&v=${Date.now()}`);
+      const sourceLabel = isRetry ? "NDTV" : "ET";
+      const sourceUrl = isRetry ? "https://feeds.feedburner.com/ndtvprofit-latest" : "https://economictimes.indiatimes.com/small-biz/rssfeeds/51111535.cms";
+      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(sourceUrl)}&v=${Date.now()}`;
+      const response = await fetch(proxyUrl, { signal: networkController.signal });
       const json = await response.json();
       const xml = new DOMParser().parseFromString(json.contents, "text/xml");
-      const items = Array.from(xml.querySelectorAll("item")).slice(0, 5).map(item => ({
-        title: item.querySelector("title").textContent,
-        link: item.querySelector("link").textContent,
-        date: item.querySelector("pubDate") ? item.querySelector("pubDate").textContent : ""
-      }));
-      renderUI(items);
-    } catch (e) { console.error("News load failed"); }
+      if (xml.querySelector("parsererror")) throw new Error("XML_ERROR");
+      const items = Array.from(xml.querySelectorAll("item")).slice(0, 5).map((item) => {
+          const t = item.querySelector("title"); const l = item.querySelector("link"); const d = item.querySelector("pubDate");
+          if (!t || !l) return null;
+          return { title: t.textContent, link: l.textContent, date: d ? d.textContent : new Date().toISOString() };
+      }).filter(Boolean);
+      if (items.length > 0) {
+        const hash = fastHash(items.map(i => i.title).join("|")) + items.length;
+        if (hash !== lastHash) {
+          lastHash = hash;
+          renderUI(items, Date.now(), sourceLabel);
+          localStorage.setItem(CACHE_KEY, JSON.stringify({ data: items, time: Date.now(), source: sourceLabel }));
+        }
+        retryCount = 0;
+      } else if (retryCount < MAX_RETRY) { retryCount++; isFetching = false; return fetchNews(true); }
+    } catch (e) {
+      if (e.name === "AbortError") return;
+      if (retryCount < MAX_RETRY) { retryCount++; isFetching = false; return fetchNews(true); }
+      if (cached) { renderUI(cached.data, cached.time, cached.source || "ET"); } else {
+        container.innerHTML = `<p style="padding:20px; text-align:center; color:var(--text-gray);">⚠️ Live feed unavailable. Retrying shortly...</p>`;
+      }
+    } finally { isFetching = false; }
   }
-  function renderUI(items) {
+
+  function renderUI(items, timestamp, sourceLabel) {
     const container = document.getElementById("msme-news-container");
-    container.innerHTML = items.map((item, index) => `
-      <a href="${item.link}" target="_blank" class="news-item">
-        <span class="news-title">${index === 0 ? "🚨 " : ""}${item.title}</span>
-        <span class="news-meta">🌐 ET Small Biz</span>
-      </a>
-    `).join("");
+    const fragment = document.createDocumentFragment();
+    items.forEach((item, index) => {
+      const link = document.createElement("a");
+      link.href = item.link; link.target = "_blank"; link.rel = "noopener noreferrer nofollow"; link.className = "news-item";
+      const dateObj = new Date(item.date);
+      const pubDate = isNaN(dateObj) ? "Update" : dateObj.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+      const title = item.title.length > 85 ? item.title.substring(0, 85) + "..." : item.title;
+      link.innerHTML = `<span class="news-title">${index === 0 ? "🚨 " : ""}${title}</span><span class="news-meta">🌐 ${pubDate} • ${sourceLabel}</span>`;
+      fragment.appendChild(link);
+    });
+    const age = Math.floor((Date.now() - timestamp) / 60000);
+    const stamp = document.createElement("p");
+    stamp.className = "news-timestamp";
+    stamp.innerText = `Synced: ${age < 1 ? "Just now" : age + "m ago"} • ${sourceLabel}`;
+    fragment.appendChild(stamp);
+    container.replaceChildren(fragment);
   }
 </script>
 </body>
