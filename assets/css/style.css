@@ -392,3 +392,124 @@ body.dark-mode .news-item {
 }
 height: 200px;
 object-fit: cover;
+
+/* Content readability improvements */
+.article-body p {
+  margin-bottom: 1.8rem;
+  font-size: 1.15rem;
+  color: var(--text-main);
+  line-height: 1.8;
+}
+
+/* Subtle link styling inside text */
+.article-body a:not(.btn) {
+  border-bottom: 2px solid rgba(30, 98, 208, 0.2);
+  padding-bottom: 1px;
+  transition: all 0.3s ease;
+}
+
+.article-body a:not(.btn):hover {
+  border-bottom-color: var(--accent-blue);
+  background: rgba(30, 98, 208, 0.05);
+}
+
+
+.insight-box {
+  background: var(--bg-light);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--accent-blue);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  padding: 25px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.insight-box:hover {
+  transform: translateX(8px);
+}
+
+/* Data Snapshot specifically */
+.data-snapshot {
+  border-left-color: #dc2626;
+  background: linear-gradient(to right, rgba(220, 38, 38, 0.02), transparent);
+}
+
+
+.comparison-table {
+  width: 100%;
+  border-radius: 12px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  margin: 40px 0;
+  border: 1px solid var(--border);
+}
+
+.comparison-table th {
+  background: var(--primary-navy);
+  color: white;
+  padding: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.comparison-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: rgba(30, 98, 208, 0.02);
+}
+
+
+blockquote {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  border-left: 0 !important; /* Overriding old style */
+  padding: 40px !important;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  text-align: center;
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 5rem;
+  color: var(--accent-blue);
+  opacity: 0.1;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+}
+
+/* Highlight Red Proof Points */
+.highlight-red {
+  color: #dc2626;
+  font-weight: 700;
+  background: rgba(220, 38, 38, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+
+#progress-bar {
+  height: 5px;
+  background: linear-gradient(to right, var(--accent-blue), #60A5FA);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+  border-radius: 0 50px 50px 0;
+  box-shadow: 0 0 10px rgba(30, 98, 208, 0.3);
+}
+
