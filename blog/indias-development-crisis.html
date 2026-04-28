@@ -5,160 +5,218 @@
   <title>India’s Development Crisis: Beyond Politics | SaXhamAI Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A deep research analysis by Nitin Pawar on India's systemic, behavioral, and structural challenges beyond politics.">
-  <meta name="keywords" content="India development, governance reform, Indian economy, MSME growth, system thinking">
+  <meta name="keywords" content="India development problems, governance India, political accountability India, Indian economy analysis, system reform India, voter behavior India">
   <meta name="author" content="Nitin Pawar">
 
-  <meta property="og:title" content="India’s Development Crisis: Beyond Politics">
-  <meta property="og:description" content="A deep research analysis on India's systemic challenges.">
-  <meta property="og:image" content="https://blog.saxhamai.com/assets/images/india-development-crisis.png">
-  <meta property="og:url" content="https://blog.saxhamai.com/blog/indias-development-crisis.html">
   <meta property="og:type" content="article">
+  <meta property="og:url" content="https://blog.saxhamai.com/blog/indias-development-crisis.html">
+  <meta property="og:title" content="India’s Development Crisis: Beyond Politics">
+  <meta property="og:description" content="Why does real development feel slow? A deep dive into the systemic and behavioral bottlenecks in India.">
+  <meta property="og:image" content="https://blog.saxhamai.com/assets/images/india-development-crisis.png">
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="India’s Development Crisis: Beyond Politics">
-  <meta name="twitter:description" content="A deep research analysis on India's systemic challenges.">
+  <meta name="twitter:description" content="A deep research analysis on India's systemic challenges by Nitin Pawar.">
   <meta name="twitter:image" content="https://blog.saxhamai.com/assets/images/india-development-crisis.png">
 
   <link rel="canonical" href="https://blog.saxhamai.com/blog/indias-development-crisis.html">
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <style>
-    .intro-hook { font-size: 1.3rem; font-weight: 500; border-left: 5px solid var(--accent-blue); padding-left: 20px; margin: 2rem 0; color: var(--text-main); }        
-    .insight-box { background: var(--bg-light); border-left: 4px solid var(--accent-blue); padding: 24px; border-radius: 0 12px 12px 0; margin: 15px 0 25px; font-size: 1.1rem; font-weight: 600; color: var(--primary-navy); }
-    blockquote { margin: 2.5rem 0; padding: 25px; background: var(--bg-light); border-radius: 12px; font-style: italic; border-left: 4px solid var(--accent-blue); font-size: 1.2rem; }
-    .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-    .comparison-table th, .comparison-table td { padding: 15px; text-align: left; border-bottom: 1px solid var(--border); }
-    .comparison-table th { background: var(--primary-navy); color: white; }
+    /* Premium Typography & Spacing */
+    .article-body { line-height: 1.8; font-size: 1.1rem; color: var(--text-main); }
+    .insight-box { 
+      background: var(--bg-light); 
+      border-left: 5px solid var(--accent-blue); 
+      padding: 24px; 
+      margin: 32px 0; 
+      border-radius: 0 12px 12px 0;
+      font-weight: 500;
+    }
+    .data-snapshot { background: #f1f5f9; border-left-color: #dc2626; }
+    body.dark-mode .data-snapshot { background: #1e293b; }
+    
+    blockquote { 
+      margin: 40px 0; 
+      padding: 20px 30px; 
+      background: var(--bg-light); 
+      border-left: 4px solid var(--accent-blue); 
+      font-style: italic; 
+      font-size: 1.25rem;
+      border-radius: 8px;
+    }
+    
+    .section-divider { border: 0; border-top: 1px solid var(--border); margin: 50px 0; }
     .entity-tag { background: rgba(30, 98, 208, 0.08); color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.95rem; }
     
-    /* Dark Mode Fixes */
-    body.dark-mode .insight-box { background: #1e293b; color: #fff; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); }
+    .comparison-table th, .comparison-table td { padding: 15px; text-align: left; border-bottom: 1px solid var(--border); }
+    .comparison-table th { background: var(--primary-navy); color: white; font-family: 'Poppins'; }
+
+    h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 10px; }
+    h2 { margin-top: 40px; color: var(--primary-navy); }
+    ul { margin-bottom: 20px; padding-left: 20px; }
+    li { margin-bottom: 10px; }
+
     body.dark-mode .entity-tag { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    body.dark-mode .comparison-table td { color: var(--text-main); }
   </style>
 </head>
 
 <body>
-  <div id="progress-bar"></div>
+<div id="progress-bar"></div>
 
-  <header class="site-header">
-    <div class="nav">
-      <div class="logo">
-        <a href="/">SaXhamAI <span style="font-weight: 500; font-size: 0.9rem; color: var(--text-gray);">Strategic Blog</span></a>
-      </div>
-      <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
-      <nav id="mainNav">
-        <a href="/">Home</a>
-        <a href="/blog/" class="active">Blog</a>
-        <a href="/resources.html">Resources</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">🔍 Audit</a>
-        <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
-      </nav>
+<header class="site-header">
+  <div class="nav">
+    <div class="logo">
+      <a href="/">SaXhamAI <span style="font-weight: 500; font-size: 1rem; margin-left: 5px; color: var(--text-gray);">Strategic Blog</span></a>
     </div>
-  </header>
+    <div class="mobile-toggle" onclick="toggleMobileMenu()">☰</div>
+    <nav id="mainNav">
+      <a href="/">Home</a>
+      <a href="/blog/" class="active">All Articles</a>
+      <a href="/resources.html">Resources</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/audit.html" class="btn btn-primary" style="padding: 8px 16px; border-radius: 4px; color: white;">🔍 Audit</a>
+      <button id="theme-btn" onclick="toggleDark()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">🌙</button>
+    </nav>
+  </div>
+</header>
 
-  <main class="section">
-    <div class="container" style="max-width: 900px; margin: 0 auto;">
-      
-      <p class="reveal" style="margin-bottom: 2rem;">
-        <a href="/blog/" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">← Back to All Articles</a>
-      </p>
+<main class="section">
+<article class="container article-body" style="max-width:850px; margin:auto;">
 
-      <header style="margin-bottom: 3rem;">
-        <span class="reveal" style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; color: var(--accent-blue);">Policy Research • India 2026</span>
-        <h1 class="reveal" style="margin-top: 10px; line-height: 1.2;">🇮🇳 India’s Development Crisis: Beyond Politics</h1>
-        <div class="reveal" style="margin-top: 25px; display: flex; align-items: center; gap: 15px; color: var(--text-gray); font-size: 0.95rem;">
-           <img src="../assets/images/favicon.png" alt="Nitin Pawar" style="width: 40px; height: 40px; border-radius: 50%;">
-           <div>By <strong>Nitin Pawar</strong> • April 28, 2026 • 10 min read</div>
-        </div>
-        <p class="reveal" style="font-size:1.2rem; font-weight:600; color:var(--accent-blue); margin-top:20px;">
-          India is growing fast — but not evenly. And that gap is the real crisis.
-        </p>
-      </header>
+    <header class="reveal">
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--accent-blue); font-size: 0.85rem; margin-bottom: 10px;">Deep Dive • System Analysis</p>
+        <h1>🇮🇳 India’s Development Crisis</h1>
+        <p style="font-size: 1.5rem; color: var(--text-gray); margin-bottom: 20px;">Beyond Politics — A System, Society & Mindset Analysis</p>
+        <p>By <strong>Nitin Pawar</strong> • <time datetime="2026-04-28">April 28, 2026</time></p>
+    </header>
 
-      <div class="article-content">
-        <img loading="lazy" decoding="async" src="../assets/images/india-development-crisis.png" class="reveal" onerror="this.onerror=null; this.src='../assets/images/default.png';" alt="India Development Crisis Analysis">
+    <div class="content">
+        <img loading="lazy" src="../assets/images/india-development-crisis.png" class="reveal" 
+             onerror="this.onerror=null; this.src='../assets/images/default.png';" 
+             alt="India's Development Crisis Analysis" 
+             style="width:100%; border-radius:16px; margin: 2rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
 
-        <h2 class="reveal">🔍 Introduction: The Real Question</h2>
-        <p class="reveal">India is one of the fastest-growing economies in the world. Digital innovation is booming. Infrastructure is expanding. Global attention is rising.</p>
-        <blockquote class="reveal">“Why does real development still feel slow, uneven, and inconsistent?”</blockquote>
-        <p class="reveal">The answer is uncomfortable but clear: <strong>India’s challenge is not just political — it is systemic, behavioral, and structural.</strong></p>
+        <section class="reveal">
+            <h2>🔍 Introduction: The Real Question</h2>
+            <p>India is one of the fastest-growing economies in the world. Digital innovation is booming. Infrastructure is expanding. Global attention is rising.</p>
+            <p>Yet, at ground level, a common question persists:</p>
+            <blockquote>“Why does real development still feel slow, uneven, and inconsistent?”</blockquote>
+            <p>The answer is uncomfortable but clear: <strong>India’s challenge is not just political — it is systemic, behavioral, and structural.</strong></p>
 
-        <div class="insight-box reveal" style="margin-top:30px; border-left-color: #dc2626;">
-          📊 <strong>Key Reality Snapshot (India 2026):</strong>
-          <br>• 40–47% politicians with criminal cases (<span class="entity-tag">Association for Democratic Reforms</span>)
-          <br>• 5+ crore pending court cases (<span class="entity-tag">National Judicial Data Grid</span>)
-          <br>• 1.4B+ population vs limited governance capacity
-          <br>• UPI processing 10B+ transactions monthly (<span class="entity-tag">National Payments Corporation of India</span>)
-        </div>
+            <div class="insight-box data-snapshot">
+                <h3 style="margin-top:0; font-size: 1.1rem;">📊 Key Reality Snapshot (India 2026):</h3>
+                <ul style="margin-bottom:0; list-style: none; padding-left: 0;">
+                    <li>• <strong>40–47%</strong> politicians with criminal cases (<span class="entity-tag">ADR Data</span>)</li>
+                    <li>• <strong>5+ Crore</strong> pending court cases (<span class="entity-tag">National Judicial Data Grid</span>)</li>
+                    <li>• <strong>1.4B+</strong> population vs limited governance capacity</li>
+                    <li>• <strong>10B+</strong> monthly UPI transactions (<span class="entity-tag">NPCI</span>)</li>
+                </ul>
+            </div>
+        </section>
 
-        <hr style="border:0; border-top:1px solid var(--border); margin:3.5rem 0;">
+        <section class="reveal">
+            <h2 style="color: #dc2626;">🔴 1. Political Accountability: Strong Democracy, Weak Enforcement</h2>
+            <p>India has a robust democratic framework, but accountability after elections remains weak. Data from the <span class="entity-tag">Association for Democratic Reforms</span> shows that around 40–47% of elected representatives have declared criminal cases. Despite this transparency, conviction rates remain low.</p>
+            <p><strong>What’s happening?</strong></p>
+            <ul style="list-style-type: none;">
+                <li>✅ Disclosure exists</li>
+                <li>❌ Enforcement is weak</li>
+                <li>⚠️ Political incentives favor winning, not governance</li>
+            </ul>
+            <p><strong>Ground Reality:</strong> Frequent government instability due to defections and political maneuvering highlights how power retention often outweighs public service.</p>
+            <p><strong>Impact:</strong> Policy inconsistency, reduced investor confidence, and local development bias.</p>
+            <div class="insight-box">👉 “Transparency without enforcement becomes a formality.”</div>
+        </section>
 
-        <h2 class="reveal" style="color: #dc2626;">🔴 1. Political Accountability: Strong Democracy, Weak Enforcement</h2>
-        <p class="reveal">India has a robust democratic framework, but accountability after elections remains weak. Data from the <span class="entity-tag">Association for Democratic Reforms</span> shows nearly 47% of representatives have criminal declarations. Transparency exists, but enforcement is slow.</p>
-        <div class="insight-box reveal">👉 “Transparency without enforcement becomes a formality.”</div>
+        <section class="reveal">
+            <h2 style="color: #f59e0b;">🟠 2. Voter Behavior: The Root of Democratic Quality</h2>
+            <p>Democracy reflects its voters. Research by <span class="entity-tag">Lokniti CSDS</span> shows that voting in India is influenced by welfare benefits, identity (caste, religion), and local candidate visibility. Urban India is shifting toward issue-based voting — but slowly.</p>
+            <p><strong>The Core Problem:</strong> Voters often prioritize short-term benefits and emotional narratives over long-term governance and economic policies.</p>
+            <p><strong>Hard Truth:</strong> Politicians don’t create voter behavior — they respond to it.</p>
+            <div class="insight-box">👉 “Democracy doesn’t fail — it reflects voter priorities.”</div>
+        </section>
 
-        <h2 class="reveal" style="color: #f59e0b;">🟠 2. Voter Behavior: The Root of Democratic Quality</h2>
-        <p class="reveal">Democracy reflects its voters. Research by <span class="entity-tag">Lokniti CSDS</span> shows that voting is influenced by welfare benefits and identity. While urban India shifts toward issue-based voting, the pace is slow.</p>
-        <p class="reveal" style="font-weight:600; color:#dc2626;">Hard Truth: Politicians don’t create voter behavior — they respond to it.</p>
-        <div class="insight-box reveal">👉 “Democracy doesn’t fail — it reflects voter priorities.”</div>
+        <section class="reveal">
+            <h2 style="color: #ecc94b;">🟡 3. Electoral Funding: The Economics of Power</h2>
+            <p>Elections in India are among the most expensive globally. Following the electoral bonds debate addressed by the <span class="entity-tag">Supreme Court of India</span>, funding has shifted — but not fully become transparent.</p>
+            <p><strong>What this creates:</strong> Dependency on donors, policy influence by funding sources, and ROI-driven politics. MSMEs often struggle for policy support while big players gain influence.</p>
+            <div class="insight-box">👉 “Who funds politics often influences governance.”</div>
+        </section>
 
-        <h2 class="reveal" style="color: #ecc94b;">🟡 3. Electoral Funding: The Economics of Power</h2>
-        <p class="reveal">Elections in India are among the most expensive globally. Following the debate at the <span class="entity-tag">Supreme Court of India</span>, funding remains a critical pillar of policy influence.</p>
-        <div class="insight-box reveal">👉 “Who funds politics often influences governance.”</div>
+        <section class="reveal">
+            <h2 style="color: #3182ce;">🔵 4. Population vs Governance Capacity</h2>
+            <p>India’s scale is both its strength and its biggest challenge. According to the <span class="entity-tag">World Bank</span>, the population is ~1.4+ billion. While growth is slowing, the police ratio remains below global standards and administrative capacity is stretched.</p>
+            <p><strong>Proof Point: India adds nearly 1 crore people every year</strong>, creating massive pressure on infrastructure and service delivery in mega-states like Maharashtra and Uttar Pradesh.</p>
+            <div class="insight-box">👉 “India’s challenge is not governance — it is governability at scale.”</div>
+            
+            <div class="insight-box" style="text-align:center; border-left:none; background: var(--primary-navy); color: white;">
+                ⚠️ India’s real crisis is not corruption alone — it is misaligned incentives across the system.
+            </div>
+        </section>
 
-        <div class="insight-box reveal" style="text-align:center; font-size:1.2rem; background:#020617; color:white; border-left: none;">
-          ⚠️ Growth without governance alignment creates invisible inequality.
-        </div>
+        <section class="reveal">
+            <h2 style="color: #805ad5;">🟣 5. Bureaucracy & Judicial System: The Hidden Bottleneck</h2>
+            <p>India’s legal and administrative systems are overloaded. Data from the <span class="entity-tag">National Judicial Data Grid</span> shows 5+ crore pending cases across courts, with ~90,000+ in the Supreme Court alone.</p>
+            <p><strong>Impact on MSMEs:</strong> Capital stuck in legal disputes, business uncertainty, and increased compliance burden. Justice delayed is not just justice denied — it is growth denied.</p>
+            <div class="insight-box">👉 “Justice delayed is growth denied.”</div>
+        </section>
 
-        <h2 class="reveal" style="color: #3182ce;">🔵 4. Population vs Governance Capacity</h2>
-        <p class="reveal">According to the <span class="entity-tag">World Bank</span>, India's scale is its biggest challenge. <strong>India adds nearly 1 crore people every year</strong>, creating massive pressure on every system from police ratio to infrastructure.</p>
-        <div class="insight-box reveal">👉 “India’s challenge is not governance — it is governability at scale.”</div>
+        <section class="reveal">
+            <h2 style="color: #744210;">🟤 6. Freebies vs Long-Term Growth</h2>
+            <p>Welfare schemes are necessary — but uncontrolled freebies create imbalance. According to the <span class="entity-tag">Economic Survey of India</span>, subsidy spending is rising while fiscal deficit remains a concern (~4–5% range).</p>
+            <p><strong>Proof Point:</strong> Several Indian states now spend over 10–15% of their budget on subsidies, which often comes at the cost of long-term infrastructure investment and creates a dependency mindset.</p>
+            <div class="insight-box">👉 “Short-term relief often comes at long-term cost.”</div>
+        </section>
 
-        <h2 class="reveal" style="color: #805ad5;">🟣 5. Bureaucracy & Judicial System: The Hidden Bottleneck</h2>
-        <p class="reveal">With over 5 crore cases in the <span class="entity-tag">National Judicial Data Grid</span>, the system is overloaded. For MSMEs, justice delayed is growth denied. <a href="/blog/" style="color:var(--accent-blue); font-weight:600;">Explore more system breakdowns →</a></p>
+        <section class="reveal">
+            <h2 style="color: #38a169;">🟢 7. Digital Governance: India’s Biggest Strength</h2>
+            <p>If there’s one area where India is leading globally — it’s digital governance. Through platforms like <span class="entity-tag">UIDAI</span> and <span class="entity-tag">NPCI</span>, India has built a scalable digital ecosystem.</p>
+            <p><strong>Proof Point:</strong> UPI alone processes over 10+ billion transactions monthly. With 140+ crore Aadhaar users and DBT (Direct Benefit Transfer), India has significantly reduced leakages in subsidies.</p>
+            <div class="insight-box">👉 “Technology is India’s shortcut to governance efficiency.”</div>
+        </section>
 
-        <h2 class="reveal" style="color: #744210;">🟤 6. Freebies vs Long-Term Growth</h2>
-        <p class="reveal">The <span class="entity-tag">Economic Survey of India</span> highlights rising subsidy spending. <strong>Proof Point:</strong> Several Indian states now spend over 10–15% of their budget on subsidies and welfare schemes, often at the cost of infrastructure.</p>
-        <div class="insight-box reveal">👉 “Short-term relief often comes at long-term cost.”</div>
+        <section class="reveal">
+            <h2>🌍 Global Comparison: Where India Stands</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>India Status</th>
+                        <th>Compared to US / China / Brazil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Digital Infrastructure</td><td>Very Strong</td><td>Global leader</td></tr>
+                    <tr><td>Governance Efficiency</td><td>Moderate</td><td>Behind US/China</td></tr>
+                    <tr><td>Corruption Control</td><td>Improving Slowly</td><td>Behind developed nations</td></tr>
+                    <tr><td>Judicial Speed</td><td>Weak</td><td>Slower than peers</td></tr>
+                </tbody>
+            </table>
+            <div class="insight-box">👉 “India leads in scale and tech, but lags in institutional efficiency.”</div>
+        </section>
 
-        <h2 class="reveal" style="color: #38a169;">🟢 7. Digital Governance: India’s Biggest Strength</h2>
-        <p class="reveal">Led by <span class="entity-tag">UIDAI</span> and <span class="entity-tag">National Payments Corporation of India</span>, India is a global leader. <strong>Proof Point:</strong> UPI alone processes over 10+ billion transactions monthly, making it one of the largest payment systems globally.</p>
-        <div class="insight-box reveal">👉 “Technology is India’s shortcut to governance efficiency.”</div>
+        <section class="reveal">
+            <h2>⚠️ Future Risks (Next 5–10 Years)</h2>
+            <ul style="line-height: 2;">
+                <li>Rising inequality between urban and rural India</li>
+                <li>Infrastructure pressure in mega cities</li>
+                <li>Fiscal stress due to rising subsidies</li>
+                <li>Job creation mismatch for the growing youth population</li>
+                <li>Declining trust in institutions if accountability gaps persist</li>
+            </ul>
+        </section>
 
-        <hr style="border: 0; border-top: 1px solid var(--border); margin: 4rem 0;">
-
-        <h2 class="reveal">🌍 Global Comparison: Where India Stands</h2>
-        <table class="comparison-table reveal">
-          <thead>
-            <tr>
-              <th>Area</th>
-              <th>India Status</th>
-              <th>Compared to Global Peers</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Digital Tech</td><td>Very Strong</td><td>Global leader (Beats US/EU)</td></tr>
-            <tr><td>Gov Efficiency</td><td>Moderate</td><td>Behind China/Singapore</td></tr>
-            <tr><td>Judicial Speed</td><td>Weak</td><td>Slower than peers</td></tr>
-          </tbody>
-        </table>
-
-        <h2 class="reveal">⚠️ Future Risks (Next 5–10 Years)</h2>
-        <ul class="reveal" style="margin-left:20px; line-height:2; margin-bottom: 40px;">
-          <li>Rising inequality between urban and rural tech-access</li>
-          <li>Infrastructure pressure in mega-cities</li>
-          <li>Fiscal stress due to rising populist subsidies</li>
-          <li>Job creation mismatch for the growing youth population</li>
-          <li>Declining trust in institutions if accountability gaps persist</li>
-        </ul>
-
-        <h2 class="reveal">🧠 What This Really Means</h2>
-        <p class="reveal">India’s development challenge is not a single failure — it is a coordination failure. Systems exist, talent exists, policies exist — but alignment between political incentives and societal behavior is missing.</p>
-
-        <div class="insight-box reveal" style="text-align:center; font-size:1.2rem; border-left: none; border-bottom: 4px solid var(--accent-blue);">
-          🔥 “India doesn’t have a leadership problem. It has an incentive problem.”
-        </div>
+        <section class="reveal">
+            <h2>🧠 What This Really Means</h2>
+            <p>India’s development challenge is not a single failure — it is a coordination failure. Systems exist, talent exists, policies exist — but alignment between political incentives and societal behavior is missing.</p>
+            <div class="insight-box" style="text-align:center; font-size:1.2rem; border-left: none; border-bottom: 4px solid var(--accent-blue);">
+              🔥 “India doesn’t have a leadership problem. It has an incentive problem.”
+            </div>
+        </section>
 
         <h2 class="reveal">🔥 Final Conclusion</h2>
         <p class="reveal">India’s problem is a combination of <strong>Incentives</strong>, <strong>Behavior</strong>, and <strong>Capacity</strong>.</p>
@@ -171,7 +229,7 @@
 
         <div class="cta-box reveal" style="margin-top: 4rem; padding: 30px; border: 1px solid var(--border); border-radius: 12px;">
           <h3 style="margin-top: 0; border-bottom: 2px solid var(--accent-blue); display: inline-block; padding-bottom: 5px;">About the Author</h3>
-          <p style="margin-bottom: 0;"><strong>Nitin Pawar</strong> is the founder of SaXhamAI, focused on system design, operational efficiency, and real-world execution for Indian businesses.</p>
+          <p style="margin-bottom: 0;"><strong>Nitin Pawar</strong> is the founder of SaXhamAI. He writes on how structured operations and system-thinking can transform both businesses and nations.</p>
         </div> 
 
         <div class="newsletter-box reveal" style="text-align: center; background: var(--primary-navy); color: white; padding: 50px 30px; margin-top: 4rem; border-radius: 20px;">
@@ -187,17 +245,9 @@
     </div>
   </main>
 
-  <a href="https://wa.me/919702855005" class="sticky-cta">💬 Let's Talk Systems</a>
-
-  <footer style="background: #020617; padding: 80px 0 40px; color: #94a3b8;">
-    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1100px; margin: 0 auto;">
-      <div style="flex: 1; min-width: 300px;"><h3 style="color: white; margin-bottom: 20px;">SaXhamAI</h3><p>Operational excellence for the Indian MSME ecosystem.</p></div>
-      <div style="flex: 1; min-width: 250px;"><h3 style="color: white; margin-bottom: 20px;">Contact</h3><p>📧 founder@saxhamai.com</p><p>📍 Navi Mumbai, Maharashtra</p></div>
-    </div>
-    <div class="container" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);"><p>© 2026 SaXhamAI | Systems by SaXham Technologies</p></div>
-  </footer>
-
-  <script>
+<script src="../assets/js/engine.js"></script>
+<script>
+    // Local script for progress bar and theme if engine.js is not loaded
     function toggleMobileMenu() { document.getElementById("mainNav").classList.toggle("nav-active"); }
     function toggleDark(){ 
       document.body.classList.toggle("dark-mode"); 
@@ -220,6 +270,6 @@
       let height = document.documentElement.scrollHeight - document.documentElement.clientHeight; 
       document.getElementById("progress-bar").style.width = (winScroll/height)*100 + "%"; 
     };
-  </script>
+</script>
 </body>
 </html>
