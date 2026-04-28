@@ -513,3 +513,125 @@ blockquote::before {
   box-shadow: 0 0 10px rgba(30, 98, 208, 0.3);
 }
 
+/* =========================================================
+   SaXham AI - PREMIUM ARTICLE & DATA STYLING (v6.2)
+========================================================= */
+
+/* 1. Article Readability Layer */
+.article-body {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-main);
+}
+
+.article-body p {
+  margin-bottom: 1.8rem;
+}
+
+/* 2. Enhanced Insight Boxes (Interactive) */
+.insight-box {
+  background: var(--bg-light);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--accent-blue);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  padding: 25px;
+  border-radius: 0 12px 12px 0;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  margin: 35px 0;
+}
+
+.insight-box:hover {
+  transform: translateX(8px);
+  border-color: var(--accent-blue);
+}
+
+/* Red-themed Snapshot for Data/Alerts */
+.data-snapshot {
+  border-left-color: #dc2626;
+  background: linear-gradient(to right, rgba(220, 38, 38, 0.03), transparent);
+}
+
+/* 3. Research-Grade Tables */
+.comparison-table {
+  width: 100%;
+  border-radius: 12px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  margin: 40px 0;
+  border: 1px solid var(--border);
+  background: var(--bg-white);
+}
+
+.comparison-table th {
+  background: var(--primary-navy);
+  color: #ffffff;
+  padding: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.comparison-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.comparison-table tr:last-child td { border-bottom: none; }
+.comparison-table tr:nth-child(even) { background: rgba(30, 98, 208, 0.02); }
+
+/* 4. Modern Blockquotes (Center-Aligned Focus) */
+blockquote {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  margin: 50px 0 !important;
+  padding: 45px !important;
+  background: var(--bg-white);
+  border: 1px solid var(--border) !important;
+  border-radius: 20px;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--primary-navy);
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 6rem;
+  color: var(--accent-blue);
+  opacity: 0.1;
+  position: absolute;
+  top: -15px;
+  left: 20px;
+}
+
+/* 5. Authority Entity Tags */
+.entity-tag {
+  background: rgba(30, 98, 208, 0.08);
+  color: var(--accent-blue);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-block;
+  border: 1px solid rgba(30, 98, 208, 0.1);
+}
+
+body.dark-mode .entity-tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 6. Proof Point Highlighting */
+.highlight-red {
+  color: #dc2626;
+  font-weight: 700;
+  background: rgba(220, 38, 38, 0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+
